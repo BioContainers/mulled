@@ -1,0 +1,19 @@
+
+site: Mulled
+
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+paginate: 10
+paginate_path: "/images/:num/"
+
+gems: [jekyll-paginate]
+permalink: /image/:title/
+

@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<div class="page-header">
+  <h1>
+    {{page.image}}
+    {% if page.info %}
+    <small>{{page.info[0].versions.stable}} via {{page.packager}}</small>
+    {% endif %}
+  </h1>
+  {% if page.info %}
+  {{page.info[0].desc}}<br>
+  <a href="{{page.info[0].homepage}}">{{page.info[0].homepage}}</a>
+  {% endif %}
+</div>
+
+<p class="text-right">
+  <a href="https://github.com/thriqon/mulled/issues/new?labels=bug&title=[{{page.image}}] Bug:" class="btn btn-danger" target="_blank">
+    <i class="fa fa-github fa-fw"></i>
+    Report
+  </a>
+</p>
+
+
+{% if page.published %}
+
+<div class="panel panel-default">
+  <div class="panel-body text-center">
+    <i class="fa fa-dollar">&nbsp;</i><samp>docker pull thriqon/mulled:{{page.image}}</samp>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading clearfix">
+    <h2 class="panel-title">Build</h2>
+  </div>
+  <div class="list-group">
+    <div class="list-group-item">
+      <i class="fa fa-calendar fa-fw"></i> {{page.date | date: "%B %d, %Y %T:%M %Z"}}
+    </div>
+    <div class="list-group-item">
+      <i class="fa fa-certificate fa-fw"></i> SHA1: <samp>{{page.checksum}}</samp>
+    </div>
+    <div class="list-group-item">
+      <i class="fa fa-balance-scale fa-fw"></i> {{page.size}}
+    </div>
+  </div>
+  <div class="panel-footer">
+    <a class="" href="{{page.buildurl}}">Build Log</a>
+  </div>
+</div>
+
+{% else %}
+
+<div class="alert alert-info">
+  <strong>Package is built</strong>, but it is not published yet. Please check back later.
+</div>
+
+{% endif %}
