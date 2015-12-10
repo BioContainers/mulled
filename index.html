@@ -1,0 +1,94 @@
+---
+---
+
+<h1 class="page-header">
+  Mulled Image Viewer
+</h1>
+
+<p>Mulled is a repository of prebuilt Linux utilities, available as Docker containers from Docker Hub. In contrast
+to the usual approach with Dockerfiles, we strive for small (and fast) images.</p>
+
+<h2>Propose new package</h2>
+
+<p>To propose a new package, please fork our <a href="https://github.com/thriqon/mulled/fork">Github repository</a>,
+and add the desired package to <code>packages.tsv</code>. We currently support the following package managers, if you
+feel like one is missing, please get in touch:</p>
+
+<ul>
+  <li><a href="http://brew.sh">Homebrew</a></li>
+</ul>
+
+<h2>Available Images</h2>
+
+<table class="table table-striped table-hover ">
+  <colgroup>
+    <col width="30%" />
+    <col width="20%" />
+    <col width="10%" />
+    <col width="40%" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Version</th>
+      <th>Status</th>
+      <th>Docker Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in paginator.posts %}
+      <tr>
+        <td>
+          <a href="{{ post.url }}">{{ post.image }}</a>
+        </td>
+        <td>
+          {% if post.info %}
+          {{post.info[0].versions.stable}}
+          {% endif %}
+        </td>
+        <td>
+          {% if post.published %}
+          <span class="label label-success">Published</span>
+          {% elsif post.info %}
+          <span class="label label-primary">Proposed</span>
+          {% else %}
+          <span class="label label-danger">Unknown</span>
+          {% endif %}
+         </td>
+         <td>
+           {% if post.published %}
+           <samp>thriqon/mulled:{{post.image}}</samp>
+           {% endif %}
+         </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if paginator.total_pages > 1 %}
+<div class="text-center">
+<ul class="pagination">
+  {% if paginator.previous_page %}
+  <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
+  {% else %}
+  <li class="disabled"><a href="#">&laquo;</a></li>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+  {% if page == paginator.page %}
+  <li class="active"><a href="#">{{page}}</a></li>
+  {% elsif page == 1 %}
+  <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+  {% else %}
+  <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+  {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+  <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
+  {% else %}
+  <li class="disabled"><a href="#">&raquo;</a></li>
+  {% endif %}
+</ul>
+</div>
+{% endif %}
