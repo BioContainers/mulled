@@ -1,6 +1,6 @@
 {
   "image": "hello",
-  "date": "2015-12-11T13:38:24+0000",
+  "date": "2015-12-11T14:07:14+0000",
   "info": {
     "name": "hello",
     "full_name": "hello",
@@ -56,7 +56,7 @@
   },
   "published": true,
   "size": "2.0MiB",
-  "checksum": "d53164f762b370bc545bda6eb9655e91b047781921b53411e17924b108e17ef1",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96266873",
+  "checksum": "sha256:4d0d3f66418b362285c93429fd5999799f5e773cf63d174e672a0d736f81e797",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96272728",
   "packager": "linuxbrew"
 }
