@@ -1,6 +1,6 @@
 {
   "image": "base64",
-  "date": "2015-12-11T10:34:57+0000",
+  "date": "2015-12-11T11:10:26+0000",
   "info": {
     "name": "base64",
     "full_name": "base64",
@@ -33,7 +33,7 @@
   },
   "published": true,
   "size": "1.9MiB",
-  "checksum": "baa5502eb07ba759f3c172d734ebb7420c6752aad1ffde06b376c06209b6eeff",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96240082",
+  "checksum": "7b5f3c1f5d5dc91e44f6feebb910b09cbb6a1c68e9ebcfeced85f1d6f7cc13f3",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96245843",
   "packager": "linuxbrew"
 }
