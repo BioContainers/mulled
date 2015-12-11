@@ -1,95 +1,85 @@
 ---
+layout: default
 ---
 
-<h1 class="page-header">
-  Mulled Image Viewer
-</h1>
+<p></p>
 
-<p>Mulled is a repository of prebuilt Linux utilities, available as Docker containers from Docker Hub. In contrast
-to the usual approach with Dockerfiles, we strive for small (and fast) images.</p>
+<div class="card-columns">
+  <div class="card card-block bg-faded">
+    <h2 class="card-title">About</h2>
+    <p class="card-text">Mulled is a repository of prebuilt Linux utilities, available as Docker containers from Docker Hub. In contrast
+    to the usual approach with Dockerfiles, we strive for small (and fast) images.</p>
+    <a href="https://github.com/thriqon/mulled" class="card-link btn btn-default">
+      <i class="fa fa-github"></i>
+      Visit Source
+    </a>
+  </div>
+  <div class="card">
+    <div class="card-block bg-faded">
+      <h2 class="card-title">How To Use</h2>
+      <p class="card-text">
+        On this page, you can find all already built packages. They are all available under the Docker Hub repository
+        <samp>thriqon/mulled</samp>, the package name is the tag. However, for additional security, you can also use
+        the digest next to the package. Using that you can be sure you get the image as it was produced on the build cluster.
+      </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-block bg-faded">
+      <h2 class="card-title">Propose new package</h2>
 
-<h2>Propose new package</h2>
+      <p class="card-text">To propose a new package, please fork our Github repository,
+      and add the desired package to <code>packages.tsv</code>. We currently support packages from Homebrew, but more will follow.</p>
 
-<p>To propose a new package, please fork our <a href="https://github.com/thriqon/mulled/fork">Github repository</a>,
-and add the desired package to <code>packages.tsv</code>. We currently support the following package managers, if you
-feel like one is missing, please get in touch:</p>
+      <a href="https://github.com/thriqon/mulled/fork" class="card-link btn btn-primary">
+        <i class="fa fa-github"></i>
+        Fork us
+      </a>
+    </div>
+  </div>
 
-<ul>
-  <li><a href="http://brew.sh">Homebrew</a></li>
-</ul>
+  {% capture images %}
+  {% for p in site.data %}
+  {{p[1].date}}|{{p[0]}}
+  {%endfor%}
+  {% endcapture %}
+  {% assign sortedimages = images | split: ' ' | sort %}
 
-<h2>Available Images</h2>
+  {% for p in sortedimages %}
+  {% assign pd = p | split: '|' %}
+  {% assign imageid = pd[1] %}
+  {% assign data = site.data[imageid] %}
 
-<table class="table table-striped table-hover ">
-  <colgroup>
-    <col width="30%" />
-    <col width="20%" />
-    <col width="10%" />
-    <col width="40%" />
-  </colgroup>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Version</th>
-      <th>Status</th>
-      <th>Docker Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for p in paginator.posts %}
-      {% assign data = site.data[p.image] %}
-      <tr>
-        <td>
-          <a href="{{ p.url }}">{{ p.image }}</a>
-        </td>
-        <td>
-          {% if data.info %}
-          {{data.info.versions.stable}}
-          {% endif %}
-        </td>
-        <td>
-          {% if data.published %}
-          <span class="label label-success">Published</span>
-          {% elsif data.info %}
-          <span class="label label-primary">Proposed</span>
-          {% else %}
-          <span class="label label-danger">Unknown</span>
-          {% endif %}
-         </td>
-         <td>
-           {% if data.published %}
-           <samp>thriqon/mulled:{{p.image}}</samp>
-           {% endif %}
-         </td>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
-
-{% if paginator.total_pages > 1 %}
-<div class="text-center">
-<ul class="pagination">
-  {% if paginator.previous_page %}
-  <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
-  {% else %}
-  <li class="disabled"><a href="#">&laquo;</a></li>
-  {% endif %}
-
-  {% for page in (1..paginator.total_pages) %}
-  {% if page == paginator.page %}
-  <li class="active"><a href="#">{{page}}</a></li>
-  {% elsif page == 1 %}
-  <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
-  {% else %}
-  <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-  {% endif %}
+  <div class="card">
+    <div class="card-block">
+      <h3 id="{{data.image}}" class="card-title">{{data.image}}</h3>
+      <h6 class="card-subtitle text-muted">{{data.info.versions.stable}} via {{data.packager}}</h6>
+      <p class="card-text">
+        {{data.info.desc}}
+	<a href="{{data.info.homepage}}">{{data.info.homepage}}</a>
+      </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <input type="text" class="form-control" value="thriqon/mulled@{{data.checksum}}" readonly>
+      </li> 
+      <li class="list-group-item">
+        <i class="fa fa-balance-scale fa-fw"></i> {{data.size}}
+      </li>
+      <li class="list-group-item">
+        <i class="fa fa-calendar fa-fw"></i> {{data.date | date: "%b %d, %Y %T %Z"}}
+      </li>
+    </ul>
+    <div class="card-block">
+      <a class="card-link" href="{{data.buildurl}}">
+        <i class="fa fa-book"></i>
+        Build Log
+      </a>
+      <a href="https://github.com/thriqon/mulled/issues/new?labels=bug&title=[{{data.image}}] Bug:" class="card-link" target="_blank">
+        <i class="fa fa-exclamation"></i>
+        Report a Problem
+      </a>
+    </div>
+  </div>
   {% endfor %}
-
-  {% if paginator.next_page %}
-  <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
-  {% else %}
-  <li class="disabled"><a href="#">&raquo;</a></li>
-  {% endif %}
-</ul>
 </div>
-{% endif %}
