@@ -17,39 +17,30 @@ layout: default
   {% endif %}
 </div>
 
-<p class="text-right">
-  <a href="https://github.com/thriqon/mulled/issues/new?labels=bug&title=[{{data.image}}] Bug:" class="btn btn-danger" target="_blank">
-    <i class="fa fa-github fa-fw"></i>
-    Report
-  </a>
-</p>
-
 
 {% if data.published %}
 
 <div class="panel panel-default">
-  <div class="panel-body text-center">
-    <i class="fa fa-dollar">&nbsp;</i><samp>docker pull thriqon/mulled:{{data.image}}</samp>
+  <div class="panel-body text-left" style="overflow:auto">
+    <i class="fa fa-dollar">&nbsp;</i><samp>docker pull thriqon/mulled:{{data.image}}</samp><br>
+    <i class="fa fa-dollar">&nbsp;</i><samp>docker pull thriqon/mulled@<wbr>{{data.checksum}}</samp>
   </div>
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading clearfix">
-    <h2 class="panel-title">Build</h2>
-  </div>
   <div class="list-group">
     <div class="list-group-item">
       <i class="fa fa-calendar fa-fw"></i> {{data.date | date: "%B %d, %Y %T:%M %Z"}}
-    </div>
-    <div class="list-group-item">
-      <i class="fa fa-certificate fa-fw"></i> SHA1: <samp>{{data.checksum}}</samp>
     </div>
     <div class="list-group-item">
       <i class="fa fa-balance-scale fa-fw"></i> {{data.size}}
     </div>
   </div>
   <div class="panel-footer">
-    <a class="" href="{{data.buildurl}}">Build Log</a>
+    <a class="" href="{{data.buildurl}}">
+      <i class="fa fa-book fa-fw"></i>
+      Build Log
+    </a>
   </div>
 </div>
 
@@ -60,3 +51,10 @@ layout: default
 </div>
 
 {% endif %}
+
+<p class="text-right">
+  <a href="https://github.com/thriqon/mulled/issues/new?labels=bug&title=[{{data.image}}] Bug:" class="btn btn-default" target="_blank">
+    <i class="fa fa-github fa-fw"></i>
+    Report a Problem
+  </a>
+</p>
