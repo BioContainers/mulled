@@ -36,28 +36,29 @@ feel like one is missing, please get in touch:</p>
     </tr>
   </thead>
   <tbody>
-    {% for post in paginator.posts %}
+    {% for p in paginator.posts %}
+      {% assign data = site.data[p.image] %}
       <tr>
         <td>
-          <a href="{{ post.url }}">{{ post.image }}</a>
+          <a href="{{ p.url }}">{{ p.image }}</a>
         </td>
         <td>
-          {% if post.info %}
-          {{post.info[0].versions.stable}}
+          {% if data.info %}
+          {{data.info.versions.stable}}
           {% endif %}
         </td>
         <td>
-          {% if post.published %}
+          {% if data.published %}
           <span class="label label-success">Published</span>
-          {% elsif post.info %}
+          {% elsif data.info %}
           <span class="label label-primary">Proposed</span>
           {% else %}
           <span class="label label-danger">Unknown</span>
           {% endif %}
          </td>
          <td>
-           {% if post.published %}
-           <samp>thriqon/mulled:{{post.image}}</samp>
+           {% if data.published %}
+           <samp>thriqon/mulled:{{p.image}}</samp>
            {% endif %}
          </td>
       </tr>

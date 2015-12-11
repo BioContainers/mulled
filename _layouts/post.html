@@ -2,32 +2,34 @@
 layout: default
 ---
 
+{% assign data = site.data[page.image] %}
+
 <div class="page-header">
   <h1>
-    {{page.image}}
-    {% if page.info %}
-    <small>{{page.info[0].versions.stable}} via {{page.packager}}</small>
+    {{data.image}}
+    {% if data.info %}
+    <small>{{data.info.versions.stable}} via {{data.packager}}</small>
     {% endif %}
   </h1>
-  {% if page.info %}
-  {{page.info[0].desc}}<br>
-  <a href="{{page.info[0].homepage}}">{{page.info[0].homepage}}</a>
+  {% if data.info %}
+  {{data.info.desc}}<br>
+  <a href="{{data.info.homepage}}">{{data.info.homepage}}</a>
   {% endif %}
 </div>
 
 <p class="text-right">
-  <a href="https://github.com/thriqon/mulled/issues/new?labels=bug&title=[{{page.image}}] Bug:" class="btn btn-danger" target="_blank">
+  <a href="https://github.com/thriqon/mulled/issues/new?labels=bug&title=[{{data.image}}] Bug:" class="btn btn-danger" target="_blank">
     <i class="fa fa-github fa-fw"></i>
     Report
   </a>
 </p>
 
 
-{% if page.published %}
+{% if data.published %}
 
 <div class="panel panel-default">
   <div class="panel-body text-center">
-    <i class="fa fa-dollar">&nbsp;</i><samp>docker pull thriqon/mulled:{{page.image}}</samp>
+    <i class="fa fa-dollar">&nbsp;</i><samp>docker pull thriqon/mulled:{{data.image}}</samp>
   </div>
 </div>
 
@@ -37,17 +39,17 @@ layout: default
   </div>
   <div class="list-group">
     <div class="list-group-item">
-      <i class="fa fa-calendar fa-fw"></i> {{page.date | date: "%B %d, %Y %T:%M %Z"}}
+      <i class="fa fa-calendar fa-fw"></i> {{data.date | date: "%B %d, %Y %T:%M %Z"}}
     </div>
     <div class="list-group-item">
-      <i class="fa fa-certificate fa-fw"></i> SHA1: <samp>{{page.checksum}}</samp>
+      <i class="fa fa-certificate fa-fw"></i> SHA1: <samp>{{data.checksum}}</samp>
     </div>
     <div class="list-group-item">
-      <i class="fa fa-balance-scale fa-fw"></i> {{page.size}}
+      <i class="fa fa-balance-scale fa-fw"></i> {{data.size}}
     </div>
   </div>
   <div class="panel-footer">
-    <a class="" href="{{page.buildurl}}">Build Log</a>
+    <a class="" href="{{data.buildurl}}">Build Log</a>
   </div>
 </div>
 
