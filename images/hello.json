@@ -1,6 +1,6 @@
 {
   "image": "hello",
-  "date": "2015-12-14T15:17:30+0000",
+  "date": "2015-12-14T16:00:18+0000",
   "info": {
     "homepage": "https://www.gnu.org/software/hello/",
     "description": "Program providing model for GNU coding standards and practices",
@@ -8,7 +8,7 @@
   },
   "published": true,
   "size": "2.0MiB",
-  "checksum": "sha256:ab4698a453c218a33e03c498d11bc06962e0cb50e3db4f96342f60cf7a140eb4",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96759823",
+  "checksum": "sha256:a73405eb1a81f82313fe2c5b4ce2bfdb948a94c825ffeaf4dd859de17e9fcede",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96769301",
   "packager": "linuxbrew"
 }
