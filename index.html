@@ -56,7 +56,12 @@ layout: default
       <h6 class="card-subtitle text-muted">{{data.info.version}} via {{data.packager}}</h6>
       <p class="card-text">
         {{data.info.description}}
-	<a href="{{data.info.homepage}}">{{data.info.homepage}}</a>
+        <a href="{{data.info.homepage}}">{{data.info.homepage}}</a>
+        {% if data.packager == "alpine" %}
+        <div class="alert alert-warning">
+          <strong>Alpine</strong> packager is still in early beta. Use with caution!
+        </div>
+        {% endif %}
       </p>
     </div>
     <ul class="list-group list-group-flush">
