@@ -1,6 +1,6 @@
 {
   "image": "sha2",
-  "date": "2015-12-11T15:57:52+0000",
+  "date": "2015-12-14T12:17:12+0000",
   "info": {
     "name": "sha2",
     "full_name": "sha2",
@@ -59,7 +59,7 @@
   },
   "published": true,
   "size": "1.9MiB",
-  "checksum": "sha256:10f3d39545d18dd98f2d06ec570fbf4d50c4af6fc60d7fcc7bf41bb04c6c98a0",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96295621",
+  "checksum": "sha256:78fc8c9a29bf2d998f45b49f73638b7d25ea8512ff47b8a72b5babf2a570b10f",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96728578",
   "packager": "linuxbrew"
 }
