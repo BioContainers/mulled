@@ -1,65 +1,14 @@
 {
   "image": "sha2",
-  "date": "2015-12-14T14:27:05+0000",
+  "date": "2015-12-14T14:44:47+0000",
   "info": {
-    "name": "sha2",
-    "full_name": "sha2",
-    "desc": "Implementation of SHA-256, SHA-384, and SHA-512 hash algorithms",
     "homepage": "https://www.aarongifford.com/computers/sha.html",
-    "oldname": null,
-    "versions": {
-      "stable": "1.0.1",
-      "bottle": false,
-      "devel": null,
-      "head": null
-    },
-    "revision": 0,
-    "installed": [
-      {
-        "version": "1.0.1",
-        "used_options": [],
-        "built_as_bottle": null,
-        "poured_from_bottle": false
-      }
-    ],
-    "linked_keg": null,
-    "keg_only": null,
-    "dependencies": [],
-    "conflicts_with": [],
-    "caveats": null,
-    "requirements": [],
-    "options": [
-      {
-        "option": "--without-check",
-        "description": "Skip compile-time tests"
-      }
-    ],
-    "bottle": {
-      "stable": {
-        "revision": 1,
-        "cellar": ":any",
-        "prefix": "/usr/local",
-        "root_url": "https://linuxbrew.bintray.com/bottles",
-        "files": {
-          "yosemite": {
-            "url": "https://linuxbrew.bintray.com/bottles/sha2-1.0.1.yosemite.bottle.1.tar.gz",
-            "sha256": "e087ba4357e2ed9d75bd2d25253c0982ac742db854d1c7c6792671d58e05bdc8"
-          },
-          "mavericks": {
-            "url": "https://linuxbrew.bintray.com/bottles/sha2-1.0.1.mavericks.bottle.1.tar.gz",
-            "sha256": "7bb393c6de372210c1343a76094063a344f59f7bfeed67210abc749e9dfb93aa"
-          },
-          "mountain_lion": {
-            "url": "https://linuxbrew.bintray.com/bottles/sha2-1.0.1.mountain_lion.bottle.1.tar.gz",
-            "sha256": "dc28fabf8cd4680b5ff534de7ef19ad95c4b839f6b891f80292e6ac9bd0952ad"
-          }
-        }
-      }
-    }
+    "description": "Implementation of SHA-256, SHA-384, and SHA-512 hash algorithms",
+    "version": "1.0.1"
   },
   "published": true,
   "size": "1.9MiB",
-  "checksum": "sha256:b6fa63af46948258f39e08d4e41dc177dfa1a89fe2119f7ac99234d2fc63fd96",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96749778",
+  "checksum": "sha256:698a292edb1092460b13751e4cedc6cf37cfba22fcb6da929fb627b9b704efb4",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96753575",
   "packager": "linuxbrew"
 }

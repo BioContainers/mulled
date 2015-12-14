@@ -1,39 +1,14 @@
 {
   "image": "base64",
-  "date": "2015-12-14T14:26:55+0000",
+  "date": "2015-12-14T14:44:37+0000",
   "info": {
-    "name": "base64",
-    "full_name": "base64",
-    "desc": "Encode and decode base64 files",
     "homepage": "https://www.fourmilab.ch/webtools/base64/",
-    "oldname": null,
-    "versions": {
-      "stable": "1.5",
-      "bottle": false,
-      "devel": null,
-      "head": null
-    },
-    "revision": 0,
-    "installed": [
-      {
-        "version": "1.5",
-        "used_options": [],
-        "built_as_bottle": null,
-        "poured_from_bottle": false
-      }
-    ],
-    "linked_keg": null,
-    "keg_only": null,
-    "dependencies": [],
-    "conflicts_with": [],
-    "caveats": null,
-    "requirements": [],
-    "options": [],
-    "bottle": {}
+    "description": "Encode and decode base64 files",
+    "version": "1.5"
   },
   "published": true,
   "size": "1.9MiB",
-  "checksum": "sha256:4fd6b0b0d41371452b625c395ff77fbba4ef88575873728320561e3884d7fc3a",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96749778",
+  "checksum": "sha256:877148b08fd8f879e3310e9cd74e2fe868adae77af4f8a14f6831ef23fe17d00",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96753575",
   "packager": "linuxbrew"
 }
