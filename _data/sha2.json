@@ -1,6 +1,6 @@
 {
   "image": "sha2",
-  "date": "2015-12-14T15:07:35+0000",
+  "date": "2015-12-14T15:18:00+0000",
   "info": {
     "homepage": "https://www.aarongifford.com/computers/sha.html",
     "description": "Implementation of SHA-256, SHA-384, and SHA-512 hash algorithms",
@@ -8,7 +8,7 @@
   },
   "published": true,
   "size": "1.9MiB",
-  "checksum": "sha256:20c606ca0678914a3331390782acc4f3b036a5f299900966ef79f059119d50a2",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96758109",
+  "checksum": "sha256:46ae0966efd17a531cbc7bd2b29ea946419b8466c93bf944eeb50688dab3c83f",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96759823",
   "packager": "linuxbrew"
 }
