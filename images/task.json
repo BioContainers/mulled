@@ -1,14 +1,14 @@
 {
   "image": "task",
-  "date": "2015-12-14T16:01:07+0000",
+  "date": "2015-12-27T19:57:48+0000",
   "info": {
-    "version": "2.4.4-r0",
-    "description": "A command-line to do list manager",
-    "homepage": "http://taskwarrior.org"
+    "version": "fetch",
+    "description": "task-2.5.0-r0 description:",
+    "homepage": "task-2.5.0-r0 webpage:"
   },
   "published": true,
   "size": "6.2MiB",
-  "checksum": "sha256:522e330e8292d282f7e8ddcdf9c2410737bf3941c3fe007e3351a17d97aa5100",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/96769301",
+  "checksum": "sha256:ebee530c6fb85679cf221690fa14ec485ec8d79eb5ef8e84e5f02f9d79ac5410",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/99006841",
   "packager": "alpine"
 }
