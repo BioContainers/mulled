@@ -1,6 +1,6 @@
 {
   "image": "task",
-  "date": "2015-12-27T19:57:48+0000",
+  "date": "2015-12-28T10:34:00+0000",
   "info": {
     "version": "fetch",
     "description": "task-2.5.0-r0 description:",
@@ -8,7 +8,7 @@
   },
   "published": true,
   "size": "6.2MiB",
-  "checksum": "sha256:ebee530c6fb85679cf221690fa14ec485ec8d79eb5ef8e84e5f02f9d79ac5410",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/99006841",
+  "checksum": "sha256:02f38cc191b3d81d07a9ee5753b71aa6f9048e2db70f6ab57e751bdf4a4fe4c8",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/99077527",
   "packager": "alpine"
 }
