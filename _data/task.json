@@ -1,0 +1,14 @@
+{
+  "image": "task",
+  "date": "2015-12-29T19:43:12+0000",
+  "info": {
+    "version": "fetch",
+    "description": "task-2.5.0-r0 description:",
+    "homepage": "task-2.5.0-r0 webpage:"
+  },
+  "published": true,
+  "size": "6.2MiB",
+  "checksum": "sha256:dd428545158968b8e8d0aacc0f5e4d7e09d907e23b83a913cea9e8e1d899d68f",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/99314000",
+  "packager": "alpine"
+}

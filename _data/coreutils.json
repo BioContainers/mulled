@@ -1,0 +1,14 @@
+{
+  "image": "coreutils",
+  "date": "2015-12-29T19:42:48+0000",
+  "info": {
+    "homepage": "https://www.gnu.org/software/coreutils",
+    "description": "GNU File, Shell, and Text utilities",
+    "version": "8.24"
+  },
+  "published": true,
+  "size": "13MiB",
+  "checksum": "sha256:d3cc04e5cd5fbd16b9c9a15b6bf6ed2d72082ade085e1558a03fc38d60b25224",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/99314000",
+  "packager": "linuxbrew"
+}
