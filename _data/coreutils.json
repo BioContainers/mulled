@@ -1,6 +1,6 @@
 {
   "image": "coreutils",
-  "date": "2015-12-31T12:35:12+0000",
+  "date": "2016-01-07T07:42:25+0000",
   "info": {
     "homepage": "https://www.gnu.org/software/coreutils",
     "description": "GNU File, Shell, and Text utilities",
@@ -8,7 +8,7 @@
   },
   "published": true,
   "size": "13MiB",
-  "checksum": "sha256:3cb016115ad97510a60048cbcff482461cc3900995ec93416964a94688484f86",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/99586870",
+  "checksum": "sha256:92ad64d0448036bd98bca4fa08388f9b50d96b43f537f0aa67959a26a8701675",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/100765754",
   "packager": "linuxbrew"
 }

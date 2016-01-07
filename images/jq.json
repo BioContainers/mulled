@@ -1,0 +1,14 @@
+{
+  "image": "jq",
+  "date": "2016-01-07T07:43:00+0000",
+  "info": {
+    "version": "fetch",
+    "description": "jq-1.5-r0 description:",
+    "homepage": "jq-1.5-r0 webpage:"
+  },
+  "published": true,
+  "size": "899KiB",
+  "checksum": "sha256:6db30027fe4b0572e0588cdc594234cb288689934b226490f96fd694b4d34737",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/100765754",
+  "packager": "alpine"
+}
