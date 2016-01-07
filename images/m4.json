@@ -1,0 +1,14 @@
+{
+  "image": "m4",
+  "date": "2016-01-07T11:30:38+0000",
+  "info": {
+    "homepage": "http://www.gnu.org/software/m4/",
+    "description": null,
+    "version": "1.4.17"
+  },
+  "published": true,
+  "size": "1.3KiB",
+  "checksum": "sha256:6df3244ad5bfa1f2b44f0df584b9c201267a450c3d7797a32d020147dc6ed701",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/100800183",
+  "packager": "bioconda"
+}
