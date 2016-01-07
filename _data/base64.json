@@ -1,6 +1,6 @@
 {
   "image": "base64",
-  "date": "2016-01-07T07:36:36+0000",
+  "date": "2016-01-07T07:51:12+0000",
   "info": {
     "homepage": "https://www.fourmilab.ch/webtools/base64/",
     "description": "Encode and decode base64 files",
@@ -8,7 +8,7 @@
   },
   "published": true,
   "size": "1.9MiB",
-  "checksum": "sha256:5b0756ebfa9e0d2ef249f3ad8993b21b81a22c9e67b13b241c49951f751bcd5d",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/100765754",
+  "checksum": "sha256:3624f8601dbdfffa093895086e8ab62334fc023b002105639d2999ba9c079b70",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/100767131",
   "packager": "linuxbrew"
 }
