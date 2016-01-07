@@ -1,14 +1,14 @@
 {
   "image": "jq",
-  "date": "2016-01-07T08:15:06+0000",
+  "date": "2016-01-07T08:34:03+0000",
   "info": {
-    "version": "A",
-    "description": "",
-    "homepage": ""
+    "version": "1.4-r0",
+    "description": "A lightweight and flexible command-line JSON processor",
+    "homepage": "http://stedolan.github.io/jq/"
   },
   "published": true,
   "size": "899KiB",
-  "checksum": "sha256:fa5b49872a8c4e7c605f09d2680075f09208e7a3dff003305fc7255eeb698d73",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/100769430",
+  "checksum": "sha256:2b03bb0397e308a0f69624aade680adac1f852d624e8a2bf86b47375a71288e4",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/100771603",
   "packager": "alpine"
 }
