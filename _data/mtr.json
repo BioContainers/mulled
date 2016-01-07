@@ -1,14 +1,14 @@
 {
   "image": "mtr",
-  "date": "2016-01-07T08:52:32+0000",
+  "date": "2016-01-07T11:10:10+0000",
   "info": {
     "version": "0.82-r1",
     "description": "Full screen ncurses traceroute tool",
     "homepage": "http://www.bitwizard.nl/mtr/"
   },
   "published": true,
-  "size": "1.2MiB",
-  "checksum": "sha256:e95695a686bfe7f86188d343e16e864a1715efb3f9ca057d2d7622ad3de485fd",
-  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/100774641",
+  "size": "2.2MiB",
+  "checksum": "sha256:e1c377da1b3d8613ccc3c8e4faa1dcb54ad9971d6bc6c592ba99db6f9090f9d5",
+  "buildurl": "https://travis-ci.org/thriqon/mulled/builds/100796727",
   "packager": "alpine"
 }
