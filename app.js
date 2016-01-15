@@ -20,16 +20,16 @@
 
     var par = document.querySelector(".card-columns");
     data.forEach(function (p) {
-      c.querySelector("h3.card-title").innerText = p.image;
-      c.querySelector("h6.card-subtitle").innerText = p.version + " via " + p.packager;
-      c.querySelector("p.card-text span").innerText = p.description;
+      c.querySelector("h3.card-title").textContent = p.image;
+      c.querySelector("h6.card-subtitle").textContent = p.version + " via " + p.packager;
+      c.querySelector("p.card-text span").textContent = p.description;
       c.querySelector("a.package-homepage").href = p.homepage;
-      c.querySelector("a.package-homepage").innerText = p.homepage;
+      c.querySelector("a.package-homepage").textContent = p.homepage;
       c.querySelector("input").value = "quay.io/mulled/"  + p.image + "@" + p.checksum;
       c.querySelector("button.copy-btn").setAttribute('data-clipboard-text', "docker run -it --rm quay.io/mulled/"  + p.image + "@" + p.checksum);
 
-      c.querySelector("span.package-size").innerText = p.size;
-      c.querySelector("span.package-date").innerText = new Date(p.date).toLocaleString();
+      c.querySelector("span.package-size").textContent = p.size;
+      c.querySelector("span.package-date").textContent = new Date(p.date).toLocaleString();
       c.querySelector("a.build-url").href = p.buildurl;
 
       c.querySelector("a.report-bug").href = "https://github.com/thriqon/mulled/issues/new?labels=bug&title=[" + p.image + "] Bug:";
