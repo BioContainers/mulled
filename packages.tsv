@@ -7,3 +7,4 @@ alpine	task	1	/usr/bin/task --version
 alpine	jq	1	test $(/usr/bin/jq -M -n -c "{a: (4+3)}") = "{\"a\":7}"
 alpine	mtr	1	/usr/sbin/mtr -v
 conda	m4	3	test $(echo "define(a, bbb)a" | /bin/m4) = "bbb"
+conda	samtools	1	samtools --version
