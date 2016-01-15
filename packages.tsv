@@ -1,0 +1,9 @@
+# Packager	Package	Revision	Test
+linuxbrew	hello	1	test "$(/brew/bin/hello)" = "Hello, world!"
+linuxbrew	base64	1	test $(echo -n mulled | /brew/bin/base64 | tr -d "\r") = "bXVsbGVk"
+linuxbrew	sha2	1	test $(echo -n mulled | /brew/bin/sha2 -256 -q) = "950af197b83c2b315d43232ffb1e11118874fd02e4a4d1d2baf93cea419feb5d"
+linuxbrew	coreutils	1	test "$(echo -n 15 | /brew/bin/factor)" = "15: 3 5"
+alpine	task	1	/usr/bin/task --version
+alpine	jq	1	test $(/usr/bin/jq -M -n -c "{a: (4+3)}") = "{\"a\":7}"
+alpine	mtr	1	/usr/sbin/mtr -v
+bioconda	m4	1	test $(echo "define(a, bbb)a" | /bin/m4) = "bbb"

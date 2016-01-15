@@ -1,0 +1,21 @@
+
+sudo: required
+
+services:
+  - docker
+
+install:
+  - curl https://get.docker.com/ | /bin/bash
+  - docker -v
+  - wget https://storage.googleapis.com/involucro-1149.appspot.com/involucro
+  - chmod u+x involucro
+
+script:
+  - if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" quay.io ; fi
+  - ./involucro -f generate_lists.lua main:prepare -vv
+  - if [ "$TRAVIS_PULL_REQUEST" = "false" -a "$TRAVIS_BRANCH" = "master" ]; then ./involucro -f builder.lua prod -vv ; else ./involucro -f builder.lua pr -vv ; fi
+
+notifications:
+  irc:
+    channels:
+      - "chat.freenode.net#mulled"
