@@ -66,6 +66,7 @@
         <div class="nav navbar-nav navbar-right pull-right">
           <a class="nav-item nav-link" href="https://travis-ci.org/thriqon/mulled">Travis CI</a>
           <a class="nav-item nav-link" href="https://github.com/thriqon/mulled">Github</a>
+          <a class="nav-item nav-link" href="/docs">API</a>
         </div>
       </div>
     </nav>
@@ -74,7 +75,7 @@
 
       <div class="card card-block bg-faded">
         <h2 class="card-title">About</h2>
-        <p class="card-text">Mulled is a repository of prebuilt Linux utilities, available as Docker containers from Docker Hub. In contrast
+        <p class="card-text">Mulled is a repository of prebuilt Linux utilities, available as Docker containers from <a href="https://quay.io/">Quay.IO</a>. In contrast
         to the usual approach with Dockerfiles, we strive for small (and fast) images.</p>
         <a href="https://github.com/thriqon/mulled" class="card-link btn btn-default">
           <i class="fa fa-github"></i>
@@ -85,9 +86,9 @@
         <div class="card-block bg-faded">
           <h2 class="card-title">How To Use</h2>
           <p class="card-text">
-          On this page, you can find all already built packages. They are all available under the Docker Hub repository
-          <samp>thriqon/mulled</samp>, the package name is the tag. However, for additional security, you can also use
-          the digest next to the package. Using that you can be sure you get the image as it was produced on the build cluster.
+          On this page, you can find all already built packages.
+          They are all available from the <samp>mulled</samp> organization on the <a href="https://quay.io/mulled">Quay organization page</a>.
+          The commands below are directly runnable and reference (via a SHA checksum) to the exact linked version.
           </p>
         </div>
       </div>
@@ -95,8 +96,10 @@
         <div class="card-block bg-faded">
           <h2 class="card-title">Propose new package</h2>
 
-          <p class="card-text">To propose a new package, please fork our Github repository,
-          and add the desired package to <code>packages.tsv</code>. We currently support packages from Homebrew, but more will follow.</p>
+          <p class="card-text">To propose a new package, please fork our Github
+          repository, and add the desired package to <code>packages.tsv</code>.
+          We currently support packages from Homebrew, Alpine and Conda, but
+          more will follow.</p>
 
           <a href="https://github.com/thriqon/mulled/fork" class="card-link btn btn-primary">
             <i class="fa fa-github"></i>
@@ -107,8 +110,6 @@
 
       <div class="card-columns">
       </div>
-
-
     </div>
   </body>
   <script src="app.js"></script>
