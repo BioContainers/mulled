@@ -112,13 +112,19 @@ builders.linuxbrew = function (package, revision, test, builddir)
 end
 
 ------------------------------------------------------------------------
-------------- BIOCONDA
+------------- CONDA
 ------------------------------------------------------------------------
-builders.bioconda = function (package, revision, test, builddir)
+builders.conda = function (package, revision, test, builddir)
   repo = namespace .. '/' .. package .. ':' .. revision
+  channels = {"bioconda", "r"}
 
-  install = [==[ conda install -p /data/dist --copy --yes ]==]
-  extractInfo = 'conda list -p /data/dist -e ' .. package .. ' | grep ^' .. package .. '= | tr = - | xargs -I %% cp /anaconda/pkgs/%%/info/recipe.json /data/info/raw.json'
+  channelArgs = ""
+  for i, c in pairs(channels) do
+    channelArgs = channelArgs .. "--channel " .. c .. " "
+  end
+
+  install = [==[ conda install ]==] .. channelArgs .. [==[ -p /data/dist --copy --yes ]==]
+  extractInfo = 'conda list -p /data/dist -e ' .. package .. ' | grep ^' .. package .. '= | tr = - | xargs -I %% cp /opt/conda/pkgs/%%/info/recipe.json /data/info/raw.json'
 
   transformInfo = '/jq-linux64 --raw-output  \'[.about.home, .about.summary, .package.version] | join("\n")\' /data/info/raw.json | '
     .. [==[ ( read homepage ; echo $homepage > /data/info/homepage ; read desc ; echo $desc > /data/info/description ; read version ; echo $version > /data/info/version ) ]==]
@@ -126,23 +132,23 @@ builders.bioconda = function (package, revision, test, builddir)
   linkLib64 = 'ln -s /lib /data/dist/lib64'
 
   inv.task('build:' .. package)
-	.using('bioconda/bioconda-builder')
-		.withConfig({entrypoint = {"/bin/sh", "-c"}})
-		.withHostConfig({
-			binds = {builddir .. ':/data'}
-		})
-		.run('mkdir -p /data/dist /data/info')
-   .run(install .. package .. ' && ' .. extractInfo)
-   .run(linkLib64)
+  .using('continuumio/miniconda')
+    .withConfig({entrypoint = {"/bin/sh", "-c"}})
+    .withHostConfig({
+      binds = {builddir .. ':/data'}
+    })
+    .run('mkdir -p /data/dist /data/info')
+    .run(install .. package .. ' && ' .. extractInfo)
+    .run(linkLib64)
 
-	.using(jq)
-		.withHostConfig({binds = {builddir .. ':/data'}})
-		.run(transformInfo)
-	.wrap(builddir .. '/dist').at('/').inImage('busybox:ubuntu')
+  .using(jq)
+    .withHostConfig({binds = {builddir .. ':/data'}})
+    .run(transformInfo)
+  .wrap(builddir .. '/dist').at('/').inImage('busybox:ubuntu')
     .as(repo)
 
   inv.task('clean:' .. package)
-    .using('bioconda/bioconda-builder')
+    .using('continuumio/miniconda')
       .withConfig({entrypoint = {"/bin/sh", "-c"}})
       .withHostConfig({
         binds = {builddir .. ':/data'}
