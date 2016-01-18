@@ -11,6 +11,23 @@ builders = {}
 
 current_build_id = 'snapshot'
 
+function split(s, delim)
+  local start = 1
+  local t = {}
+  while true do
+    local pos = string.find(s, delim, start, true)
+    if not pos then
+      break
+    end
+    table.insert(t, string.sub(s, start, pos - 1))
+    start = pos + #delim
+  end
+  table.insert(t, string.sub(s, start))
+  return t
+end
+assert(table.concat(split("a-d", "-"), "///") == "a///d")
+assert(table.concat(split("a---d", "---"), "///") == "a///d")
+
 ------------------------------------------------------------------------
 ------------- ALPINE
 ------------------------------------------------------------------------
@@ -126,19 +143,19 @@ builders.conda = function (package, revision, test, builddir)
   install = [==[ conda install ]==] .. channelArgs .. [==[ -p /data/dist --copy --yes ]==]
   extractInfo = 'conda list -p /data/dist -e ' .. package .. ' | grep ^' .. package .. '= | tr = - | xargs -I %% cp /opt/conda/pkgs/%%/info/recipe.json /data/info/raw.json'
 
+  conda_version = table.concat(split(revision, "--"), "=")
+
   transformInfo = '/jq-linux64 --raw-output  \'[.about.home, .about.summary, .package.version] | join("\n")\' /data/info/raw.json | '
-    .. [==[ ( read homepage ; echo $homepage > /data/info/homepage ; read desc ; echo $desc > /data/info/description ; read version ; echo $version > /data/info/version ) ]==]
+    .. [==[ ( read homepage ; echo $homepage > /data/info/homepage ; read desc ; echo $desc > /data/info/description ; read version ; echo ]==] .. revision .. [==[ > /data/info/version ) ]==]
 
   linkLib64 = 'ln -s /lib /data/dist/lib64'
 
   inv.task('build:' .. package)
   .using('continuumio/miniconda')
     .withConfig({entrypoint = {"/bin/sh", "-c"}})
-    .withHostConfig({
-      binds = {builddir .. ':/data'}
-    })
+    .withHostConfig({binds = {builddir .. ':/data'}})
     .run('mkdir -p /data/dist /data/info')
-    .run(install .. package .. ' && ' .. extractInfo)
+    .run(install .. package .. '=' .. conda_version .. ' && ' .. extractInfo)
     .run(linkLib64)
 
   .using(jq)
@@ -150,9 +167,7 @@ builders.conda = function (package, revision, test, builddir)
   inv.task('clean:' .. package)
     .using('continuumio/miniconda')
       .withConfig({entrypoint = {"/bin/sh", "-c"}})
-      .withHostConfig({
-        binds = {builddir .. ':/data'}
-      })
+      .withHostConfig({binds = {builddir .. ':/data'}})
       .run('rm -rf /data/dist /data/info')
 
   inv.task('test:' .. package)
@@ -237,26 +252,10 @@ function pushTask(package, new_revision, packager, builddir)
         .. '-T /pkg/info/github_commit https://api.github.com/repos/' .. github_repo .. '/contents/_images/' .. package .. '.json')
 end
 
--- split line by tabs
-function split(s)
-  local start = 1
-  local t = {}
-  while true do
-    local pos = string.find(s, "\t", start, true)
-    if not pos then
-      break
-    end
-    table.insert(t, string.sub(s, start, pos - 1))
-    start = pos + 1
-  end
-  table.insert(t, string.sub(s, start))
-  return t
-end
-
 -- registered packages
 registered_packages = {}
 for line in io.lines("packages.tsv") do
-  fields = split(line)
+  fields = split(line, "\t")
   registered_packages[fields[2]] = fields
 end
 
