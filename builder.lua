@@ -144,7 +144,7 @@ builders.conda = function (package, revision, test, builddir)
   .using(jq)
     .withHostConfig({binds = {builddir .. ':/data'}})
     .run(transformInfo)
-  .wrap(builddir .. '/dist').at('/').inImage('busybox:ubuntu')
+  .wrap(builddir .. '/dist').at('/').inImage('progrium/busybox')
     .as(repo)
 
   inv.task('clean:' .. package)
