@@ -12,8 +12,8 @@ install:
 
 script:
   - if [[ $TRAVIS_SECURE_ENV_VARS == "true" ]]; then docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" quay.io ; fi
-  - ./involucro -f generate_lists.lua main:prepare -vv
-  - if [ "$TRAVIS_PULL_REQUEST" = "false" -a "$TRAVIS_BRANCH" = "master" ]; then ./involucro -f builder.lua prod -vv ; else ./involucro -f builder.lua pr -vv ; fi
+  - ./involucro -f generate_lists.lua main:prepare -vv >/dev/null
+  - (if [ "$TRAVIS_PULL_REQUEST" = "false" -a "$TRAVIS_BRANCH" = "master" ]; then ./involucro -f builder.lua prod -vv ; else ./involucro -f builder.lua pr -vv ; fi) > /dev/null
 
 notifications:
   irc:

@@ -267,21 +267,23 @@ local build_counter = 0
 
 -- build tasks
 for line in io.lines("data/build_list") do
-  local fields = registered_packages[line]
+  if line ~= "" then
+    local fields = registered_packages[line]
 
-  local packager = fields[1]
-  local package = fields[2]
-  local revision = fields[3]
-  local test = fields[4]
+    local packager = fields[1]
+    local package = fields[2]
+    local revision = fields[3]
+    local test = fields[4]
 
-  assert(builders[packager])
-  build_counter = build_counter + 1
-  builddir = './mulled-build-' .. tostring(build_counter)
-  builders[packager](package, revision, test, builddir)
+    assert(builders[packager])
+    build_counter = build_counter + 1
+    builddir = './mulled-build-' .. tostring(build_counter)
+    builders[packager](package, revision, test, builddir)
 
-  pushTask(package, revision, packager, builddir)
+    pushTask(package, revision, packager, builddir)
 
-  pr.runTask('build:' .. package).runTask('test:' .. package).runTask('clean:' .. package)
-  prod.runTask('build:' .. package).runTask('test:' .. package).runTask('push:' .. package).runTask('clean:' .. package)
+    pr.runTask('build:' .. package).runTask('test:' .. package).runTask('clean:' .. package)
+    prod.runTask('build:' .. package).runTask('test:' .. package).runTask('push:' .. package).runTask('clean:' .. package)
+  end
 end
 
