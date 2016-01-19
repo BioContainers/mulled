@@ -140,28 +140,30 @@ builders.conda = function (package, revision, test, builddir)
     channelArgs = channelArgs .. "--channel " .. c .. " "
   end
 
-  install = [==[ conda install ]==] .. channelArgs .. [==[ -p /data/dist --copy --yes ]==]
-  extractInfo = 'conda list -p /data/dist -e ' .. package .. ' | grep ^' .. package .. '= | tr = - | xargs -I %% cp /opt/conda/pkgs/%%/info/recipe.json /data/info/raw.json'
+  install = [==[ conda install ]==] .. channelArgs .. [==[ -p /usr/local --copy --yes ]==]
+  extractInfo = 'conda list -p /usr/local -e ' .. package .. ' | grep ^' .. package .. '= | tr = - | xargs -I %% cp /opt/conda/pkgs/%%/info/recipe.json /info/raw.json'
 
   conda_version = table.concat(split(revision, "--"), "=")
 
-  transformInfo = '/jq-linux64 --raw-output  \'[.about.home, .about.summary, .package.version] | join("\n")\' /data/info/raw.json | '
-    .. [==[ ( read homepage ; echo $homepage > /data/info/homepage ; read desc ; echo $desc > /data/info/description ; read version ; echo ]==] .. revision .. [==[ > /data/info/version ) ]==]
+  transformInfo = '/jq-linux64 --raw-output  \'[.about.home, .about.summary, .package.version] | join("\n")\' /info/raw.json | '
+    .. [==[ ( read homepage ; echo $homepage > /info/homepage ; read desc ; echo $desc > /info/description ; read version ; echo ]==] .. revision .. [==[ > /info/version ) ]==]
 
-  linkLib64 = 'ln -s /lib /data/dist/lib64'
+  condaBinds = {
+    builddir .. "/info:/info",
+    builddir .. "/dist:/usr/local",
+  }
 
   inv.task('build:' .. package)
   .using('continuumio/miniconda')
     .withConfig({entrypoint = {"/bin/sh", "-c"}})
-    .withHostConfig({binds = {builddir .. ':/data'}})
-    .run('mkdir -p /data/dist /data/info')
+    .withHostConfig({binds = condaBinds})
     .run(install .. package .. '=' .. conda_version .. ' && ' .. extractInfo)
-    .run(linkLib64)
 
   .using(jq)
-    .withHostConfig({binds = {builddir .. ':/data'}})
+    .withHostConfig({binds = condaBinds})
     .run(transformInfo)
-  .wrap(builddir .. '/dist').at('/').inImage('progrium/busybox')
+  .wrap(builddir .. '/dist').at('/usr/local')
+    .inImage('progrium/busybox')
     .as(repo)
 
   inv.task('clean:' .. package)
