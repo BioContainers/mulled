@@ -74,7 +74,15 @@ inv.task('main:fetch_images_dir_from_github')
   .using(curl)
     .run('https://api.github.com/repos/' .. github_repo .. '/contents/_images', '-o', 'data/github_repo')
 
+inv.task('main:check_uniqueness_of_keys')
+  .using('busybox')
+    .run('/bin/sh', '-c',
+      "cat packages.tsv | cut -f2 |" -- read in all package names
+      .. "sort | uniq -d |" -- filter out non-duplicates
+      .. "wc -l | xargs -I%% test 0 -eq %% || (echo 'Package names not unique' 1>&2 && false)") -- count number of non-duplicates and assert that there are zero of them
+
 inv.task('main:prepare')
+  .runTask('main:check_uniqueness_of_keys')
   .runTask('main:create_data_dir')
   .runTask('main:generate_jq_image')
   .runTask('main:load_versions_from_quay')
