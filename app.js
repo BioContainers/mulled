@@ -28,7 +28,7 @@
       c.querySelector("input").value = "quay.io/mulled/"  + p.image + "@" + p.checksum;
       c.querySelector("button.copy-btn").setAttribute('data-clipboard-text', "docker run -it --rm quay.io/mulled/"  + p.image + "@" + p.checksum);
 
-      c.querySelector("span.package-size").textContent = p.size;
+      c.querySelector("span.package-size").textContent = numeral(p.size).format('0b');
       c.querySelector("span.package-date").textContent = new Date(p.date).toLocaleString();
       c.querySelector("a.build-url").href = p.buildurl;
 
