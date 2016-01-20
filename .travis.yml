@@ -11,11 +11,10 @@ install:
   - chmod u+x involucro
 
 script:
+  - ./involucro -v main:generate_linuxbrew_builder > /dev/null
   - if [[ $TRAVIS_SECURE_ENV_VARS == "true" ]]; then docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" quay.io ; fi
-  - ./involucro -v -f generate_lists.lua main:prepare >/dev/null
-  - (if [ "$TRAVIS_PULL_REQUEST" = "false" -a "$TRAVIS_BRANCH" = "master" ]; then ./involucro -v -f builder.lua prod ; else ./involucro -v -f builder.lua pr ; fi) > /dev/null
+  - (if [ "$TRAVIS_PULL_REQUEST" = "false" -a "$TRAVIS_BRANCH" = "master" ]; then ./involucro -v main:prepare deploy ; else ./involucro -v main:prepare test ; fi) > /dev/null
 
 notifications:
-  irc:
-    channels:
-      - "chat.freenode.net#mulled"
+  webhooks:
+    - https://webhooks.gitter.im/e/54581d2e70d821f7839b
