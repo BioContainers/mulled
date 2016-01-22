@@ -1,5 +1,6 @@
 ---
 papersize: a4paper
+classoption: draft
 documentclass: article
 title: Mulled
 subtitle: Containerized Packages in the Cloud
@@ -37,10 +38,48 @@ source code for the software.
 
 # Architecture
 
-Mulled uses Involucro[^involucro] to execute Docker containers and wrap
-directories into images.
+Mulled takes build instructions from a package definitions file
+(`packages.tsv`) and builds them according to the rules specific to each
+packager encoded in this file. The results are stored in a Quay.io repository.
 
-TODO
+Each time a commit is done in the GitHub repository a Travis CI executes this
+file. All packages that need rebuilding (i.e. that have no matching version
+already built and packaged) are built and tested. If the commit is on `master`,
+the result is pushed to Quay.io and stored.
+
+Mulled uses Involucro[^involucro] to execute Docker containers and wrap
+directories into images. This file as a whole is a (albeit complex) build
+script that controls Involucro.
+
+The high-level flow can be visualized as:
+
+```
+      +-----------+
+      |-----------|
+      ||  START  ||
+      |-----------|
+      +-----------+
+              |
+              |                  +-------+
+   +----------v--------+ NO      |-------|
++--> unbuilt packages? +----------> END ||
+|  +-------------------+         |-------|
+|           |YES                 +-------+
+|           |
+|  +--------v----------+
+|  |   builder(pkg)    |
+|  +--------+----------+
+|           |
+|  +--------v----------+
++--+   upload(image)   |
+   +-------------------+
+```
+
+Each of the builders executes a number of Docker containers with a build directory
+mounted into it. Each container modifies this directory to some extent, and the final
+result is a directory containing exactly the files that should end up in the Docker image.
+Involucro then reads this directory and puts it on top of an existing base image, such
+as `busybox`.
 
 # Preliminary Steps
 
@@ -708,7 +747,7 @@ In that case, we take the key and join the resulting array to a newline delimite
         .. computeBuildList .. '\' data/quay_versions data/local_versions'
           .. ' > data/build_list')
 
-The data dir will contain all data concerning the whole build process.
+The data directory will contain all data concerning the whole build process.
 
     inv.task('main:create_data_dir')
       .using('busybox')
@@ -730,7 +769,8 @@ This check tests for any duplicates and tells the user.
         .run('/bin/sh', '-c',
           "cat packages.tsv | cut -f2 |" -- read in all package names
           .. "sort | uniq -d |" -- filter out non-duplicates
-          .. "wc -l | xargs -I%% test 0 -eq %% || (echo 'Package names not unique' 1>&2 && false)") -- count number of non-duplicates and assert that there are zero of them
+          .. "wc -l | xargs -I%% test 0 -eq %% ||"
+          .. "(echo 'Package names not unique' 1>&2 && false)")
 
     inv.task('main:prepare')
       .runTask('main:check_uniqueness_of_keys')
@@ -741,6 +781,11 @@ This check tests for any duplicates and tells the user.
       .runTask('main:generate_list:builds')
       .runTask('main:fetch_images_dir_from_github')
       .hook(afterPrepare)
+
+# Related Work
+
+Mulled is not the only software repository based on Docker. Some other
+implementations are mentioned and differences are highlighted.
 
 
 # Appendix
@@ -756,7 +801,9 @@ is generated as follows:
       .using('busybox')
         .run('mkdir', '-p', 'jq')
       .using('appropriate/curl')
-        .run('--location', 'https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64', '-o', 'jq/jq-linux64')
+        .run('--location',
+          'https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64',
+          '-o', 'jq/jq-linux64')
       .using('busybox')
         .run('chmod', 'a+x', 'jq/jq-linux64')
       .wrap('jq').at('/')
@@ -767,9 +814,8 @@ is generated as follows:
 
 ## local_tools/linuxbrew_builder
 
-The builder image for `linuxbrew` is generated here.
-
-Linuxbrew builder image
+The builder image for `linuxbrew` is generated here. It contains everything
+Linuxbrew expects from the compiling host.
 
     inv.task('main:generate_linuxbrew_builder')
       .using('alpine')
@@ -796,7 +842,11 @@ Linuxbrew builder image
       .using('alpine')
         .run('rm', '-rf', 'linuxbrew-alpine')
 
-This article can build itself!
+## Article
+
+This article can build itself, and the task to do that is defined here. It
+is using `pandoc` to transform the Markdown source into LaTeX, which is then
+compiled into PDF with xelatex.
 
     inv.task('article')
       .using('thriqon/full-pandoc')
