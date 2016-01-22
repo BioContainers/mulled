@@ -12,3 +12,4 @@ conda	samtools	1.3--1	samtools --version
 conda	cufflinks	2.2.1--py27_1	(cuffmerge --help 2>&1) | grep Options > /dev/null
 conda	tophat	2.1.0--py27_0	(tophat --version 2>&1) > /dev/null
 conda	curl	7.45.0--1	curl --fail icanhazip.com
+conda	bcftools	1.3--0	bcftools --version
