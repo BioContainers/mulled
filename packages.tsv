@@ -5,6 +5,7 @@ linuxbrew	sha2	1	test $(echo -n mulled | /brew/bin/sha2 -256 -q) = "950af197b83c
 linuxbrew	coreutils	1	test "$(echo -n 15 | /brew/bin/factor)" = "15: 3 5"
 alpine	go	1	go version | grep "go version"
 alpine	task	1	/usr/bin/task --version
+alpine	postgresql	1	postgres -V
 alpine	jq	1	test $(/usr/bin/jq -M -n -c "{a: (4+3)}") = "{\"a\":7}"
 alpine	mtr	1	/usr/sbin/mtr -v
 conda	m4	1.4.17--0	test $(echo "define(a, bbb)a" | m4) = "bbb"
