@@ -9,6 +9,7 @@ alpine	task	1	/usr/bin/task --version
 alpine	jq	1	test $(/usr/bin/jq -M -n -c "{a: (4+3)}") = "{\"a\":7}"
 alpine	mtr	1	/usr/sbin/mtr -v
 alpine	znc	1	/usr/bin/znc -v
+alpine	bc	1	test $(echo "2+3" | bc -q) = "5"
 conda	m4	1.4.17--0	test $(echo "define(a, bbb)a" | m4) = "bbb"
 conda	samtools	1.3--1	samtools --version
 conda	cufflinks	2.2.1--py27_1	(cuffmerge --help 2>&1) | grep Options > /dev/null
