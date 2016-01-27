@@ -18,9 +18,31 @@ New packages can be added by inserting a new line into the `packages.tsv` file i
 repository. It's a Tab Separated Values file with the following fields:
 
 * Packager: One of the available packagers (`linuxbrew`, `alpine`, `conda`).
-* Package: The name of the package as it is installable from the builder. This name must be unique in the whole file.
-* Revision: Apart from the `conda` packager, this is a simple integer that is incremented when a rebuild is needed. `conda` packages can be installed directly using their version identifier. Please note that for technical reasons the build number is separated using a double dash (--) instead of an equal sign (=).
-* Test: A small shell script that is executed in the context of the new container to check whether the build was actually successful. If possible, this should check the actual working of the program, but a test for `--version` is also okay.
+* Package: The name of the package as it is installable from the builder. This
+    name must be unique in the whole file.
+* Revision: Apart from the `conda` packager, this is a simple integer that is
+    incremented when a rebuild is needed. `conda` packages can be installed
+    directly using their version identifier. Please note that for technical
+    reasons the build number is separated using a double dash (--) instead of
+    an equal sign (=).
+* Test: A small shell script that is executed in the context of the new
+    container to check whether the build was actually successful. If possible,
+    this should check the actual working of the program, but a test for
+    `--version` is also okay.
+
+### Three steps to a package
+
+1. Find a package you want to add, for example you can search for it in one of
+   the repositories that are supported:
+  - [Conda](https://conda.anaconda.org/)
+  - [Braumeister](https://braumeister.org)
+  - [Alpine Packages](https://alpine-linux.org/packages/)
+2. Edit the `packages.tsv` and send a Pull Request. As soon as the build
+   succeeds and the package has been approved, it will be added to the
+   repository.
+3. Run the image: `docker run quay.io/mulled/...`
+
+### Slightly Longer Version
 
 You can follow the following steps to add a new package (we assume that the `hello` package is not yet available):
 
@@ -29,7 +51,7 @@ You can follow the following steps to add a new package (we assume that the `hel
    occur in `packages.tsv`.
 1. Choose the package manager. This is highly subjective, and quite often
    people just choose the one they already know. In this case, we're going with
-   `linuxbrew`. 
+   `linuxbrew`.
 2. Set the version. As this is not the `conda` builder, we simply choose "1".
 3. Determine a useful test. In the case of the 'hello world' program this might
    be checking if the output is actually 'hello world'.
