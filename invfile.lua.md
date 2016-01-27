@@ -433,20 +433,11 @@ creates the task according to the given values. The name of the task is
 `push:<package_name>`.
 
     function pushTask(package, new_revision, packager, builddir)
-      local repo = namespace .. '/' .. package
-      local tagged_repo = repo .. ':' .. new_revision
+      local repo = namespace .. '/' .. package .. ':' .. new_revision
 
       inv.task('push:' .. package)
 
-The resulting image will be available under both
-`quay.io/mulled/<package>:latest` and `quay.io/mulled/<package>:<revision>`,
-until the next version is published. In this step the image that is already
-tagged for new revision by the builders is tagged as `latest`.
-
-        .tag(tagged_repo)
-          .as(repo)
-
-Quay automatically creates a repository when pushed to. But, at least to the
+Quay automatically creates a repository when pushed to. But, at least at the
 time of writing, this repository is private by default. To have full control
 over the creation we try to explicitly create it each time and just ignore any
 failures.
@@ -489,7 +480,6 @@ authenticate ourselves against Quay.io.
               builddir .. ':/pkg'
             }
           })
-          .run('docker', 'push', repo)
 
 When pushing the new image the registry tells us the digest it calculated for
 it. This is a SHA256 checksum that is recorded and presented to the user on the
@@ -498,11 +488,11 @@ web page. The output contains exactly one line that contains the prefix
 checksum is stored in the info directory.
 
           .run('/bin/sh', '-c', 
-            'docker push ' .. tagged_repo .. ' | grep digest | '
+            'docker push ' .. repo .. ' | grep digest | '
             .. 'grep "' .. new_revision .. ': " | cut -d" " -f 3 '
             .. ' > /pkg/info/checksum')
           .run('/bin/sh', '-c',
-            'docker inspect -f "{{.VirtualSize}}" ' .. tagged_repo
+            'docker inspect -f "{{.VirtualSize}}" ' .. repo
               .. ' > /pkg/info/size')
 
 TODO
@@ -625,7 +615,7 @@ package are generated using the builders.
 
 ## Overall tasks
 
-The tool can be used in two modes: In Local test mode and in deploy mode.
+The tool can be used in two modes: In local test mode and in deploy mode.
 Usually, local test mode is used when evaluating the compilability of pull
 requests, while deploy mode is reserved for commits on `master`. Appropriately,
 we define two tasks called `test` and `deploy`.
