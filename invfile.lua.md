@@ -687,7 +687,8 @@ format of the query above.
     parsePackages = 'split("\n")[1:] |'
       .. 'map(select((. | length) > 0)) |'
       .. 'map(split("\t")) |'
-      .. 'map({key: .[1], value: .[2]}) | from_entries'
+      .. 'group_by(.[1]) |'
+      .. 'map({(.[0][1]): map(.[2])}) | add'
 
     inv.task('main:load_versions_from_packages.tsv')
       .using(jq).run('/jq-linux64 --slurp --raw-input \'' .. parsePackages
