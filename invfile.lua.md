@@ -728,16 +728,18 @@ fetches a directory listing of the API repository.
         .run('https://api.github.com/repos/' .. github_repo ..
           '/contents/_images', '-o', 'data/github_repo')
 
-It is currently not possible to have multiple packages sharing one identifier.
-This check tests for any duplicates and tells the user.
+It is not possible to have the same package identifier with the same revision
+occurring multiple times in the same `packages.tsv`. This check tests for any
+duplicates and tells the user.
 
     inv.task('main:check_uniqueness_of_keys')
       .using('busybox')
         .run('/bin/sh', '-c',
-          "cat packages.tsv | cut -f2 |" -- read in all package names
+          -- fields 2 and 3 are package name and revision
+          "cat packages.tsv | cut -f2-3 |"
           .. "sort | uniq -d |" -- filter out non-duplicates
           .. "wc -l | xargs -I%% test 0 -eq %% ||"
-          .. "(echo 'Package names not unique' 1>&2 && false)")
+          .. "(echo 'Package not unique' 1>&2 && false)")
 
     inv.task('main:prepare')
       .runTask('main:check_uniqueness_of_keys')
