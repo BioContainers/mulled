@@ -149,6 +149,8 @@ checkable.
       local install = 'apk --root /data/dist'
       .. ' --update-cache --repository '
       .. ' http://dl-4.alpinelinux.org/alpine/latest-stable/main'
+      .. ' --repository '
+      .. ' http://dl-4.alpinelinux.org/alpine/latest-stable/community'
       .. ' --keys-dir /etc/apk/keys --initdb add '
 
 After installation we have to extract some information from the package
