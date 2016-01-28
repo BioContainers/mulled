@@ -506,7 +506,6 @@ TODO
             .. 'echo "# ' .. package .. '" ; echo; '
             .. 'echo -n "> "; cat /pkg/info/description; echo; '
             .. 'cat /pkg/info/homepage; echo; '
-            .. 'echo "Latest revision: ' .. new_revision .. '"; echo; '
             .. 'echo "---" ; echo; '
             .. 'echo "## Available revisions"; echo; '
             .. '/jq-linux64 --raw-output \'(.' .. package .. '//[]) | map("* " + .) | join("\n")\' /data/quay_versions; '
