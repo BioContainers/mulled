@@ -848,7 +848,7 @@ Linuxbrew expects from the compiling host.
 
 This article can build itself, and the task to do that is defined here. It
 is using `pandoc` to transform the Markdown source into LaTeX, which is then
-compiled into PDF with xelatex.
+compiled into PDF with `xelatex`.
 
     inv.task('article')
       .using('thriqon/full-pandoc')
@@ -863,6 +863,47 @@ compiled into PDF with xelatex.
       .using('thriqon/xelatex-docker')
         .run('xelatex', 'mulled.tex')
 
+## Travis CI Build
+
+If this tool is executed in Travis CI, it provides meaningful step to execute
+there. These are grouped under the task `travis`.
+
+    local travis = inv.task('travis')
+
+We always have to rebuild the Linuxbrew builder, since it is not available in a
+repository:
+
+    travis
+      .runTask('main:generate_linuxbrew_builder')
+
+If secure variables are available, i.e. this is a trusted build from a branch,
+we log in to Quay.io:
+
+    if ENV.TRAVIS_SECURE_ENV_VARS == "true" then
+      travis.using('docker').withConfig({env = {
+        "DOCKER_EMAIL=" .. ENV.DOCKER_EMAIL,
+        "DOCKER_USERNAME=" .. ENV.DOCKER_USERNAME,
+        "DOCKER_PASSWORD=" .. ENV.DOCKER_PASSWORD
+      }}).run('/bin/sh', '-c', 'docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD quay.io')
+    end
+
+The branch currently being tested is stored in the environment variable
+`TRAVIS_BRANCH`, but this is also set to `master` when testing a pull request
+directed at `master`.  We therefore have to make sure that this is actually a
+production build by testing for target branch and pull-requestness. Before
+actually testing or deploying the packages, the build environment has to be
+prepared:
+
+    travis
+      .runTask('main:prepare')
+
+    if ENV.TRAVIS_PULL_REQUEST == "false" and ENV.TRAVIS_BRANCH == "master" then
+      travis
+        .runTask('deploy')
+    else
+      travis
+        .runTask('test')
+    end
 
 [^alpine-linux]: <http://www.alpinelinux.org/>
 [^docker-trademark]: Docker is a registered trademark of Docker, Inc.
