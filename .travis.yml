@@ -9,6 +9,9 @@ install:
   - wget https://storage.googleapis.com/involucro-1149.appspot.com/involucro
   - chmod u+x involucro
 
+after_install:
+  - if [ "$TRAVIS_SECURE_ENV_VARS" = "true" ]; then docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD quay.io ; fi
+
 script: ./involucro -v travis > /dev/null
 
 notifications:

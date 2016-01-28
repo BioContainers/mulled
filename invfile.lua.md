@@ -876,17 +876,6 @@ repository:
     travis
       .runTask('main:generate_linuxbrew_builder')
 
-If secure variables are available, i.e. this is a trusted build from a branch,
-we log in to Quay.io:
-
-    if ENV.TRAVIS_SECURE_ENV_VARS == "true" then
-      travis.using('docker').withConfig({env = {
-        "DOCKER_EMAIL=" .. ENV.DOCKER_EMAIL,
-        "DOCKER_USERNAME=" .. ENV.DOCKER_USERNAME,
-        "DOCKER_PASSWORD=" .. ENV.DOCKER_PASSWORD
-      }}).run('/bin/sh', '-c', 'docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD quay.io')
-    end
-
 The branch currently being tested is stored in the environment variable
 `TRAVIS_BRANCH`, but this is also set to `master` when testing a pull request
 directed at `master`.  We therefore have to make sure that this is actually a
