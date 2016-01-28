@@ -511,68 +511,46 @@ since it's only possible to have one description. It is then shared for all tags
               .. '-HContent-type:application/json '
               .. 'https://quay.io/api/v1/repository/' .. quay_prefix .. '/' .. package)
 
-During preparation, the directory index containing the image descriptors on the
-GitHub are downloaded and stored in the general `data` directory. To upload a
-*new* version of an image descriptor GitHub requires us to supply the *old* SHA
-of the file. The next step extracts the SHA from the directory file and stores
-it into the `info` directory of the currently worked on package.
+The last step for this package is the generation of the API database entry.
+All the small information files that were prepared in the previous step are
+read in order and inserted into the correct location by `jq`. Each file
+contains one line, and the combination of `--raw-input` and `--slurp` makes
+`jq` convert this to a big string, with newlines as separators.  This array is
+split and indexed with positional indexes.
 
-        .using(jq)
-          .withHostConfig({binds = {
-            builddir .. ':/pkg', './data:/data'}
-          })
-          .run('/jq-linux64 --raw-output '
+Similar to the Quay.io repository description, the description and homepage are
+taken from the latest revision.
 
-Map/Select filters out any array items that do not fulfil the provided
-predicate. Afterwards, the first and only item is selected and the stored SHA
-is written to a file. If no previous SHA is found, this is interpreted by
-GitHub as a file creation request.
+However, we have to make sure that the file containing 'old' revisions exists in
+the package information directory. If any old revisions exist, they are copied over,
+otherwise a new array is used.
 
-            .. '\'map(select(.name == "' .. package .. '.json"))'
-            .. '[0].sha\' /data/github_repo'
-            .. ' > /pkg/info/previous_file_sha')
-
-This step generates the image descriptor that is sent to GitHub. The file contents
-have an empty Jekyll frontmatter document attached to them (two rows with three dashes).
-This document is encoded as Base64 and stored in another JSON document, which is ready to
-be sent to GitHub[^github-create-a-file].
-
-All the small information files that were prepared in the previous step are read in order and
-inserted into the correct location by `jq`. Each file contains one line, and the combination
-of `--raw-input` and `--slurp` makes `jq` convert this to a big string, with newlines as separators.
-This array is split and indexed with positional indexes.
+    .using('busybox')
+      .withHostConfig({binds = {
+        builddir .. ':/pkg',
+        './data:/data'
+      }})
+      .run('/bin/sh', '-c',
+        'cp /data/api/_images/' .. package .. '.json'
+        .. ' /pkg/info/github.json '
+        .. '|| echo "{\"versions\":[]}" > /pkg/info/github.json')
 
     .using(jq)
       .withHostConfig({binds = {builddir .. ':/pkg'}})
       .run('/jq-linux64 --raw-input --slurp \'.|split("\n") as $i'
-        .. ' | {'
-
-The commit message is encoded with the key `message`:
-
-        .. 'message: "'
-          .. 'build ' .. ENV.TRAVIS_BUILD_NUMBER .. '\n\n'
-          .. 'build url: ' .. current_build_id .. '", '
-
-        .. 'content: ("---\n---\n" + ({'
+        .. '("---\n---\n" + ({'
           .. 'image: "' .. package .. '",'
-          .. 'date: (now | todate),'
-          .. 'buildurl: "' .. current_build_id .. '",'
           .. 'packager: "' .. packager .. '", '
           .. 'homepage: $i[0], description: $i[1], '
-          .. 'version: $i[2], checksum: $i[3], size: $i[4]'
-        .. '} | tostring) | @base64), '
-
-        .. 'sha: $i[5]}\' /pkg/info/homepage /pkg/info/description '
-        .. '/pkg/info/version /pkg/info/checksum /pkg/info/size '
-        .. '/pkg/info/previous_file_sha  > /pkg/info/github_commit')
-
-Finally, the prepared update message is sent to GitHub with `curl`.
-
-        .using(curl)
-          .withHostConfig({binds = {builddir .. ':/pkg'}})
-          .withConfig({env = {"TOKEN=" .. ENV.GITHUB_TOKEN}})
-          .run('/bin/sh',  '-c', 'curl --fail -HAuthorization:Bearer\\ $TOKEN -HContent-Type:application/json '
-            .. '-T /pkg/info/github_commit https://api.github.com/repos/' .. github_repo .. '/contents/_images/' .. package .. '.json')
+          .. 'versions: ($i[3] | fromjson | '
+          .. '  map(select(.revision != "' .. new_revision
+          .. '" )) + {version: $i[2], revision: "' .. new_revision
+          .. '", size: $i[4], date: (now | todate)}),'
+          .. 'buildurl: "' .. current_build_id .. '"})'
+          .. '|tostring)'
+          .. ' /pkg/info/homepage /pkg/info/description '
+          .. '/pkg/info/version /pkg/info/github.json  /pkg/info/size '
+          .. '/pkg/info/previous_file_sha  > /pkg/info/github_commit')
     end
 
 # The Build Tasks
@@ -636,38 +614,58 @@ attach all predefined, package specific tasks to the overall tasks:
 # Determining What To Build
 
 It is highly inefficient to build every single package every time a build is
-invoked. In this tool, we restrict ourselves to building packages that have no
-corresponding version in Quay.io.
+invoked. In this tool, we restrict ourselves to building packages in versions
+that are not already registered in our API database.
 
-Firstly, we scan the repository for already available versions. It is possible
-to get all descriptions from all repositories in a namespace with a single API
-call.  The repository descriptions are then decoded using a `jq` program and
-stored in a JSON file:
+Firstly, we fetch the current API 'database' from GitHub. This database is
+comprised of several JSON files containing common and revision specific
+information for each package. Each file may look like the following example
+(note the YAML frontmatter for Jekyll):
 
-    parseDescriptions = '[.repositories[] |'
-      .. '{key: .name, value: '
+```json
+---
+---
+{
+ "image": "bc",
+ "packager": "alpine",
+ "homepage": "http://www.gnu.org/software/bc/bc.html",
+ "description": "An arbitrary precision numeric processing language (calculator)",
+ "versions": [
+   {
+   "revision": "1",
+   "version": "1.06.95-r2",
+   "size": 5000,
+   "date": "2016-01-26T11:00:02Z",
+   "buildurl": "https://travis.ci-org./mulled/mulled/builds/203830"
+   },
+   {
+   "revision": "2",
+   "version": "1.06.95-r3",
+   "size": 4000,
+   "date": "2016-01-26T11:02:02Z",
+   "buildurl": "https://travis.ci-org./mulled/mulled/builds/203831"
+  }
+ ]
+}
+```
 
-Above the delimiter line can be anything, at this point we're just interested
-in the list below it.
+We clone the repository into a subdirectory called `data/api`:
 
-      .. ' .description | split("---")[1] |'
-      .. 'split("\n") |'
+    inv.task('main:versions:clone_from_github')
+      .using(git)
+        .run('clone', 'https://github.com/mulled/api.git', 'data/api')
 
-We're only interested in lines starting with the '* ' prefix indicating a list,
-and remove that prefix.
+These data files still contain the YAML frontmatter, and have to be transformed
+to make easy use of them in later steps. A `jq` program is used to read them in,
+and store a single JSON object assinging a list of versions to each package.
 
-      .. 'map(select(startswith("* "))[2:])'
-      .. '}] | from_entries' -- output object
+    local parseGithubImages = 'map({(.image): (.versions | map(.revision))}) | add // {}'
 
-This program is executed against the Quay.io namespace of this tool:
-
-    inv.task('main:load_versions_from_quay')
-      .using(curl).run('--fail',
-        'https://quay.io/api/v1/repository?public=true&namespace='
-          .. quay_prefix, '-o', 'data/quay_repository_search')
-      .using(jq).run('/jq-linux64 \''
-        .. parseDescriptions .. '\' data/quay_repository_search '
-        .. '> data/quay_versions')
+    inv.task('main:versions:process_versions_from_github')
+      .using('busybox')
+        .run('/bin/sh', '-c', 'tail -q -n +3 data/api/_images/*json > data/github_jsons.jsonl || touch data/github_jsons.jsonl')
+      .using(jq)
+        .run('/jq-linux64 --slurp \'' .. parseGithubImages .. '\' data/github_jsons.jsonl > data/github_versions')
 
 As the next step, we parse the list of locally defined packages and intersect
 this with the list of remotely available images. The `packages.tsv` is split
@@ -681,29 +679,20 @@ format of the query above.
       .. 'group_by(.[1]) |'
       .. 'map({(.[0][1]): map(.[2])}) | add'
 
-    inv.task('main:load_versions_from_packages.tsv')
+    inv.task('main:versions:load_from_packages.tsv')
       .using(jq).run('/jq-linux64 --slurp --raw-input \'' .. parsePackages
         .. '\' packages.tsv > data/local_versions')
 
-The build list is a simple file with one package that should be built per line. 
+The build list is a simple file with each package / revision combination taking
+exactly one line.
 
-    computeBuildList = '. as [$remotes, $locals] |'
-      .. '$locals | to_entries |'
-      .. 'map(.key as $k | .value as $v | select(false == ('
-
-At this point we are rejecting (the inverse of selecting) all packages whose corresponding
-remote array or the empty array, if the former doesn't exist, has no entry for their version.
-
-      .. '    ($remotes[$k]//[]) |'
-      .. '    contains([$v]) ))) |'
-
-In that case, we take the key and join the resulting array to a newline delimited string.
-
-      .. ' map(.key) | join("\n")'
+    computeBuildList = '(.[1] | to_entries) - (.[0] | to_entries) |'
+      .. 'map(.key as $k | .value | map($k + ":" + .)) |'
+      .. 'flatten | join("\n")'
 
     inv.task('main:generate_list:builds')
       .using(jq).run('/jq-linux64 --slurp --raw-output \''
-        .. computeBuildList .. '\' data/quay_versions data/local_versions'
+        .. computeBuildList .. '\' data/github_versions data/local_versions'
           .. ' > data/build_list')
 
 The data directory will contain all data concerning the whole build process.
@@ -711,14 +700,6 @@ The data directory will contain all data concerning the whole build process.
     inv.task('main:create_data_dir')
       .using('busybox')
         .run('mkdir', '-p', 'data')
-
-The GitHub API restricts us to know which files we are replacing. This step
-fetches a directory listing of the API repository.
-
-    inv.task('main:fetch_images_dir_from_github')
-      .using(curl)
-        .run('https://api.github.com/repos/' .. github_repo ..
-          '/contents/_images', '-o', 'data/github_repo')
 
 It is not possible to have the same package identifier with the same revision
 occurring multiple times in the same `packages.tsv`. This check tests for any
@@ -736,11 +717,13 @@ duplicates and tells the user.
     inv.task('main:prepare')
       .runTask('main:check_uniqueness_of_keys')
       .runTask('main:create_data_dir')
-      .runTask('main:generate_jq_image')
-      .runTask('main:load_versions_from_quay')
-      .runTask('main:load_versions_from_packages.tsv')
+
+      .runTask('main:versions:clone_from_github')
+      .runTask('main:versions:process_versions_from_github')
+
+      .runTask('main:versions:load_from_packages.tsv')
+
       .runTask('main:generate_list:builds')
-      .runTask('main:fetch_images_dir_from_github')
       .hook(afterPrepare)
 
 # Related Work
