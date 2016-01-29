@@ -716,7 +716,6 @@ duplicates and tells the user.
 
     inv.task('main:prepare')
       .runTask('main:check_uniqueness_of_keys')
-      .runTask('main:create_data_dir')
 
       .runTask('main:versions:clone_from_github')
       .runTask('main:versions:process_versions_from_github')
@@ -858,6 +857,7 @@ We always have to rebuild the local tools, since they are not available in a
 repository:
 
     travis
+      .runTask('main:create_data_dir')
       .runTask('main:generate_image:jq')
       .runTask('main:generate_image:git')
       .runTask('main:generate_image:linuxbrew_builder')
