@@ -71,7 +71,9 @@ We also determine where the results will be stored:
     namespace = 'quay.io/' .. quay_prefix
     github_repo = 'mulled/api'
 
-    current_build_id = 'snapshot'
+    current_build_id =
+      'https://travis-ci.org/mulled/mulled/builds/'
+      .. ENV.TRAVIS_BUILD_ID
 
 The Lua version used in Involucro doesn't provide native support for splitting
 a `string` by a delimiter. This utility function fills that gap:
