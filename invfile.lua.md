@@ -534,7 +534,7 @@ otherwise a new array is used.
       .run('/bin/sh', '-c',
         'cp /data/api/_images/' .. package .. '.json'
         .. ' /pkg/info/github.json '
-        .. '|| echo "{\"versions\":[]}" > /pkg/info/github.json')
+        .. '|| echo "{}" > /pkg/info/github.json')
 
     .using(jq)
       .withHostConfig({binds = {
@@ -546,7 +546,7 @@ otherwise a new array is used.
           .. 'image: "' .. package .. '",'
           .. 'packager: "' .. packager .. '", '
           .. 'homepage: $i[0], description: $i[1], '
-          .. 'versions: ($i[3] | fromjson |.versions | '
+          .. 'versions: ($i[3] | fromjson | (.versions // []) | '
           .. '  map(select(.revision != "' .. new_revision
           .. '" )) + [{version: $i[2], revision: "' .. new_revision
           .. '", size: $i[4], date: (now | todate)}]),'
@@ -730,6 +730,9 @@ duplicates and tells the user.
       .runTask('main:versions:load_from_packages.tsv')
 
       .runTask('main:generate_list:builds')
+      .runTask('main:after_prepare')
+
+    inv.task('main:after_prepare')
       .hook(afterPrepare)
 
 # Final Steps
