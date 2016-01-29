@@ -614,7 +614,6 @@ attach all predefined, package specific tasks to the overall tasks:
         end
       end
       deploy
-        .runTask('main:store_github_credentials')
         .runTask('main:commit_api_database')
     end
 
@@ -737,17 +736,8 @@ duplicates and tells the user.
 
 # Final Steps
 
-If we are doing a production build on Travis, we have to store credentials for
-GitHub (passed as environment variables) and commit/push the new API database.
-
-    inv.task('main:store_github_credentials')
-      .using(busybox)
-        .withConfig({env = {"TOKEN=" .. ENV.GITHUB_TOKEN}})
-        .withHostConfig({binds = {"./data/api:/source"}})
-        .run('/bin/sh', '-c', 'echo "https://${TOKEN}:@github.com" > .git/credentials')
-      .using(git)
-        .withHostConfig({binds = {"./data/api:/source"}})
-        .run('config', 'credential.helper', 'store --file=.git/credentials')
+If we are doing a production build on Travis, we have to commit/push the new
+API database.
 
     inv.task('main:commit_api_database')
       .using(git)
@@ -899,12 +889,12 @@ the packages, the build environment has to be prepared:
     inv.task('main:netrc:trusted')
       .using(busybox)
         .withConfig({env = {"TOKEN=" .. ENV.GITHUB_TOKEN}})
-        .run('/bin/sh', '-c', 'echo "machine github.com login $TOKEN password _" > data/netrc')
+        .run('/bin/sh', '-c', 'echo "machine github.com login $TOKEN" > data/netrc')
         .run('chmod', '0600', 'data/netrc')
 
     inv.task('main:netrc:plain')
       .using(busybox)
-        .run('/bin/sh', '-c', 'echo "machine github.com login mulled_bot password _" > data/netrc')
+        .run('/bin/sh', '-c', 'echo "machine github.com login mulled_bot" > data/netrc')
         .run('chmod', '0600', 'data/netrc')
 
     inv.task('main:configure_git')
