@@ -63,6 +63,7 @@ Firstly, we define some settings. These name utility images used later:
 
     curl = 'appropriate/curl'
     jq = 'local_tools/jq'
+    git = 'local_tools/git'
 
 We also determine where the results will be stored:
 
@@ -767,7 +768,7 @@ Some utility tasks are needed. They are defined here.
 Quite often in this tool, a generic image containing `jq` is needed. This image
 is generated as follows:
 
-    inv.task('main:generate_jq_image')
+    inv.task('main:generate_image:jq')
       .using('busybox')
         .run('mkdir', '-p', 'jq')
       .using('appropriate/curl')
@@ -782,12 +783,31 @@ is generated as follows:
       .using('busybox')
         .run('rm', '-rf', 'jq')
 
+## local_tools/git
+
+This image contains the `git` client:
+
+    inv.task('main:generate_image:git')
+      .using('alpine')
+        .run('mkdir', '-p', 'alpine-git')
+        .run('apk', '--root', '/source/alpine-git',
+          '--update-cache', '--repository',
+          'http://dl-4.alpinelinux.org/alpine/latest-stable/main',
+          '--keys-dir', '/etc/apk/keys', '--initdb', 'add',
+          'git')
+        .run('rm', '-rf', 'alpine-git/lib/apk', 'alpine-git/var/cache/apk/')
+      .wrap('alpine-git').at('/').withConfig({
+          entrypoint = {'/usr/bin/git'}
+        }).inImage('alpine').as(git)
+      .using('alpine')
+        .run('rm', '-rf', 'alpine-git')
+
 ## local_tools/linuxbrew_builder
 
 The builder image for `linuxbrew` is generated here. It contains everything
 Linuxbrew expects from the compiling host.
 
-    inv.task('main:generate_linuxbrew_builder')
+    inv.task('main:generate_image:linuxbrew_builder')
       .using('alpine')
         .run('mkdir', '-p', 'linuxbrew-alpine/brew', 'linuxbrew-alpine/tmp')
         .run('apk', '--root', '/source/linuxbrew-alpine',
@@ -798,9 +818,9 @@ Linuxbrew expects from the compiling host.
           'tar', 'binutils', 'build-base', 'bash', 'perl',
           'zlib', 'zlib-dev', 'jq', 'patch')
 
-        .run('/bin/sh', '-c',
-          'apk --update-cache add git && '
-          .. 'git clone https://github.com/Homebrew/linuxbrew linuxbrew-alpine/brew')
+      .using(git)
+          .run('clone', 'https://github.com/Homebrew/linuxbrew', 'linuxbrew-alpine/brew')
+      .using('alpine')
         .run('cp', '-r', 'linuxbrew-alpine/brew/bin', 'linuxbrew-alpine/brew/orig_bin')
         .run('/bin/sh', '-c',
           'find linuxbrew-alpine/brew -print0 | xargs -0 -n 1 chown nobody:users')
@@ -838,11 +858,13 @@ there. These are grouped under the task `travis`.
 
     local travis = inv.task('travis')
 
-We always have to rebuild the Linuxbrew builder, since it is not available in a
+We always have to rebuild the local tools, since they are not available in a
 repository:
 
     travis
-      .runTask('main:generate_linuxbrew_builder')
+      .runTask('main:generate_image:jq')
+      .runTask('main:generate_image:git')
+      .runTask('main:generate_image:linuxbrew_builder')
 
 The branch currently being tested is stored in the environment variable
 `TRAVIS_BRANCH`, but this is also set to `master` when testing a pull request
