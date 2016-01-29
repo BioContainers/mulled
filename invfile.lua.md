@@ -692,9 +692,9 @@ format of the query above.
 The build list is a simple file with each package / revision combination taking
 exactly one line.
 
-    computeBuildList = '(.[1] | to_entries) - (.[0] | to_entries) |'
-      .. 'map(.key as $k | .value | map($k + ":" + .)) |'
-      .. 'flatten | join("\n")'
+    computeBuildList = 'map(to_entries |'
+      .. 'map(.key as $k | .value | map($k + ":" + .))'
+      .. '| flatten) | .[1] - .[0] | join("\n")'
 
     inv.task('main:generate_list:builds')
       .using(jq).run('/jq-linux64 --slurp --raw-output \''
