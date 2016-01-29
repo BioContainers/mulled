@@ -484,7 +484,7 @@ authenticate ourselves against Quay.io.
               builddir .. ':/pkg'
             }
           })
-          .run('/bin/sh', '-c', 
+          .run('/bin/sh', '-c',
             'docker push ' .. repo)
           .run('/bin/sh', '-c',
             'docker inspect -f "{{.VirtualSize}}" ' .. repo
@@ -532,9 +532,8 @@ otherwise a new array is used.
         './data:/data'
       }})
       .run('/bin/sh', '-c',
-        'cp /data/api/_images/' .. package .. '.json'
-        .. ' /pkg/info/github.json '
-        .. '|| echo "{}" > /pkg/info/github.json')
+        '(tail -n +3 /data/api/_images/' .. package .. '.json'
+        .. '|| echo "{}") > /pkg/info/github.json')
 
     .using(jq)
       .withHostConfig({binds = {
