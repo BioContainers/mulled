@@ -51,30 +51,6 @@ Mulled uses Involucro[^involucro] to execute Docker containers and wrap
 directories into images. This file as a whole is a (albeit complex) build
 script that controls Involucro.
 
-The high-level flow can be visualized as:
-
-```
-      +-----------+
-      |-----------|
-      ||  START  ||
-      |-----------|
-      +-----------+
-              |
-              |                  +-------+
-   +----------v--------+ NO      |-------|
-+--> unbuilt packages? +----------> END ||
-|  +-------------------+         |-------|
-|           |YES                 +-------+
-|           |
-|  +--------v----------+
-|  |   builder(pkg)    |
-|  +--------+----------+
-|           |
-|  +--------v----------+
-+--+   upload(image)   |
-   +-------------------+
-```
-
 Each of the builders executes a number of Docker containers with a build directory
 mounted into it. Each container modifies this directory to some extent, and the final
 result is a directory containing exactly the files that should end up in the Docker image.
