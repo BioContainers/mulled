@@ -1,0 +1,15 @@
+---
+---
+
+{
+  "builders": [
+    {% for b in site.data.builders %}
+      {
+        "name": "{{b[1].name}}",
+        "homepage": "{{b[1].homepage}}",
+        "explicitVersioning": "{{b[1].explicitVersioning}}"
+      }
+    {% unless forloop.last == true %},{% endunless %}
+    {% endfor %}
+  ]
+}

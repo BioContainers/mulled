@@ -1,0 +1,42 @@
+{% assign packages = site.packages %}
+
+{% for b in site.builds | sort: 'id' %}
+  {% for p in b.packages %}
+    {% if (include.all == "true") or (include.package == p.name) %}
+      {% assign packages = packages | push: p %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% assign packages = packages | group_by: "image" %}
+
+{
+  "packages": [
+    {% for p in packages %}
+      {
+        "versions": [
+          {% assign versions = p.items | group_by: "version" %}
+          {% for v in versions %}
+            {% assign version = v.items | last %}
+            {% assign homepage = version.homepage %}
+            {% assign description = version.description %}
+            {% assign packager = version.packager %}
+            {% assign id = version.image %}
+            {
+              "version": "{{version.version}}",
+              "revision": "{{version.revision}}",
+              "buildurl": "https://travis.ci.org/{{version.travisslug}}/builds/{{version.travisid}}/",
+              "date": "{{version.date}}",
+              "size": "{{version.size}}"
+            }{% unless forloop.last == true %},{% endunless %}
+          {% endfor %}
+        ],
+        "description": "{{description}}",
+        "homepage": "{{homepage}}",
+        "id": "{{id}}",
+        "packager": "{{packager}}"
+      }
+      {% unless forloop.last == true %},{% endunless %}
+    {% endfor %}
+  ]
+}

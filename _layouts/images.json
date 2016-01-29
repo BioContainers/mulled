@@ -1,0 +1,2 @@
+{% assign id = page.id | split:"/" | last %}
+{% include packages.json package=id %}

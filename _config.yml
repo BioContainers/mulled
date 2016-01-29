@@ -1,0 +1,13 @@
+collections:
+  builds:
+    output: true
+    permalink: /v2/builds/:title
+
+defaults:
+  - scope:
+      type: builds
+      path: ""
+    values:
+      layout: builds
+
+packages: []

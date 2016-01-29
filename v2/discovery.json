@@ -1,0 +1,123 @@
+{
+	"swagger" : "2.0",
+	"info" : {
+		"description" : "Information about pre-built packages",
+		"version" : "2.0.0",
+		"title" : "Mulled API"
+	},
+	"host" : "mulled.github.io",
+	"basePath" : "/mulled/v2/",
+	"schemes" : [ "https", "http" ],
+	"produces" : [ "application/json" ],
+	"paths" : {
+		"/images.json" : {
+			"get" : {
+				"tags" : [ "Images" ],
+				"summary" : "Installed Packages",
+				"parameters" : [ ],
+				"responses" : {
+					"200" : {
+						"description" : "An array of images",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/Image"
+							}
+						}
+					},
+					"default" : {
+						"description" : "Unexpected error"
+					}
+				}
+			}
+		},
+		"/builders.json": {
+			"get": {
+				"tags": ["Builders"],
+				"summary": "Available Builders",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "An array of builders",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Builder"
+							}
+						}
+					},
+					"default": {
+						"description": "Unexpected error"
+					}
+				}
+			}
+		}
+	},
+	"definitions" : {
+		"Version": {
+			"type": "object",
+			"properties": {
+				"date" : {
+					"type" : "string",
+					"description" : "The date the image was last built"
+				},
+				"buildurl" : {
+					"type" : "string",
+					"description" : "References the build that built and uploaded this image."
+				},
+				"version" : {
+					"type" : "string",
+					"description" : "The version from the package manager."
+				},
+				"revision" : {
+					"type" : "string",
+					"description" : "The internal version."
+				},
+        "size": {
+          "type": "string",
+          "description": "The size of the image"
+        }
+			}
+		},
+		"Image" : {
+			"type" : "object",
+			"properties" : {
+				"id" : {
+					"type" : "string",
+					"description" : "The unique identifier for the package. Identical with the name in one of the available package managers."
+				},
+				"packager" : {
+					"type" : "string",
+					"description" : "The packager that has been used for this."
+				},
+				"homepage" : {
+					"type" : "string",
+					"description" : "Referencing the homepage set by the package manager for this package."
+				},
+				"description" : {
+					"type" : "string",
+					"description" : "A textual message describing the tool."
+				},
+				"versions": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Version"
+					}
+				}
+			}
+		},
+		"Builder": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string",
+					"description": "A unique identifier for the builder, the same one as used in the `packages.tsv`."
+				},
+				"homepage": {
+					"type": "string",
+					"description": "A URL pointing to the home of the builder."
+				}
+			}
+		}
+	}
+}
