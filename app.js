@@ -17,19 +17,32 @@
 
   function renderData(data) {
     var c = document.querySelector("#package-card").content;
+    var vt = document.querySelector("#package-version").content;
 
     var par = document.querySelector(".card-columns");
     data.forEach(function (p) {
       c.querySelector("h3.card-title").textContent = p.image;
-      c.querySelector("h6.card-subtitle").textContent = p.version + " via " + p.packager;
-      c.querySelector("p.card-text span").textContent = p.description;
+      c.querySelector("h6.card-subtitle").textContent = "via " + p.packager;
+      c.querySelector("blockquote p").textContent = p.description;
       c.querySelector("a.package-homepage").href = p.homepage;
       c.querySelector("a.package-homepage").textContent = p.homepage;
-      c.querySelector("input").value = "quay.io/mulled/"  + p.image + "@" + p.checksum;
-      c.querySelector("button.copy-btn").setAttribute('data-clipboard-text', "docker run -it --rm quay.io/mulled/"  + p.image + "@" + p.checksum);
 
-      c.querySelector("span.package-size").textContent = numeral(p.size).format('0b');
-      c.querySelector("span.package-date").textContent = new Date(p.date).toLocaleString();
+
+      var card = c.querySelector(".card");
+      Array.prototype.forEach.call(c.querySelectorAll(".card .package-version"), function (c) {
+        card.removeChild(c);
+      });
+
+      p.versions.forEach(function (ver) {
+        vt.querySelector("h4").textContent = ver.version;
+        vt.querySelector("button.copy-btn").setAttribute("data-clipboard-text", "docker run -it --rm quay.io/mulled/" + p.image + ":" + ver.revision);
+        vt.querySelector("span.package-size").textContent = numeral(ver.size).format('0b');
+        vt.querySelector("span.package-date").textContent = new Date(ver.date).toLocaleString();
+
+        var n = document.importNode(vt, true);
+        c.querySelector(".card").appendChild(n);
+      });
+
       c.querySelector("a.build-url").href = p.buildurl;
 
       c.querySelector("a.report-bug").href = "https://github.com/thriqon/mulled/issues/new?labels=bug&title=[" + p.image + "] Bug:";
