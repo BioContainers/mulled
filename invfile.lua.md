@@ -612,6 +612,9 @@ attach all predefined, package specific tasks to the overall tasks:
             .runTask('clean:' .. package)
         end
       end
+      deploy
+        .runTask('main:store_github_credentials')
+        .runTask('main:commit_api_database')
     end
 
 # Determining What To Build
@@ -729,11 +732,31 @@ duplicates and tells the user.
       .runTask('main:generate_list:builds')
       .hook(afterPrepare)
 
-# Related Work
+# Final Steps
 
-Mulled is not the only software repository based on Docker. Some other
-implementations are mentioned and differences are highlighted.
+If we are doing a production build on Travis, we have to store credentials for
+GitHub (passed as environment variables) and commit/push the new API database.
 
+    inv.task('main:store_github_credentials')
+      .using('busybox')
+        .withConfig({env = {"TOKEN=" .. ENV.GITHUB_TOKEN}})
+        .withHostConfig({binds = {"./data/api:/source"}})
+        .run('/bin/sh', '-c', 'echo "https://${TOKEN}:@github.com" > .git/credentials')
+      .using(git)
+        .withHostConfig({binds = {"./data/api:/source"}})
+        .run('config', 'credential.helper', 'store --file=.git/credentials')
+
+    inv.task('main:commit_api_database')
+      .using(git)
+        .withHostConfig({
+          binds = {
+            "./data/git/.gitconfig:/root/.gitconfig",
+            "./data/netrc:/root/.netrc",
+            "./data/api:/source"
+          }})
+        .run('add', '_images')
+        .run('commit', '-m', 'Build ' .. ENV.TRAVIS_BUILD_NUMBER)
+        .run('push', 'origin', 'gh-pages')
 
 # Appendix
 
@@ -845,9 +868,18 @@ repository:
 The branch currently being tested is stored in the environment variable
 `TRAVIS_BRANCH`, but this is also set to `master` when testing a pull request
 directed at `master`.  We therefore have to make sure that this is actually a
-production build by testing for target branch and pull-requestness. Before
-actually testing or deploying the packages, the build environment has to be
-prepared:
+production build by testing for target branch and pull-requestness. If secure
+environment variables are available, i.e. this is a build originated from the
+official mulled repository and not a fork, we also generate a trusted `.netrc`
+to make `git` authenticate with GitHub.  Before actually testing or deploying
+the packages, the build environment has to be prepared:
+
+    if ENV.TRAVIS_SECURE_ENV_VARS == "true" then
+      travis.runTask('main:netrc:trusted')
+    else
+      travis.runTask('main:netrc:plain')
+    end
+    travis.runTask('main:configure_git')
 
     travis
       .runTask('main:prepare')
@@ -859,6 +891,26 @@ prepared:
       travis
         .runTask('test')
     end
+
+    inv.task('main:netrc:trusted')
+      .using('busybox')
+        .withConfig({env = {"TOKEN=" .. ENV.GITHUB_TOKEN}})
+        .run('/bin/sh', '-c', 'echo "machine github.com login $TOKEN password _" > data/netrc')
+        .run('chmod', '0600', 'data/netrc')
+
+    inv.task('main:netrc:plain')
+      .using('busybox')
+        .run('/bin/sh', '-c', 'echo "machine github.com login mulled_bot password _" > data/netrc')
+        .run('chmod', '0600', 'data/netrc')
+
+    inv.task('main:configure_git')
+      .using(git)
+        .withHostConfig({binds = {
+          "./data/git:/root/"
+        }})
+        .run('config', '--global', 'user.name', 'MulledBot')
+        .run('config', '--global', 'user.email', 'mulled@bot.com')
+        .run('config', '--global', 'push.default', 'simple')
 
 [^alpine-linux]: <http://www.alpinelinux.org/>
 [^docker-trademark]: Docker is a registered trademark of Docker, Inc.
