@@ -483,17 +483,8 @@ authenticate ourselves against Quay.io.
               builddir .. ':/pkg'
             }
           })
-
-When pushing the new image the registry tells us the digest it calculated for
-it. This is a SHA256 checksum that is recorded and presented to the user on the
-web page. The output contains exactly one line that contains the prefix
-'digest' and the package name, and has the checksum in column three. This
-checksum is stored in the info directory.
-
           .run('/bin/sh', '-c', 
-            'docker push ' .. repo .. ' | grep digest | '
-            .. 'grep "' .. new_revision .. ': " | cut -d" " -f 3 '
-            .. ' > /pkg/info/checksum')
+            'docker push ' .. repo)
           .run('/bin/sh', '-c',
             'docker inspect -f "{{.VirtualSize}}" ' .. repo
               .. ' > /pkg/info/size')
