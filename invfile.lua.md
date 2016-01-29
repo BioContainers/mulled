@@ -553,7 +553,7 @@ otherwise a new array is used.
           .. '|tostring))\''
           .. ' /pkg/info/homepage /pkg/info/description '
           .. '/pkg/info/version /pkg/info/github.json  /pkg/info/size '
-          .. '/pkg/info/previous_file_sha  > /data/api/_images/' .. package .. '.json')
+          .. ' > /data/api/_images/' .. package .. '.json')
     end
 
 # The Build Tasks
