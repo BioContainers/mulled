@@ -748,8 +748,10 @@ API database.
             "./data/api:/source"
           }})
         .run('add', '_images')
-        .run('commit', '-m', 'Build ' .. ENV.TRAVIS_BUILD_NUMBER)
-        .run('push', 'origin', 'gh-pages')
+        .withConfig({entrypoint = {'/bin/sh', '-c'}})
+        .run('git commit -m "Build '
+          .. ENV.TRAVIS_BUILD_NUMBER .. '" || true')
+        .run('git push origin gh-pages')
 
 # Appendix
 
