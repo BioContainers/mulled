@@ -11,7 +11,7 @@ install:
 
 script:
   - if [ "$TRAVIS_SECURE_ENV_VARS" = "true" ]; then docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD quay.io ; fi
-  - ./involucro -v travis > /dev/null
+  - ./involucro -l=-2 travis
 
 notifications:
   webhooks:
