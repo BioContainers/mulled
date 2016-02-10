@@ -5,7 +5,10 @@ services:
   - docker
 
 install:
-  - curl https://get.docker.com/ | /bin/bash
+  - sudo service docker stop
+  - wget https://get.docker.com/builds/Linux/x86_64/docker-1.10.0 -O docker
+  - chmod +x docker
+  - sudo ./docker daemon --log-level=fatal &
   - wget https://storage.googleapis.com/involucro-1149.appspot.com/involucro
   - chmod u+x involucro
 
