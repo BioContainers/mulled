@@ -6,15 +6,16 @@ services:
 
 install:
   - sudo service docker stop
-  - wget https://get.docker.com/builds/Linux/x86_64/docker-1.10.0 -O docker
-  - chmod +x docker
-  - sudo ./docker daemon --log-level=fatal &
-  - wget https://storage.googleapis.com/involucro-1149.appspot.com/involucro
-  - chmod u+x involucro
+  - wget https://get.docker.com/builds/Linux/x86_64/docker-1.10.0 https://github.com/thriqon/involucro/releases/download/v1.0.1/involucro
+  - chmod +x docker-1.10.0 involucro
+  - sudo ./docker-1.10.0 daemon --log-level=fatal &
+  - sleep 5
+
+before_script:
+  - if [ "$TRAVIS_SECURE_ENV_VARS" = "true" ]; then docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD quay.io ; fi
 
 script:
-  - if [ "$TRAVIS_SECURE_ENV_VARS" = "true" ]; then docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD quay.io ; fi
-  - ./involucro -l=-2 travis
+  - ./involucro -v=2 travis
 
 notifications:
   webhooks:
