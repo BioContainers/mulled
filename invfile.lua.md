@@ -264,12 +264,30 @@ unattended installation. The enabled channels are passed in as well.
         ' -p /usr/local --copy --yes '
 
 Metadata for Conda packages is stored in JSON files in
-`/opt/conda/pkgs/` `<package-version-build>/` `info/recipe.json`.  Since the version
-and build is given in a slightly different format (version--build) in the
-`packages.tsv`, we have to convert it first:
+`/opt/conda/pkgs/` `<package-version-build>/` `info/recipe.json`.
 
-      local packageDirName = package .. '-' ..
-        table.concat(split(revision, "--"), "-")
+The revision value in `packages.tsv` is used to name the tag of the
+corresponding Docker image, which disallows the use of `=`. However, Conda uses
+an equal sign to separate version code and build number. As a solution we propose
+using a double dash (`--`) instead in the `packages.tsv`, which can then be translated
+into an equal sign when communicating with Conda.
+
+We support two formats for the version number: Firstly, a simple specification
+of the package version (`1.0.0`). During installation, Conda picks the latest build
+for this version and installs it. Secondy, a version and build number specification
+of the form `1.0.0--2` which translates to version `1.0.0` and build number `2`.
+
+      local packageDirName = ''
+      local conda_version = ''
+      if string.find(revision, "--") then
+        packageDirName = package .. '-' ..
+          table.concat(split(revision, "--"), "-")
+        conda_version  = table.concat(split(revision, "--"), "=")
+      else
+        packageDirName = package .. '-' .. revision .. '-*'
+        conda_version  = '=' .. revision
+      end
+
 
 Extracting the info is as simple as copying the `recipe.json` file into the `/info` directory that is available
 to other build steps.
@@ -296,14 +314,6 @@ is set using the revision from the `packages.tsv`.
         .. ' read homepage ; echo $homepage > /info/homepage ; '
         .. ' read desc ; echo $desc > /info/description ; '
         .. ' echo ' .. revision .. [==[ > /info/version ) ]==]
-
-The revision value in `packages.tsv` is used to name the tag of the
-corresponding Docker image, which disallows the use of `=`. However, Conda uses
-an equal sign to separate version code and build number. As a solution we propose
-using a double dash (`--`) instead in the `packages.tsv`, which can then be translated
-into an equal sign when communicating with Conda.
-
-      local conda_version = table.concat(split(revision, "--"), "=")
 
 The actual build step utilizes the official `miniconda` image from Continuum Analytics
 with a default shell. It executes the install and extract information commands.
