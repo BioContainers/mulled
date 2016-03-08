@@ -16,6 +16,13 @@ conda	tmux	2.1--1	tmux -V
 conda	m4	1.4.17--0	test $(echo 'define(a, bbb)a' | m4) = 'bbb'
 conda	samtools	1.3--1	samtools --version
 conda	samtools	1.0--0	samtools --version
+conda	bowtie2	2.2.5--0	(bowtie2 --version 2>&1) > /dev/null
+conda	bowtie2	2.2.6--py27_0	(bowtie2 --version 2>&1) > /dev/null
+conda	bowtie2	2.2.6--py34_0	(bowtie2 --version 2>&1) > /dev/null
+conda	bowtie2	2.2.6--py35_0	(bowtie2 --version 2>&1) > /dev/null
+conda	bowtie2	2.2.7--py27_0	(bowtie2 --version 2>&1) > /dev/null
+conda	bowtie2	2.2.7--py34_0	(bowtie2 --version 2>&1) > /dev/null
+conda	bowtie2	2.2.7--py35_0	(bowtie2 --version 2>&1) > /dev/null
 conda	pyrad	3.0.64--py27_0	pyrad -h
 conda	stacks	1.37--0	cstacks  2>&1 | grep cstacks
 conda	r-vegan	2.3_4--r3.2.2_1	R -e 'library(''vegan'')'
