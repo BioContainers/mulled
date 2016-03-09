@@ -5,6 +5,7 @@ linuxbrew	coreutils	1	test $(/brew/bin/factor 15 | tr ' ' '_') = '15:_3_5'
 linuxbrew	sha2	1	test $(echo -n mulled | /brew/bin/sha2 -256 -q) = '950af197b83c2b315d43232ffb1e11118874fd02e4a4d1d2baf93cea419feb5d'
 alpine	go	1	go version | grep 'go version'
 alpine	irssi	1	irssi -v
+alpine	mksh	1	mksh -v
 alpine	task	1	/usr/bin/task --version
 alpine	jq	1	test $(/usr/bin/jq -M -n -c '[true, (4+3)]') = '[true,7]'
 alpine	mtr	1	/usr/sbin/mtr -v
