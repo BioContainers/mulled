@@ -1,4 +1,8 @@
 # Packager	Package	Revision	Test
+linuxbrew	hello	1	test $(/brew/bin/hello -g 'Hello_World') = 'Hello_World'
+linuxbrew	base64	1	test $(echo -n mulled | base64) = 'bXVsbGVk'
+linuxbrew	coreutils	1	test $(/brew/bin/factor 15 | tr ' ' '_') = '15:_3_5'
+linuxbrew	sha2	1	test $(echo -n mulled | /brew/bin/sha2 -256 -q) = '950af197b83c2b315d43232ffb1e11118874fd02e4a4d1d2baf93cea419feb5d'
 alpine	go	1	go version | grep 'go version'
 alpine	irssi	1	irssi -v
 alpine	mksh	1	mksh -v
