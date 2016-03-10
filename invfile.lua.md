@@ -27,7 +27,6 @@ Mulled fetches build instructions from such package managers, and compiles
 applications ahead-of-time in the cloud. Resulting images are made available
 in public image repositories.
 
--- TODO
 The remainder of this article is structured as follows: Firstly, we introduce
 the builders (one for each enabled package manager). After that, we describe
 how the build system determines which packages need to be rebuilt.
@@ -68,13 +67,11 @@ Firstly, we define some settings. These name utility images used later:
 
 We also determine where the results will be stored:
 
-    quay_prefix = 'mulled'
+    quay_prefix = ENV.QUAY_PREFIX 
     namespace = 'quay.io/' .. quay_prefix
-    github_repo = 'mulled/mulled'
-
-    current_build_id =
-      'https://travis-ci.org/mulled/mulled/builds/'
-      .. ENV.TRAVIS_BUILD_ID
+    github_repo = ENV.TRAVIS_REPO_SLUG
+    build_log_branch = ENV.BUILD_LOG_BRANCH
+    main_branch = ENV.MAIN_BRANCH
 
 The Lua version used in Involucro doesn't provide native support for splitting
 a `string` by a delimiter. This utility function fills that gap:
@@ -570,8 +567,8 @@ package are generated using the builders.
 
 The tool can be used in two modes: In local test mode and in deploy mode.
 Usually, local test mode is used when evaluating the compilability of pull
-requests, while deploy mode is reserved for commits on `master`. Appropriately,
-we define two tasks called `test` and `deploy`.
+requests, while deploy mode is reserved for commits on the main branch.
+Appropriately, we define two tasks called `test` and `deploy`.
 
     test = inv.task('test')
     deploy = inv.task('deploy')
@@ -609,8 +606,8 @@ that are not already registered in our API database.
         .run('fetch', '--unshallow')
         .run('config', 'remote.origin.fetch',
           '+refs/heads/*:refs/remotes/origin/*')
-        .run('fetch', 'origin', 'gh-pages')
-        .run('checkout', 'origin/gh-pages',
+        .run('fetch', 'origin', build_log_branch)
+        .run('checkout', 'origin/' .. build_log_branch,
           '--', '_builds')
 
     inv.task('main:versions:process_versions_from_github')
@@ -713,7 +710,8 @@ to GitHub.
            .. github_repo .. '/contents/_builds/'
            .. ENV.TRAVIS_BUILD_NUMBER .. '-$(date +%s).json '
           .. '-d \'{"message":"no ' .. ENV.TRAVIS_BUILD_NUMBER
-           .. '", "branch": "gh-pages", "content": "'
+           .. '", "branch": "' .. build_log_branch .. '",'
+           .. '"content": "'
            .. '\'$(base64 data/build_log | tr -d "\n")\'"}\' '
           .. '-HAuthorization:Bearer\\ $TOKEN ')
 
@@ -827,24 +825,15 @@ repository:
 
 The branch currently being tested is stored in the environment variable
 `TRAVIS_BRANCH`, but this is also set to `master` when testing a pull request
-directed at `master`.  We therefore have to make sure that this is actually a
-production build by testing for target branch and pull-requestness. If secure
-environment variables are available, i.e. this is a build originated from the
-official mulled repository and not a fork, we also generate a trusted `.netrc`
-to make `git` authenticate with GitHub.  Before actually testing or deploying
-the packages, the build environment has to be prepared:
-
-    if ENV.TRAVIS_SECURE_ENV_VARS == "true" then
-      travis.runTask('main:netrc:trusted')
-    else
-      travis.runTask('main:netrc:plain')
-    end
-    travis.runTask('main:configure_git')
+directed at `master`.  We therefore have to make sure that this is actually
+a production build by testing for target branch and pull-requestness. Before
+actually testing or deploying the packages, the build environment has to be
+prepared:
 
     travis
       .runTask('main:prepare')
 
-    if ENV.TRAVIS_PULL_REQUEST == "false" and ENV.TRAVIS_BRANCH == "master" then
+    if ENV.TRAVIS_PULL_REQUEST == "false" and ENV.TRAVIS_BRANCH == main_branch then
       travis
         .runTask('deploy')
     else
@@ -852,25 +841,6 @@ the packages, the build environment has to be prepared:
         .runTask('test')
     end
 
-    inv.task('main:netrc:trusted')
-      .using(busybox)
-        .withConfig({env = {"TOKEN=" .. ENV.GITHUB_TOKEN}})
-        .run('/bin/sh', '-c', 'echo "machine github.com login $TOKEN" > data/netrc')
-        .run('chmod', '0600', 'data/netrc')
-
-    inv.task('main:netrc:plain')
-      .using(busybox)
-        .run('/bin/sh', '-c', 'echo "machine github.com login mulled_bot" > data/netrc')
-        .run('chmod', '0600', 'data/netrc')
-
-    inv.task('main:configure_git')
-      .using(git)
-        .withHostConfig({binds = {
-          "./data/git:/root/"
-        }})
-        .run('config', '--global', 'user.name', 'MulledBot')
-        .run('config', '--global', 'user.email', 'mulled@bot.com')
-        .run('config', '--global', 'push.default', 'simple')
 
 [^alpine-linux]: <http://www.alpinelinux.org/>
 [^docker-trademark]: Docker is a registered trademark of Docker, Inc.
