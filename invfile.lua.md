@@ -388,7 +388,8 @@ the output files.
             entrypoint = {"/bin/sh", "-c"},
             env = {
               "BREW=/brew/orig_bin/brew",
-              "HOME=/tmp"
+              "HOME=/tmp",
+              "FORCE_UNSAFE_CONFIGURE=1"
             }
           })
           .withHostConfig({binds = {
