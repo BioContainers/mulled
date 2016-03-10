@@ -1,4 +1,7 @@
 # Packager	Package	Revision	Test
+linuxbrew	hello	1	test $(/brew/bin/hello -g 'Hello_World') = 'Hello_World'
+linuxbrew	base64	1	echo -n mulled | /brew/bin/base64 | grep 'bXVsbGVk'
+linuxbrew	coreutils	1	test $(/brew/bin/factor 15 | tr ' ' '_') = '15:_3_5'
 alpine	go	1	go version | grep 'go version'
 alpine	irssi	1	irssi -v
 alpine	mksh	1	mksh -v

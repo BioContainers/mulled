@@ -374,32 +374,32 @@ ownership to `nobody`. This is necessary since the builder has to be run as
 
       inv.task('build:' .. package .. ':' .. revision)
         .using('local_tools/linuxbrew_builder')
-          .withConfig({user = "root"})
           .withHostConfig({binds = {builddir .. ':/data'}})
             .run('mkdir', '-p', '/data/info', '/data/dist')
-            .run('chown', 'nobody', '/data/info', '/data/dist/')
 
 *Inside* the output directory more subdirectories are created, that will contain
 the output files.
 
-          .withConfig({user = "nobody"})
-            .run('mkdir', '/data/dist/bin', '/data/dist/Cellar')
-
+            .run('mkdir', '/data/dist/bin',
+                '/data/dist/lib',
+                '/data/dist/Cellar')
 
           .withConfig({
-            user = "nobody",
             entrypoint = {"/bin/sh", "-c"},
             env = {
               "BREW=/brew/orig_bin/brew",
-              "HOME=/tmp"
+              "HOME=/tmp",
+              "FORCE_UNSAFE_CONFIGURE=1"
             }
           })
           .withHostConfig({binds = {
             builddir .. "/dist/bin:/brew/bin",
+            builddir .. "/dist/lib:/brew/lib",
             builddir .. "/dist/Cellar:/brew/Cellar",
             builddir .. "/info:/info"
           }})
           .run('$BREW install ' .. package)
+          .run('rm /brew/lib/ld.so && ln -s /lib/ld-musl-x86_64.so.1 /brew/lib/ld.so')
           .run('$BREW test ' .. package)
           .run(extractInfo)
 
@@ -772,15 +772,14 @@ Linuxbrew expects from the compiling host.
           '--keys-dir', '/etc/apk/keys', '--initdb', 'add',
           'git', 'make', 'clang', 'ruby', 'ruby-irb', 'ncurses-dev',
           'tar', 'binutils', 'build-base', 'bash', 'perl',
-          'zlib', 'zlib-dev', 'jq', 'patch')
+          'zlib', 'zlib-dev', 'jq', 'patch', 'ncurses')
 
       .using(git)
           .run('clone', 'https://github.com/Homebrew/linuxbrew', 'linuxbrew-alpine/brew')
       .using('alpine:latest')
+        .run('ln', '-s', '/lib', 'linuxbrew-alpine/lib64')
+        .run('ln', '-s', '/lib/ld-musl-x86_64.so.1', 'linuxbrew-alpine/lib/ld-linux-x86-64.so.2')
         .run('cp', '-r', 'linuxbrew-alpine/brew/bin', 'linuxbrew-alpine/brew/orig_bin')
-        .run('/bin/sh', '-c',
-          'find linuxbrew-alpine/brew -print0 | xargs -0 -n 1 chown nobody:users')
-        .run('chown', 'nobody:users', 'linuxbrew-alpine/brew', 'linuxbrew-alpine/tmp')
         .run('rm', '-rf', 'linuxbrew-alpine/lib/apk', 'linuxbrew-alpine/var/cache/apk/')
       .wrap('linuxbrew-alpine').inImage('alpine:latest')
         .at('/').as('local_tools/linuxbrew_builder')
