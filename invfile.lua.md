@@ -374,7 +374,6 @@ ownership to `nobody`. This is necessary since the builder has to be run as
 
       inv.task('build:' .. package .. ':' .. revision)
         .using('local_tools/linuxbrew_builder')
-          .withConfig({user = "root"})
           .withHostConfig({binds = {builddir .. ':/data'}})
             .run('mkdir', '-p', '/data/info', '/data/dist')
             .run('chown', 'nobody', '/data/info', '/data/dist/')
@@ -382,12 +381,10 @@ ownership to `nobody`. This is necessary since the builder has to be run as
 *Inside* the output directory more subdirectories are created, that will contain
 the output files.
 
-          .withConfig({user = "nobody"})
             .run('mkdir', '/data/dist/bin', '/data/dist/Cellar')
 
 
           .withConfig({
-            user = "nobody",
             entrypoint = {"/bin/sh", "-c"},
             env = {
               "BREW=/brew/orig_bin/brew",
@@ -778,9 +775,6 @@ Linuxbrew expects from the compiling host.
           .run('clone', 'https://github.com/Homebrew/linuxbrew', 'linuxbrew-alpine/brew')
       .using('alpine:latest')
         .run('cp', '-r', 'linuxbrew-alpine/brew/bin', 'linuxbrew-alpine/brew/orig_bin')
-        .run('/bin/sh', '-c',
-          'find linuxbrew-alpine/brew -print0 | xargs -0 -n 1 chown nobody:users')
-        .run('chown', 'nobody:users', 'linuxbrew-alpine/brew', 'linuxbrew-alpine/tmp')
         .run('rm', '-rf', 'linuxbrew-alpine/lib/apk', 'linuxbrew-alpine/var/cache/apk/')
       .wrap('linuxbrew-alpine').inImage('alpine:latest')
         .at('/').as('local_tools/linuxbrew_builder')
