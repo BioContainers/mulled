@@ -5,10 +5,9 @@ services:
   - docker
 
 install:
-  - sudo service docker stop
-  - wget https://get.docker.com/builds/Linux/x86_64/docker-1.11.0 https://github.com/thriqon/involucro/releases/download/v1.0.1/involucro
-  - chmod +x docker-1.11.0 involucro
-  - sudo ./docker-1.11.0 daemon --log-level=fatal &
+  - wget https://github.com/thriqon/involucro/releases/download/v1.0.1/involucro
+  - chmod +x involucro
+  - docker --version
   - sleep 5
 
 before_script:
