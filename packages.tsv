@@ -34,6 +34,6 @@ conda	locarna	1.8.9--2	locarna --version
 conda	rnacode	0.3--0	RNAcode --help
 conda	rnashapes	2.1.6--0	RNAshapes  -h
 conda	rnastructure	5.7--1	refold -h
-conda	rnaz	2.1--0	RNAz -h
+conda	rnaz	2.1--1	RNAz -h
 conda	sortmerna	2.0--1	sortmerna --version
 conda	viennarna	2.2.5--2	RNAfold --version
