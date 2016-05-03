@@ -7,6 +7,7 @@ alpine	irssi	1	irssi -v
 alpine	mksh	1	mksh -v
 alpine	task	1	/usr/bin/task --version
 alpine	jq	1	test $(/usr/bin/jq -M -n -c '[true, (4+3)]') = '[true,7]'
+alpine	postgresql	1	postgres -V
 alpine	mtr	1	/usr/sbin/mtr -v
 alpine	znc	1	/usr/bin/znc -v
 alpine	bc	1	test $(echo '2+3' | bc -q) = '5'
@@ -24,3 +25,4 @@ conda	curl	7.45.0--1	curl --fail icanhazip.com
 conda	bcftools	1.3--0	bcftools --version
 conda	deeptools	2.2.2--py27_0	bamCompare --version
 conda	deeptools	2.2.3--py27_0	bamCompare --version
+conda	bowtie	1.1.2--py35_1	(bowtie --version 2>&1) > /dev/null
