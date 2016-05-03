@@ -25,7 +25,7 @@
             {
               "version": "{{version.version}}",
               "revision": "{{version.revision}}",
-              "buildurl": "https://travis.ci.org/{{version.travisslug}}/builds/{{version.travisid}}/",
+              "buildurl": "https://travis-ci.org/{{version.travisslug}}/builds/{{version.travisid}}/",
               "date": "{{version.date}}",
               "size": "{{version.size}}"
             }{% unless forloop.last == true %},{% endunless %}
