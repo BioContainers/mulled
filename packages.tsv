@@ -11,6 +11,7 @@ alpine	postgresql	1	postgres -V
 alpine	mtr	1	/usr/sbin/mtr -v
 alpine	znc	1	/usr/bin/znc -v
 alpine	bc	1	test $(echo '2+3' | bc -q) = '5'
+conda	bowtie2	2.2.8--py35_2	bowtie2 --version
 conda	tmux	1.9a--1	tmux -V
 conda	tmux	2.1--1	tmux -V
 conda	m4	1.4.17--0	test $(echo 'define(a, bbb)a' | m4) = 'bbb'
