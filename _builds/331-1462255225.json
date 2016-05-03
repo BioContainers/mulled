@@ -1,0 +1,31 @@
+---
+{
+  "title": "331",
+  "packages": [
+    {
+      "image": "bowtie",
+      "packager": "conda",
+      "homepage": "https://github.com/BenLangmead/bowtie",
+      "description": "An ultrafast memory-efficient short read aligner",
+      "travisid": 127423654,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T05:59:58+0000",
+      "version": "1.1.2--py35_1",
+      "revision": "1.1.2--py35_1",
+      "size": "128767905"
+    },
+    {
+      "image": "postgresql",
+      "packager": "alpine",
+      "homepage": "http://www.postgresql.org/",
+      "description": "A sophisticated object-relational DBMS",
+      "travisid": 127423654,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T06:00:22+0000",
+      "version": "9.4.6-r0",
+      "revision": "1",
+      "size": "23252442"
+    }
+  ]
+}
+---
