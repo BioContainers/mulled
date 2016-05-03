@@ -1,0 +1,127 @@
+---
+{
+  "title": "381",
+  "packages": [
+    {
+      "image": "autodock-vina",
+      "packager": "conda",
+      "homepage": "http://vina.scripps.edu/",
+      "description": "AutoDock Vina is an open-source program for doing molecular docking",
+      "travisid": 127658042,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T22:58:33+0000",
+      "version": "1.1.2--0",
+      "revision": "1.1.2--0",
+      "size": "7817128"
+    },
+    {
+      "image": "bamhash",
+      "packager": "conda",
+      "homepage": "https://github.com/joerick/pyinstrument",
+      "description": "",
+      "travisid": 127658042,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T22:58:59+0000",
+      "version": "1.0--0",
+      "revision": "1.0--0",
+      "size": "20832307"
+    },
+    {
+      "image": "bioconductor-affy",
+      "packager": "conda",
+      "homepage": "http://bioconductor.org/packages/release/bioc/html/affy.html",
+      "description": "The package contains functions for exploratory oligonucleotide array analysis. The dependence on tkWidgets only concerns few convenience functions. 'affy' is fully functional without it.",
+      "travisid": 127658042,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T23:00:47+0000",
+      "version": "1.48.0--0",
+      "revision": "1.48.0--0",
+      "size": "201495774"
+    },
+    {
+      "image": "bioconductor-deseq",
+      "packager": "conda",
+      "homepage": "http://bioconductor.org/packages/release/bioc/html/DESeq.html",
+      "description": "Estimate variance-mean dependence in count data from high-throughput sequencing assays and test for differential expression based on a model using the negative binomial distribution",
+      "travisid": 127658042,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T23:04:24+0000",
+      "version": "1.22.1--r3.2.2_0",
+      "revision": "1.22.1--r3.2.2_0",
+      "size": "260503723"
+    },
+    {
+      "image": "bioconductor-gage",
+      "packager": "conda",
+      "homepage": "http://bioconductor.org/packages/release/bioc/html/gage.html",
+      "description": "GAGE is a published method for gene set (enrichment or GSEA) or pathway analysis. GAGE is generally applicable independent of microarray or RNA-Seq data attributes including sample sizes, experimental designs, assay platforms, and other types of heterogeneity, and consistently achieves superior performance over other frequently used methods. In gage package, we provide functions for basic GAGE analysis, result processing and presentation. We have also built pipeline routines for of multiple GAGE analyses in a batch, comparison between parallel analyses, and combined analysis of heterogeneous data from different sources/studies. In addition, we provide demo microarray data and commonly used gene set data based on KEGG pathways and GO terms. These funtions and data are also useful for gene set analysis using other methods.",
+      "travisid": 127658042,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T23:07:13+0000",
+      "version": "2.21.1--0",
+      "revision": "2.21.1--0",
+      "size": "284435248"
+    },
+    {
+      "image": "bioconductor-gagedata",
+      "packager": "conda",
+      "homepage": "http://bioconductor.org/packages/release/data/experiment/html/gageData.html",
+      "description": "This is a supportive data package for the software package, gage. However, the data supplied here are also useful for gene set or pathway analysis or microarray data analysis in general. In this package, we provide two demo microarray dataset: GSE16873 (a breast cancer dataset from GEO) and BMP6 (originally published as an demo dataset for GAGE, also registered as GSE13604 in GEO). This package also includes commonly used gene set data based on KEGG pathways and GO terms for major research species, including human, mouse, rat and budding yeast. Mapping data between common gene IDs for budding yeast are also included.",
+      "travisid": 127658042,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T23:09:02+0000",
+      "version": "2.8.0--0",
+      "revision": "2.8.0--0",
+      "size": "206323931"
+    },
+    {
+      "image": "bioconductor-genefilter",
+      "packager": "conda",
+      "homepage": "http://bioconductor.org/packages/release/bioc/html/genefilter.html",
+      "description": "Some basic functions for filtering genes",
+      "travisid": 127658042,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T23:11:53+0000",
+      "version": "1.52.1--r3.2.2_0",
+      "revision": "1.52.1--r3.2.2_0",
+      "size": "255729268"
+    },
+    {
+      "image": "bioconductor-limma",
+      "packager": "conda",
+      "homepage": "http://bioconductor.org/packages/release/bioc/html/limma.html",
+      "description": "Data analysis, linear models and differential expression for microarray data.",
+      "travisid": 127658042,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T23:14:32+0000",
+      "version": "3.26.9--0",
+      "revision": "3.26.9--0",
+      "size": "197620810"
+    },
+    {
+      "image": "hicexplorer",
+      "packager": "conda",
+      "homepage": "https://github.com/maxplanck-ie/HiCExplorer",
+      "description": "Set of programs to process, analyze and visualize Hi-C data",
+      "travisid": 127658042,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T23:21:16+0000",
+      "version": "0.1--py27_0",
+      "revision": "0.1--py27_0",
+      "size": "982088155"
+    },
+    {
+      "image": "r-yaml",
+      "packager": "conda",
+      "homepage": "",
+      "description": "This package implements the libyaml YAML 1.1 parser and emitter (http://pyyaml.org/wiki/LibYAML) for R.",
+      "travisid": 127658042,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T23:22:52+0000",
+      "version": "2.1.13--r3.2.2_0",
+      "revision": "2.1.13--r3.2.2_0",
+      "size": "195481310"
+    }
+  ]
+}
+---
