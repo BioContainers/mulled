@@ -38,3 +38,4 @@ conda	rnastructure	5.7--1	refold -h
 conda	rnaz	2.1--1	RNAz -h
 conda	sortmerna	2.0--1	sortmerna --version
 conda	viennarna	2.2.5--2	RNAfold --version
+conda	mash	1.1--0	mash -h
