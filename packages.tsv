@@ -24,4 +24,4 @@ conda	curl	7.45.0--1	curl --fail icanhazip.com
 conda	bcftools	1.3--0	bcftools --version
 conda	deeptools	2.2.2--py27_0	bamCompare --version
 conda	deeptools	2.2.3--py27_0	bamCompare --version
-conda	barrnap	0.7--0	barrnap --help
+conda	barrnap	0.7--pl==5.22.0_0	barrnap --help
