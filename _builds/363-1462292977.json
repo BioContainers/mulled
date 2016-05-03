@@ -1,0 +1,19 @@
+---
+{
+  "title": "363",
+  "packages": [
+    {
+      "image": "bowtie2",
+      "packager": "conda",
+      "homepage": "http://bowtie-bio.sourceforge.net/bowtie2/index.shtml",
+      "description": "Fast and sensitive read alignment",
+      "travisid": 127563607,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T16:29:34+0000",
+      "version": "2.2.8--py35_2",
+      "revision": "2.2.8--py35_2",
+      "size": "213332985"
+    }
+  ]
+}
+---
