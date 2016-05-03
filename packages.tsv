@@ -41,6 +41,11 @@ conda	viennarna	2.2.5--2	RNAfold --version
 conda	mash	1.1--0	mash -h
 conda	autodock-vina	1.1.2--0	vina --help
 conda	bamhash	1.0--0	bamhash_checksum_bam --version
-conda	searchgui	2.1.4--1	searchgui eu.isas.searchgui.cmd.FastaCLI
 conda	hicexplorer	0.1--py27_0	hicBuildMatrix --version
 conda	r-yaml	2.1.13--r3.2.2_0	Rscript -e 'library(''yaml'')'
+conda	bioconductor-gagedata	2.8.0--0	Rscript -e 'library(''gageData'')'
+conda	bioconductor-gage	2.21.1--0	Rscript -e 'library(''gage'')'
+conda	bioconductor-genefilter	1.52.1--r3.2.2_0	Rscript -e 'library(''genefilter'')'
+conda	bioconductor-affy	1.48.0--0	Rscript -e 'library(''affy'')'
+conda	bioconductor-deseq	1.22.1--r3.2.2_0	Rscript -e 'library(''DESeq'')'
+conda	bioconductor-limma	3.26.9--0	Rscript -e 'library(''limma'')'
