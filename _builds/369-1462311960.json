@@ -1,0 +1,127 @@
+---
+{
+  "title": "369",
+  "packages": [
+    {
+      "image": "carna",
+      "packager": "conda",
+      "homepage": "https://www.bioinf.uni-leipzig.de/~will/Software/CARNA/",
+      "description": "Constraint-based Alignment of RNA Ensembles",
+      "travisid": 127639069,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T21:40:42+0000",
+      "version": "1.3.1--3",
+      "revision": "1.3.1--3",
+      "size": "456301136"
+    },
+    {
+      "image": "infernal",
+      "packager": "conda",
+      "homepage": "http://infernal.janelia.org/",
+      "description": "Infernal (\"INFERence of RNA ALignment\") is for searching DNA sequence databases for RNA structure and sequence similarities.",
+      "travisid": 127639069,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T21:41:07+0000",
+      "version": "1.1.1--0",
+      "revision": "1.1.1--0",
+      "size": "29784484"
+    },
+    {
+      "image": "intarna",
+      "packager": "conda",
+      "homepage": "http://www.bioinf.uni-freiburg.de/Software",
+      "description": "Efficient target prediction incorporating accessibility of interaction sites",
+      "travisid": 127639069,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T21:41:31+0000",
+      "version": "1.2.5--1",
+      "revision": "1.2.5--1",
+      "size": "10620391"
+    },
+    {
+      "image": "locarna",
+      "packager": "conda",
+      "homepage": "http://www.bioinf.uni-freiburg.de/Software/LocARNA/",
+      "description": "Multiple alignment of RNAs",
+      "travisid": 127639069,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T21:42:48+0000",
+      "version": "1.8.9--2",
+      "revision": "1.8.9--2",
+      "size": "247092244"
+    },
+    {
+      "image": "rnacode",
+      "packager": "conda",
+      "homepage": "http://wash.github.io/rnacode/",
+      "description": "RNAcode - Analyze the protein coding potential in multiple sequence alignments RNAcode relies on evolutionary signatures including synonymous/conservative mutations and conservation of the reading frame. It does not use any species specific sequence characteristics whatsoever and does not use any machine learning techniques.",
+      "travisid": 127639069,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T21:43:11+0000",
+      "version": "0.3--0",
+      "revision": "0.3--0",
+      "size": "6660760"
+    },
+    {
+      "image": "rnashapes",
+      "packager": "conda",
+      "homepage": "http://bibiserv.techfak.uni-bielefeld.de/rnashapes",
+      "description": "RNAshape abstraction maps structures to a tree-like domain of shapes, retaining adjacency and nesting of structural features, but disregarding helix lengths. Shape abstraction integrates well with dynamic programming algorithms, and hence it can be applied during structure prediction rather than afterwards. This avoids exponential explosion and can still give us a non-heuristic and complete account of properties of the molecule's folding space.",
+      "travisid": 127639069,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T21:43:32+0000",
+      "version": "2.1.6--0",
+      "revision": "2.1.6--0",
+      "size": "8542373"
+    },
+    {
+      "image": "rnastructure",
+      "packager": "conda",
+      "homepage": "http://rna.urmc.rochester.edu/RNAstructure.html",
+      "description": "RNAstructure is a complete package for RNA and DNA secondary structure prediction and analysis. It includes algorithms for secondary structure prediction, including facility to predict base pairing probabilities. It also can be used to predict bimolecular structures and can predict the equilibrium binding affinity of an oligonucleotide to a structured RNA target. This is useful for siRNA design. It can also predict secondary structures common to two, unaligned sequences, which is much more accurate than single sequence secondary structure prediction. Finally, RNAstructure can take a number of different types of experiment mapping data to constrain or restrain structure prediction. These include chemical mapping, enzymatic mapping, NMR, and SHAPE data.",
+      "travisid": 127639069,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T21:44:06+0000",
+      "version": "5.7--1",
+      "revision": "5.7--1",
+      "size": "53297537"
+    },
+    {
+      "image": "rnaz",
+      "packager": "conda",
+      "homepage": "https://www.tbi.univie.ac.at/~wash/RNAz/",
+      "description": "predicting structural noncoding RNAs",
+      "travisid": 127639069,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T21:44:52+0000",
+      "version": "2.1--1",
+      "revision": "2.1--1",
+      "size": "120658200"
+    },
+    {
+      "image": "sortmerna",
+      "packager": "conda",
+      "homepage": "http://bioinfo.lifl.fr/RNA/sortmerna",
+      "description": "SortMeRNA is a biological sequence analysis tool for filtering, mapping and OTU-picking NGS reads.",
+      "travisid": 127639069,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T21:45:17+0000",
+      "version": "2.0--1",
+      "revision": "2.0--1",
+      "size": "10208853"
+    },
+    {
+      "image": "viennarna",
+      "packager": "conda",
+      "homepage": "http://www.tbi.univie.ac.at/RNA/",
+      "description": "Vienna RNA package -- RNA secondary structure prediction and comparison",
+      "travisid": 127639069,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T21:45:57+0000",
+      "version": "2.2.5--2",
+      "revision": "2.2.5--2",
+      "size": "103179985"
+    }
+  ]
+}
+---
