@@ -1,0 +1,19 @@
+---
+{
+  "title": "373",
+  "packages": [
+    {
+      "image": "mash",
+      "packager": "conda",
+      "homepage": "https://github.com/marbl/Mash",
+      "description": "Fast sequence distance estimator that uses MinHash",
+      "travisid": 127646686,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-03T22:06:43+0000",
+      "version": "1.1--0",
+      "revision": "1.1--0",
+      "size": "14529189"
+    }
+  ]
+}
+---
