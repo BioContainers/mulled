@@ -27,3 +27,42 @@ conda	deeptools	2.2.2--py27_0	bamCompare --version
 conda	deeptools	2.2.3--py27_0	bamCompare --version
 conda	bowtie	1.1.2--py35_1	(bowtie --version 2>&1) > /dev/null
 conda	metaphlan2	2.2.0--py27_1	metaphlan2.py -v
+# Packager	Package	Revision	Test
+linuxbrew	hello	1	test $(/brew/bin/hello -g 'Hello_World') = 'Hello_World'
+linuxbrew	base64	1	echo -n mulled | /brew/bin/base64 | grep 'bXVsbGVk'
+linuxbrew	coreutils	1	test $(/brew/bin/factor 15 | tr ' ' '_') = '15:_3_5'
+alpine	go	1	go version | grep 'go version'
+alpine	irssi	1	irssi -v
+alpine	mksh	1	mksh -v
+alpine	task	1	/usr/bin/task --version
+alpine	jq	1	test $(/usr/bin/jq -M -n -c '[true, (4+3)]') = '[true,7]'
+alpine	postgresql	1	postgres -V
+alpine	mtr	1	/usr/sbin/mtr -v
+alpine	znc	1	/usr/bin/znc -v
+alpine	bc	1	test $(echo '2+3' | bc -q) = '5'
+conda	tmux	1.9a--1	tmux -V
+conda	tmux	2.1--1	tmux -V
+conda	m4	1.4.17--0	test $(echo 'define(a, bbb)a' | m4) = 'bbb'
+conda	samtools	1.3--1	samtools --version
+conda	samtools	1.0--0	samtools --version
+conda	pyrad	3.0.64--py27_0	pyrad -h
+conda	stacks	1.37--0	cstacks  2>&1 | grep cstacks
+conda	r-vegan	2.3_4--r3.2.2_1	R -e 'library(''vegan'')'
+conda	cufflinks	2.2.1--py27_1	(cuffmerge --help 2>&1) | grep Options > /dev/null
+conda	tophat	2.1.0--py27_0	(tophat --version 2>&1) > /dev/null
+conda	curl	7.45.0--1	curl --fail icanhazip.com
+conda	bcftools	1.3--0	bcftools --version
+conda	deeptools	2.2.2--py27_0	bamCompare --version
+conda	deeptools	2.2.3--py27_0	bamCompare --version
+conda	bowtie	1.1.2--py35_1	(bowtie --version 2>&1) > /dev/null
+conda	metaphlan2	2.2.0--py27_1	metaphlan2.py -v
+conda	carna	1.3.1--3	carna --help
+conda	infernal	1.1.1--0	infernal --help
+conda	intarna	1.2.5--1	intarna --help
+conda	locarna	1.8.9--2	locarna --help
+conda	rnacode	0.3--0	rnacode --help
+conda	rnashapes	2.1.6--0	rnashapes --help
+conda	rnastructure	5.7--0	rnastructure --help
+conda	rnaz	2.1--0	rnaz --help
+conda	sortmerna	2.0--1	sortmerna --help
+conda	viennarna	2.2.5--2	rnafold --help
