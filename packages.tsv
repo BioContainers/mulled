@@ -55,13 +55,13 @@ conda	krona	2.6--3	ktImportTaxonomy
 conda	bioconductor-gosemsim	1.28.2--0	Rscript -e 'library(''GOSemSim'')'
 conda	last	719--py27_1	lastal -V &> /dev/null
 conda	biobambam	2.0.42--0	bamsormadup --help
-conda	khmer	2.0--py27_0	python -c "import khmer"
-conda	kid	0.9.6--py27_1	python -c "import kid"
+conda	khmer	2.0--py27_0	python -c 'import khmer'
+conda	kid	0.9.6--py27_1	python -c 'import kid'
 conda	kraken	0.10.6_eaf8fb68--0	kraken --version 2>&1 > /dev/null
-conda	bbmap	35.85--2	bbmap.sh -V 2>&1 | grep "Executing" > /dev/null
-conda	bioblend	0.7.0--py27_0	python -c "import bioblend"
+conda	bbmap	35.85--2	bbmap.sh -V 2>&1 | grep 'Executing' > /dev/null
+conda	bioblend	0.7.0--py27_0	python -c 'import bioblend'
 conda	impute2	2.3.2--0	impute2 2>&1 | grep IMPUTE
-conda	keepalive	0.5--py27_0	python -c "import keepalive"
+conda	keepalive	0.5--py27_0	python -c 'import keepalive'
 conda	repeatmasker	4.0.6--4	RepeatMasker | grep 'RepeatMasker - Mask repetitive DNA' > /dev/null
 conda	abricate	0.2--0	abricate --help 2>&1 | grep ResFinder > /dev/null
 conda	igblast	1.4.0--5	igblastn -h
