@@ -1,0 +1,31 @@
+---
+{
+  "title": "386",
+  "packages": [
+    {
+      "image": "deeptools",
+      "packager": "conda",
+      "homepage": "https://github.com/fidelram/deepTools",
+      "description": "A set of user-friendly tools for normalization and visualzation of deep-sequencing data",
+      "travisid": 127774926,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-04T15:21:23+0000",
+      "version": "2.2.2--py27_0",
+      "revision": "2.2.2--py27_0",
+      "size": "970768226"
+    },
+    {
+      "image": "deeptools",
+      "packager": "conda",
+      "homepage": "https://github.com/fidelram/deepTools",
+      "description": "A set of user-friendly tools for normalization and visualzation of deep-sequencing data",
+      "travisid": 127774926,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-04T15:27:31+0000",
+      "version": "2.2.3--py27_0",
+      "revision": "2.2.3--py27_0",
+      "size": "970805600"
+    }
+  ]
+}
+---
