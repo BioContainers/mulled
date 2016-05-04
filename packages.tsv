@@ -51,3 +51,14 @@ conda	bioconductor-deseq	1.22.1--r3.2.2_0	Rscript -e 'library(''DESeq'')'
 conda	bioconductor-limma	3.26.9--0	Rscript -e 'library(''limma'')'
 conda	age-metasv	2015.01.29.3--0	age_align
 conda	abyss	1.9.0--0	ABYSS --version
+conda	cancerit-allelecount	2.1.2--0	alleleCounter -h
+conda	ccat	3.0--0	CCAT --help
+conda	cdbtools	0.99--0	cdbfasta -v
+conda	ceas	1.0.2--py27_0	ceas --version > /dev/null
+conda	chanjo	3.3.0--py27_0	chanjo --help
+conda	cnvkit	0.7.11--py27_0	cnvkit.py -h
+conda	cobra	0.4.0--py27_0	python -c 'import cobra'
+conda	cramtools	3.0.b127--0	cramtools -h
+conda	crossmap	0.2.2--py27_2	CrossMap.py bed
+conda	cutadapt	1.9.1--py27_0	python -c 'import cutadapt'
+conda	cyvcf2	0.2.8--py27_0	python -c 'import cyvcf2'
