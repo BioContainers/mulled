@@ -1,0 +1,31 @@
+---
+{
+  "title": "386",
+  "packages": [
+    {
+      "image": "abyss",
+      "packager": "conda",
+      "homepage": "http://www.bcgsc.ca/platform/bioinfo/software/abyss",
+      "description": "Assembly By Short Sequences - a de novo, parallel, paired-end sequence assembler",
+      "travisid": 127774926,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-04T12:08:12+0000",
+      "version": "1.9.0--0",
+      "revision": "1.9.0--0",
+      "size": "98751985"
+    },
+    {
+      "image": "age-metasv",
+      "packager": "conda",
+      "homepage": "https://github.com/marghoob/AGE/tree/simple-parseable-output",
+      "description": "optimal alignment of sequences with structural variants (SVs), modifiied for MetaSV integration",
+      "travisid": 127774926,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-04T12:08:33+0000",
+      "version": "2015.01.29.3--0",
+      "revision": "2015.01.29.3--0",
+      "size": "6290745"
+    }
+  ]
+}
+---
