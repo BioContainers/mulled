@@ -66,4 +66,4 @@ conda	abricate	0.2--0	abricate --help 2>&1 | grep ResFinder > /dev/null
 conda	bioconductor-go.db	3.2.2--0	Rscript -e 'library(''GO.db'')'
 conda	art	3.19.15--1	art_illumina -sam -i test.fasta -l 150 -ss MS -f 10 -o illumina_test
 conda	lastz	1.0.2--0	lastz --version  2>&1 | grep 1.02.00 > /dev/null
-conda	kallisto	0.42.4--1	kallisto | grep Usage > /dev/null
+conda	kallisto	0.42.4--2	kallisto | grep Usage > /dev/null
