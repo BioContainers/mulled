@@ -23,16 +23,16 @@
             {% assign packager = version.packager %}
             {% assign id = version.image %}
             {
-              "version": "{{version.version}}",
-              "revision": "{{version.revision}}",
+              "version": "{{version.version | escape}}",
+              "revision": "{{version.revision | escape}}",
               "buildurl": "https://travis-ci.org/{{version.travisslug}}/builds/{{version.travisid}}/",
               "date": "{{version.date}}",
               "size": "{{version.size}}"
             }{% unless forloop.last == true %},{% endunless %}
           {% endfor %}
         ],
-        "description": "{{description}}",
-        "homepage": "{{homepage}}",
+        "description": "{{description | escape}}",
+        "homepage": "{{homepage | escape}}",
         "id": "{{id}}",
         "packager": "{{packager}}"
       }
