@@ -53,7 +53,7 @@ conda	age-metasv	2015.01.29.3--0	age_align
 conda	abyss	1.9.0--0	ABYSS --version
 conda	cancerit-allelecount	2.1.2--1	alleleCounter -h
 conda	ccat	3.0--1	CCAT --help
-conda	cdbtools	0.99--0	cdbfasta -v
+conda	cdbtools	0.99--1	cdbfasta -v
 conda	ceas	1.0.2--py27_0	ceas --version > /dev/null
 conda	chanjo	3.3.0--py27_0	chanjo --help
 conda	cnvkit	0.7.11--py27_0	cnvkit.py -h
