@@ -1,0 +1,19 @@
+---
+{
+  "title": "448",
+  "packages": [
+    {
+      "image": "sambamba",
+      "packager": "conda",
+      "homepage": "https://github.com/lomereiter/sambamba",
+      "description": "Tools for working with SAM/BAM data",
+      "travisid": 128697508,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T19:26:54+0000",
+      "version": "0.6.1--0",
+      "revision": "0.6.1--0",
+      "size": "26788516"
+    }
+  ]
+}
+---
