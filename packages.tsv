@@ -77,3 +77,4 @@ conda	cobra	0.4.0--py27_0	python -c 'import cobra'
 conda	crossmap	0.2.2--py27_2	CrossMap.py
 conda	cyvcf2	0.3.0--py27_0	python -c 'import cyvcf2'
 conda	sambamba	0.6.1--0	sambamba view
+conda	theta2	0.7--py27_0	RunTHetA.py -h
