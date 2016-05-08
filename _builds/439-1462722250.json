@@ -1,0 +1,55 @@
+---
+{
+  "title": "439",
+  "packages": [
+    {
+      "image": "bowtie2",
+      "packager": "conda",
+      "homepage": "http://bowtie-bio.sourceforge.net/bowtie2/index.shtml",
+      "description": "Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences. It is particularly good at aligning reads of about 50 up to 100s or 1,000s of characters, and particularly good at aligning to relatively long (e.g. mammalian) genomes. Bowtie 2 indexes the genome with an FM Index to keep its memory footprint small: for the human genome, its memory footprint is typically around 3.2 GB. Bowtie 2 supports gapped, local, and paired-end alignment modes. http://bowtie-bio.sourceforge.net/bowtie2/index.shtml",
+      "travisid": 128669213,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T15:29:16+0000",
+      "version": "2.2.5--py35_2",
+      "revision": "2.2.5--py35_2",
+      "size": "211711743"
+    },
+    {
+      "image": "cobra",
+      "packager": "conda",
+      "homepage": "https://opencobra.github.io/cobrapy",
+      "description": "COBRApy is a package for constraint-based modeling of biological networks",
+      "travisid": 128669213,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T15:33:14+0000",
+      "version": "0.4.0--py27_0",
+      "revision": "0.4.0--py27_0",
+      "size": "816175723"
+    },
+    {
+      "image": "crossmap",
+      "packager": "conda",
+      "homepage": "http://crossmap.sourceforge.net",
+      "description": "Convert genomic coordiates between assemblies",
+      "travisid": 128669213,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T15:38:43+0000",
+      "version": "0.2.2--py27_2",
+      "revision": "0.2.2--py27_2",
+      "size": "936810095"
+    },
+    {
+      "image": "cyvcf2",
+      "packager": "conda",
+      "homepage": "https://github.com/brentp/cyvcf2",
+      "description": "A cython wrapper around htslib built for fast parsing of Variant Call Format (VCF) files",
+      "travisid": 128669213,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T15:44:07+0000",
+      "version": "0.3.0--py27_0",
+      "revision": "0.3.0--py27_0",
+      "size": "970655517"
+    }
+  ]
+}
+---
