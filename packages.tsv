@@ -41,6 +41,7 @@ conda	sortmerna	2.0--1	sortmerna --version
 conda	viennarna	2.2.5--2	RNAfold --version
 conda	mash	1.1--0	mash -h
 conda	autodock-vina	1.1.2--0	vina --help
+conda	align_it	1.0.3--0	align-it --help
 conda	bamhash	1.0--0	bamhash_checksum_bam --version
 conda	hicexplorer	0.1--py27_0	hicBuildMatrix --version
 conda	r-yaml	2.1.13--r3.2.2_0	Rscript -e 'library(''yaml'')'
