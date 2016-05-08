@@ -57,7 +57,3 @@ conda	cdbtools	0.99--1	cdbfasta -v
 conda	ceas	1.0.2--py27_0	ceas --version > /dev/null
 conda	chanjo	3.3.0--py27_0	chanjo --help
 conda	cnvkit	0.7.11--py27_0	cnvkit.py -h
-conda	cobra	0.4.0--py27_0	python -c 'import cobra'
-conda	crossmap	0.2.2--py27_2	CrossMap.py
-conda	cutadapt	1.9.1--py27_0	python -c 'import cutadapt'
-conda	cyvcf2	0.2.8--py27_0	python -c 'import cyvcf2'
