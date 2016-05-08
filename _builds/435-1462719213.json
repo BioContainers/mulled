@@ -1,0 +1,31 @@
+---
+{
+  "title": "435",
+  "packages": [
+    {
+      "image": "cutadapt",
+      "packager": "conda",
+      "homepage": "https://cutadapt.readthedocs.org/",
+      "description": "trim adapters from high-throughput sequencing reads",
+      "travisid": 128664230,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T14:48:15+0000",
+      "version": "1.9.1--py27_0",
+      "revision": "1.9.1--py27_0",
+      "size": "102177629"
+    },
+    {
+      "image": "cyvcf2",
+      "packager": "conda",
+      "homepage": "https://github.com/brentp/cyvcf2",
+      "description": "A cython wrapper around htslib built for fast parsing of Variant Call Format (VCF) files",
+      "travisid": 128664230,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T14:53:30+0000",
+      "version": "0.2.8--py27_0",
+      "revision": "0.2.8--py27_0",
+      "size": "970723259"
+    }
+  ]
+}
+---
