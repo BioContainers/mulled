@@ -1,0 +1,19 @@
+---
+{
+  "title": "457",
+  "packages": [
+    {
+      "image": "theta2",
+      "packager": "conda",
+      "homepage": "https://github.com/raphael-group/THetA",
+      "description": "Estimate tumor purity and clonal/subclonal copy number aberrations directly from high-throughput DNA sequencing data",
+      "travisid": 128704974,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T20:08:53+0000",
+      "version": "0.7--py27_0",
+      "revision": "0.7--py27_0",
+      "size": "888719474"
+    }
+  ]
+}
+---
