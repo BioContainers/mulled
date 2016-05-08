@@ -1,0 +1,79 @@
+---
+{
+  "title": "432",
+  "packages": [
+    {
+      "image": "cancerit-allelecount",
+      "packager": "conda",
+      "homepage": "https://github.com/cancerit/alleleCount",
+      "description": "Support code for NGS copy number algorithms",
+      "travisid": 128644296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:59:32+0000",
+      "version": "2.1.2--1",
+      "revision": "2.1.2--1",
+      "size": "6841593"
+    },
+    {
+      "image": "ccat",
+      "packager": "conda",
+      "homepage": "http://cmb.gis.a-star.edu.sg/ChIPSeq/paperCCAT.htm",
+      "description": "CCAT is a software package for the analysis of ChIP-seq data with negative control.",
+      "travisid": 128644296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:59:52+0000",
+      "version": "3.0--1",
+      "revision": "3.0--1",
+      "size": "4845476"
+    },
+    {
+      "image": "cdbtools",
+      "packager": "conda",
+      "homepage": "http://compbio.dfci.harvard.edu/tgi",
+      "description": "CDB (Constant DataBase) indexing and retrieval tools for FASTA files",
+      "travisid": 128644296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T12:00:17+0000",
+      "version": "0.99--1",
+      "revision": "0.99--1",
+      "size": "9078741"
+    },
+    {
+      "image": "ceas",
+      "packager": "conda",
+      "homepage": "http://liulab.dfci.harvard.edu/CEAS",
+      "description": "CEAS: Cis-regulatory Element Annotation System",
+      "travisid": 128644296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T12:00:57+0000",
+      "version": "1.0.2--py27_0",
+      "revision": "1.0.2--py27_0",
+      "size": "106280065"
+    },
+    {
+      "image": "chanjo",
+      "packager": "conda",
+      "homepage": "http://www.chanjo.co/",
+      "description": "Coverage analysis tool for clinical sequencing",
+      "travisid": 128644296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T12:01:57+0000",
+      "version": "3.3.0--py27_0",
+      "revision": "3.3.0--py27_0",
+      "size": "133908718"
+    },
+    {
+      "image": "cnvkit",
+      "packager": "conda",
+      "homepage": "https://github.com/etal/cnvkit",
+      "description": "Copy number variant detection from targeted DNA sequencing",
+      "travisid": 128644296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T12:09:32+0000",
+      "version": "0.7.11--py27_0",
+      "revision": "0.7.11--py27_0",
+      "size": "1201236753"
+    }
+  ]
+}
+---
