@@ -1,0 +1,175 @@
+---
+{
+  "title": "423",
+  "packages": [
+    {
+      "image": "abricate",
+      "packager": "conda",
+      "homepage": "https://github.com/tseemann/abricate",
+      "description": "Mass screening of contigs for antibiotic resistance genes",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:24:00+0000",
+      "version": "0.2--0",
+      "revision": "0.2--0",
+      "size": "767928496"
+    },
+    {
+      "image": "art",
+      "packager": "conda",
+      "homepage": "http://www.niehs.nih.gov/research/resources/software/biostatistics/art/",
+      "description": "Illumina, 454 and Solid read simulator",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:24:24+0000",
+      "version": "3.19.15--1",
+      "revision": "3.19.15--1",
+      "size": "28191515"
+    },
+    {
+      "image": "biobambam",
+      "packager": "conda",
+      "homepage": "https://github.com/gt1/biobambam2",
+      "description": "Tools for early stage alignment file processing",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:25:01+0000",
+      "version": "2.0.42--0",
+      "revision": "2.0.42--0",
+      "size": "55907798"
+    },
+    {
+      "image": "bioblend",
+      "packager": "conda",
+      "homepage": "https://github.com/galaxy/bioblend",
+      "description": "A Python library for interacting with CloudMan and the Galaxy API",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:25:44+0000",
+      "version": "0.7.0--py27_0",
+      "revision": "0.7.0--py27_0",
+      "size": "115265046"
+    },
+    {
+      "image": "bioconductor-go.db",
+      "packager": "conda",
+      "homepage": "http://bioconductor.org/packages/release/data/annotation/html/GO.db.html",
+      "description": "A set of annotation maps describing the entire Gene Ontology assembled using data from GO",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:27:55+0000",
+      "version": "3.2.2--0",
+      "revision": "3.2.2--0",
+      "size": "306999466"
+    },
+    {
+      "image": "bioconductor-gosemsim",
+      "packager": "conda",
+      "homepage": "http://bioconductor.org/packages/release/bioc/html/GOSemSim.html",
+      "description": "Implemented five methods proposed by Resnik, Schlicker, Jiang, Lin and Wang respectively for estimating GO semantic similarities. Support many species, including Anopheles, Arabidopsis, Bovine, Canine, Chicken, Chimp, Coelicolor, E coli strain K12 and Sakai, Fly, Gondii, Human, Malaria, Mouse, Pig, Rhesus, Rat, Worm, Xenopus, Yeast, and Zebrafish.",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:30:09+0000",
+      "version": "1.28.2--0",
+      "revision": "1.28.2--0",
+      "size": "317650325"
+    },
+    {
+      "image": "impute2",
+      "packager": "conda",
+      "homepage": "https://mathgen.stats.ox.ac.uk/impute/impute_v2.html",
+      "description": "Genotype imputation and haplotype phasing",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:30:29+0000",
+      "version": "2.3.2--0",
+      "revision": "2.3.2--0",
+      "size": "8049967"
+    },
+    {
+      "image": "kallisto",
+      "packager": "conda",
+      "homepage": "http://pachterlab.github.io/kallisto",
+      "description": "Quantifying abundances of transcripts from RNA-Seq data, or more generally of target sequences using high-throughput sequencing reads.",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:30:52+0000",
+      "version": "0.42.4--2",
+      "revision": "0.42.4--2",
+      "size": "16043389"
+    },
+    {
+      "image": "keepalive",
+      "packager": "conda",
+      "homepage": "https://github.com/wikier/keepalive",
+      "description": "urllib keepalive support for python",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:31:29+0000",
+      "version": "0.5--py27_0",
+      "revision": "0.5--py27_0",
+      "size": "100821806"
+    },
+    {
+      "image": "khmer",
+      "packager": "conda",
+      "homepage": "https://khmer.readthedocs.org/",
+      "description": "khmer is a library and suite of command line tools for working with DNA sequence. It is primarily aimed at short-read sequencing data such as that produced by the Illumina platform. khmer takes a k-mer-centric approach to sequence analysis, hence the name.",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:32:21+0000",
+      "version": "2.0--py27_1",
+      "revision": "2.0--py27_1",
+      "size": "134973270"
+    },
+    {
+      "image": "kid",
+      "packager": "conda",
+      "homepage": "https://pypi.python.org/pypi/kid",
+      "description": "A simple and pythonic XML template language",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:32:59+0000",
+      "version": "0.9.6--py27_1",
+      "revision": "0.9.6--py27_1",
+      "size": "101487936"
+    },
+    {
+      "image": "kraken",
+      "packager": "conda",
+      "homepage": "http://ccb.jhu.edu/software/kraken/",
+      "description": "Kraken is a system for assigning taxonomic labels to short DNA sequences, usually obtained through metagenomic studies.",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:33:30+0000",
+      "version": "0.10.6_eaf8fb68--2",
+      "revision": "0.10.6_eaf8fb68--2",
+      "size": "56489504"
+    },
+    {
+      "image": "last",
+      "packager": "conda",
+      "homepage": "http://last.cbrc.jp/",
+      "description": "LAST finds similar regions between sequences, and aligns them. It is designed for comparing large datasets to each other (e.g. vertebrate genomes and/or large numbers of DNA reads).",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:34:10+0000",
+      "version": "719--py27_1",
+      "revision": "719--py27_1",
+      "size": "106365782"
+    },
+    {
+      "image": "lastz",
+      "packager": "conda",
+      "homepage": "http://www.bx.psu.edu/~rsharris/lastz/",
+      "description": "LASTZ is a program for aligning DNA sequences, a pairwise aligne",
+      "travisid": 128640385,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-08T11:34:32+0000",
+      "version": "1.0.2--0",
+      "revision": "1.0.2--0",
+      "size": "9461826"
+    }
+  ]
+}
+---
