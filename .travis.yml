@@ -5,16 +5,19 @@ services:
   - docker
 
 install:
-  - sudo service docker stop
-  - wget https://get.docker.com/builds/Linux/x86_64/docker-1.10.0 -O docker
-  - chmod +x docker
-  - sudo ./docker daemon --log-level=fatal &
-  - wget https://storage.googleapis.com/involucro-1149.appspot.com/involucro
-  - chmod u+x involucro
+  - wget https://github.com/thriqon/involucro/releases/download/v1.0.1/involucro
+  - chmod +x involucro
+  - sudo apt-get update -qq
+  - sudo apt-get install docker-engine --no-install-recommends -y -o Dpkg::Options::="--force-confmiss" -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew"
+  - docker --version
+  - docker info
+  - sleep 5
+
+before_script:
+  - if [ "$TRAVIS_SECURE_ENV_VARS" = "true" ]; then docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD quay.io ; fi
 
 script:
-  - if [ "$TRAVIS_SECURE_ENV_VARS" = "true" ]; then docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD quay.io ; fi
-  - ./involucro -l=-2 travis
+  - ./involucro -v=2 travis
 
 notifications:
   webhooks:

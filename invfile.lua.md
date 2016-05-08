@@ -27,7 +27,6 @@ Mulled fetches build instructions from such package managers, and compiles
 applications ahead-of-time in the cloud. Resulting images are made available
 in public image repositories.
 
--- TODO
 The remainder of this article is structured as follows: Firstly, we introduce
 the builders (one for each enabled package manager). After that, we describe
 how the build system determines which packages need to be rebuilt.
@@ -68,13 +67,11 @@ Firstly, we define some settings. These name utility images used later:
 
 We also determine where the results will be stored:
 
-    quay_prefix = 'mulled'
+    quay_prefix = ENV.QUAY_PREFIX 
     namespace = 'quay.io/' .. quay_prefix
-    github_repo = 'mulled/api'
-
-    current_build_id =
-      'https://travis-ci.org/mulled/mulled/builds/'
-      .. ENV.TRAVIS_BUILD_ID
+    github_repo = ENV.TRAVIS_REPO_SLUG
+    build_log_branch = ENV.BUILD_LOG_BRANCH
+    main_branch = ENV.MAIN_BRANCH
 
 The Lua version used in Involucro doesn't provide native support for splitting
 a `string` by a delimiter. This utility function fills that gap:
@@ -377,32 +374,32 @@ ownership to `nobody`. This is necessary since the builder has to be run as
 
       inv.task('build:' .. package .. ':' .. revision)
         .using('local_tools/linuxbrew_builder')
-          .withConfig({user = "root"})
           .withHostConfig({binds = {builddir .. ':/data'}})
             .run('mkdir', '-p', '/data/info', '/data/dist')
-            .run('chown', 'nobody', '/data/info', '/data/dist/')
 
 *Inside* the output directory more subdirectories are created, that will contain
 the output files.
 
-          .withConfig({user = "nobody"})
-            .run('mkdir', '/data/dist/bin', '/data/dist/Cellar')
-
+            .run('mkdir', '/data/dist/bin',
+                '/data/dist/lib',
+                '/data/dist/Cellar')
 
           .withConfig({
-            user = "nobody",
             entrypoint = {"/bin/sh", "-c"},
             env = {
               "BREW=/brew/orig_bin/brew",
-              "HOME=/tmp"
+              "HOME=/tmp",
+              "FORCE_UNSAFE_CONFIGURE=1"
             }
           })
           .withHostConfig({binds = {
             builddir .. "/dist/bin:/brew/bin",
+            builddir .. "/dist/lib:/brew/lib",
             builddir .. "/dist/Cellar:/brew/Cellar",
             builddir .. "/info:/info"
           }})
           .run('$BREW install ' .. package)
+          .run('rm /brew/lib/ld.so && ln -s /lib/ld-musl-x86_64.so.1 /brew/lib/ld.so')
           .run('$BREW test ' .. package)
           .run(extractInfo)
 
@@ -519,41 +516,23 @@ contains one line, and the combination of `--raw-input` and `--slurp` makes
 `jq` convert this to a big string, with newlines as separators.  This array is
 split and indexed with positional indexes.
 
-Similar to the Quay.io repository description, the description and homepage are
-taken from the latest revision.
-
-However, we have to make sure that the file containing 'old' revisions exists in
-the package information directory. If any old revisions exist, they are copied over,
-otherwise a new array is used.
-
-    .using(busybox)
-      .withHostConfig({binds = {
-        builddir .. ':/pkg',
-        './data:/data'
-      }})
-      .run('/bin/sh', '-c',
-        '(tail -n +3 /data/api/_images/' .. package .. '.json'
-        .. '|| echo "{}") > /pkg/info/github.json')
-
     .using(jq)
       .withHostConfig({binds = {
         builddir .. ':/pkg',
         "./data:/data"
       }})
-      .run('/jq-linux64 --raw-output --raw-input --slurp \'.|split("\n") as $i'
-        .. '| ("---\n---\n" + ({'
-          .. 'image: "' .. package .. '",'
+      .run('/jq-linux64 -c --raw-input --slurp \'.|split("\n") as $i'
+        .. '| {image: "' .. package .. '", '
           .. 'packager: "' .. packager .. '", '
           .. 'homepage: $i[0], description: $i[1], '
-          .. 'versions: ($i[3] | fromjson | (.versions // []) | '
-          .. '  map(select(.revision != "' .. new_revision
-          .. '" )) + [{version: $i[2], revision: "' .. new_revision
-          .. '", size: $i[4], date: (now | todate)}]),'
-          .. 'buildurl: "' .. current_build_id .. '"}'
-          .. '|tostring))\''
+          .. 'travisid: ' .. ENV.TRAVIS_BUILD_ID .. ','
+          .. 'travisslug: "' .. ENV.TRAVIS_REPO_SLUG .. '",'
+          .. 'date: "\'$(date -Iseconds)\'", '
+          .. 'version: $i[2], revision: "'
+          .. new_revision .. '", size: $i[3]}\''
           .. ' /pkg/info/homepage /pkg/info/description '
-          .. '/pkg/info/version /pkg/info/github.json  /pkg/info/size '
-          .. ' > /data/api/_images/' .. package .. '.json')
+          .. '/pkg/info/version /pkg/info/size '
+          .. ' >> /data/loglines.jsonl')
     end
 
 # The Build Tasks
@@ -588,8 +567,8 @@ package are generated using the builders.
 
 The tool can be used in two modes: In local test mode and in deploy mode.
 Usually, local test mode is used when evaluating the compilability of pull
-requests, while deploy mode is reserved for commits on `master`. Appropriately,
-we define two tasks called `test` and `deploy`.
+requests, while deploy mode is reserved for commits on the main branch.
+Appropriately, we define two tasks called `test` and `deploy`.
 
     test = inv.task('test')
     deploy = inv.task('deploy')
@@ -613,7 +592,7 @@ attach all predefined, package specific tasks to the overall tasks:
         end
       end
       deploy
-        .runTask('main:commit_api_database')
+        .runTask('main:upload_build_log')
     end
 
 # Determining What To Build
@@ -622,55 +601,21 @@ It is highly inefficient to build every single package every time a build is
 invoked. In this tool, we restrict ourselves to building packages in versions
 that are not already registered in our API database.
 
-Firstly, we fetch the current API 'database' from GitHub. This database is
-comprised of several JSON files containing common and revision specific
-information for each package. Each file may look like the following example
-(note the YAML frontmatter for Jekyll):
-
-```json
----
----
-{
- "image": "bc",
- "packager": "alpine",
- "homepage": "http://www.gnu.org/software/bc/bc.html",
- "description": "An arbitrary precision numeric processing language (calculator)",
- "versions": [
-   {
-   "revision": "1",
-   "version": "1.06.95-r2",
-   "size": 5000,
-   "date": "2016-01-26T11:00:02Z",
-   "buildurl": "https://travis.ci-org./mulled/mulled/builds/203830"
-   },
-   {
-   "revision": "2",
-   "version": "1.06.95-r3",
-   "size": 4000,
-   "date": "2016-01-26T11:02:02Z",
-   "buildurl": "https://travis.ci-org./mulled/mulled/builds/203831"
-  }
- ]
-}
-```
-
-We clone the repository into a subdirectory called `data/api`:
-
     inv.task('main:versions:clone_from_github')
       .using(git)
-        .run('clone', 'https://github.com/mulled/api.git', 'data/api')
-
-These data files still contain the YAML frontmatter, and have to be transformed
-to make easy use of them in later steps. A `jq` program is used to read them in,
-and store a single JSON object assinging a list of versions to each package.
-
-    local parseGithubImages = 'map({(.image): (.versions | map(.revision))}) | add // {}'
+        .run('fetch', '--unshallow')
+        .run('config', 'remote.origin.fetch',
+          '+refs/heads/*:refs/remotes/origin/*')
+        .run('fetch', 'origin', build_log_branch)
+        .run('checkout', 'origin/' .. build_log_branch,
+          '--', '_builds')
 
     inv.task('main:versions:process_versions_from_github')
-      .using(busybox)
-        .run('/bin/sh', '-c', 'tail -q -n +3 data/api/_images/*json > data/github_jsons.jsonl || touch data/github_jsons.jsonl')
       .using(jq)
-        .run('/jq-linux64 --slurp \'' .. parseGithubImages .. '\' data/github_jsons.jsonl > data/github_versions')
+        .run('cat _builds/* | grep -v -- "---" | /jq-linux64 --slurp --raw-output '
+          .. '\'map(.packages)|flatten|group_by(.image)|'
+          .. 'map({key: .[0].image, value: map(.revision)})|from_entries\' '
+          .. ' > data/github_versions')
 
 As the next step, we parse the list of locally defined packages and intersect
 this with the list of remotely available images. The `packages.tsv` is split
@@ -735,22 +680,40 @@ duplicates and tells the user.
 
 # Final Steps
 
-If we are doing a production build on Travis, we have to commit/push the new
-API database.
+If we are doing a production build on Travis, we have to upload the build log
+to GitHub.
 
-    inv.task('main:commit_api_database')
-      .using(git)
-        .withHostConfig({
-          binds = {
-            "./data/git/.gitconfig:/root/.gitconfig",
-            "./data/netrc:/root/.netrc",
-            "./data/api:/source"
-          }})
-        .run('add', '_images')
-        .withConfig({entrypoint = {'/bin/sh', '-c'}})
-        .run('git commit -m "Build '
-          .. ENV.TRAVIS_BUILD_NUMBER .. '" || true')
-        .run('git push origin gh-pages')
+    inv.task('main:upload_build_log')
+      .using(busybox)
+        .run('touch', 'data/loglines.jsonl')
+      .using(jq)
+        .run('/jq-linux64 --slurp '
+          .. '\'{title: "' .. ENV.TRAVIS_BUILD_NUMBER .. '",'
+          .. 'packages: .}\' '
+          .. 'data/loglines.jsonl > data/log.json')
+      .using(busybox)
+        .withHostConfig({binds = {
+          './data:/data'
+        }})
+        .run('/bin/sh', '-c', 'cat /data/log.json')
+        .run('/bin/sh', '-c',
+          '(echo "---"; '
+          .. 'cat /data/log.json; '
+          .. 'echo "---") > /data/build_log')
+      .using(curl)
+        .withConfig({
+          env = {"TOKEN=" .. ENV.GITHUB_TOKEN}
+        })
+        .run('/bin/sh', '-c',
+          'curl -X PUT '
+          .. 'https://api.github.com/repos/'
+           .. github_repo .. '/contents/_builds/'
+           .. ENV.TRAVIS_BUILD_NUMBER .. '-$(date +%s).json '
+          .. '-d \'{"message":"no ' .. ENV.TRAVIS_BUILD_NUMBER
+           .. '", "branch": "' .. build_log_branch .. '",'
+           .. '"content": "'
+           .. '\'$(base64 data/build_log | tr -d "\n")\'"}\' '
+          .. '-HAuthorization:Bearer\\ $TOKEN ')
 
 # Appendix
 
@@ -809,15 +772,14 @@ Linuxbrew expects from the compiling host.
           '--keys-dir', '/etc/apk/keys', '--initdb', 'add',
           'git', 'make', 'clang', 'ruby', 'ruby-irb', 'ncurses-dev',
           'tar', 'binutils', 'build-base', 'bash', 'perl',
-          'zlib', 'zlib-dev', 'jq', 'patch')
+          'zlib', 'zlib-dev', 'jq', 'patch', 'ncurses')
 
       .using(git)
           .run('clone', 'https://github.com/Homebrew/linuxbrew', 'linuxbrew-alpine/brew')
       .using('alpine:latest')
+        .run('ln', '-s', '/lib', 'linuxbrew-alpine/lib64')
+        .run('ln', '-s', '/lib/ld-musl-x86_64.so.1', 'linuxbrew-alpine/lib/ld-linux-x86-64.so.2')
         .run('cp', '-r', 'linuxbrew-alpine/brew/bin', 'linuxbrew-alpine/brew/orig_bin')
-        .run('/bin/sh', '-c',
-          'find linuxbrew-alpine/brew -print0 | xargs -0 -n 1 chown nobody:users')
-        .run('chown', 'nobody:users', 'linuxbrew-alpine/brew', 'linuxbrew-alpine/tmp')
         .run('rm', '-rf', 'linuxbrew-alpine/lib/apk', 'linuxbrew-alpine/var/cache/apk/')
       .wrap('linuxbrew-alpine').inImage('alpine:latest')
         .at('/').as('local_tools/linuxbrew_builder')
@@ -862,24 +824,15 @@ repository:
 
 The branch currently being tested is stored in the environment variable
 `TRAVIS_BRANCH`, but this is also set to `master` when testing a pull request
-directed at `master`.  We therefore have to make sure that this is actually a
-production build by testing for target branch and pull-requestness. If secure
-environment variables are available, i.e. this is a build originated from the
-official mulled repository and not a fork, we also generate a trusted `.netrc`
-to make `git` authenticate with GitHub.  Before actually testing or deploying
-the packages, the build environment has to be prepared:
-
-    if ENV.TRAVIS_SECURE_ENV_VARS == "true" then
-      travis.runTask('main:netrc:trusted')
-    else
-      travis.runTask('main:netrc:plain')
-    end
-    travis.runTask('main:configure_git')
+directed at `master`.  We therefore have to make sure that this is actually
+a production build by testing for target branch and pull-requestness. Before
+actually testing or deploying the packages, the build environment has to be
+prepared:
 
     travis
       .runTask('main:prepare')
 
-    if ENV.TRAVIS_PULL_REQUEST == "false" and ENV.TRAVIS_BRANCH == "master" then
+    if ENV.TRAVIS_PULL_REQUEST == "false" and ENV.TRAVIS_BRANCH == main_branch then
       travis
         .runTask('deploy')
     else
@@ -887,25 +840,6 @@ the packages, the build environment has to be prepared:
         .runTask('test')
     end
 
-    inv.task('main:netrc:trusted')
-      .using(busybox)
-        .withConfig({env = {"TOKEN=" .. ENV.GITHUB_TOKEN}})
-        .run('/bin/sh', '-c', 'echo "machine github.com login $TOKEN" > data/netrc')
-        .run('chmod', '0600', 'data/netrc')
-
-    inv.task('main:netrc:plain')
-      .using(busybox)
-        .run('/bin/sh', '-c', 'echo "machine github.com login mulled_bot" > data/netrc')
-        .run('chmod', '0600', 'data/netrc')
-
-    inv.task('main:configure_git')
-      .using(git)
-        .withHostConfig({binds = {
-          "./data/git:/root/"
-        }})
-        .run('config', '--global', 'user.name', 'MulledBot')
-        .run('config', '--global', 'user.email', 'mulled@bot.com')
-        .run('config', '--global', 'push.default', 'simple')
 
 [^alpine-linux]: <http://www.alpinelinux.org/>
 [^docker-trademark]: Docker is a registered trademark of Docker, Inc.

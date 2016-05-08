@@ -1,15 +1,18 @@
 # Packager	Package	Revision	Test
 linuxbrew	hello	1	test $(/brew/bin/hello -g 'Hello_World') = 'Hello_World'
-linuxbrew	base64	1	test $(echo -n mulled | base64) = 'bXVsbGVk'
+linuxbrew	base64	1	echo -n mulled | /brew/bin/base64 | grep 'bXVsbGVk'
 linuxbrew	coreutils	1	test $(/brew/bin/factor 15 | tr ' ' '_') = '15:_3_5'
-linuxbrew	sha2	1	test $(echo -n mulled | /brew/bin/sha2 -256 -q) = '950af197b83c2b315d43232ffb1e11118874fd02e4a4d1d2baf93cea419feb5d'
 alpine	go	1	go version | grep 'go version'
 alpine	irssi	1	irssi -v
+alpine	mksh	1	mksh -v
 alpine	task	1	/usr/bin/task --version
 alpine	jq	1	test $(/usr/bin/jq -M -n -c '[true, (4+3)]') = '[true,7]'
+alpine	postgresql	1	postgres -V
 alpine	mtr	1	/usr/sbin/mtr -v
 alpine	znc	1	/usr/bin/znc -v
 alpine	bc	1	test $(echo '2+3' | bc -q) = '5'
+conda	bowtie2	2.2.5--py35_2	bowtie2 --version
+conda	bowtie2	2.2.8--py35_2	bowtie2 --version
 conda	tmux	1.9a--1	tmux -V
 conda	tmux	2.1--1	tmux -V
 conda	ddocent	2.1--0	dDocent --help
@@ -23,3 +26,53 @@ conda	cufflinks	2.2.1--py27_1	(cuffmerge --help 2>&1) | grep Options > /dev/null
 conda	tophat	2.1.0--py27_0	(tophat --version 2>&1) > /dev/null
 conda	curl	7.45.0--1	curl --fail icanhazip.com
 conda	bcftools	1.3--0	bcftools --version
+conda	deeptools	2.2.2--py27_0	bamCompare --version
+conda	deeptools	2.2.3--py27_0	bamCompare --version
+conda	bowtie	1.1.2--py35_1	(bowtie --version 2>&1) > /dev/null
+conda	metaphlan2	2.2.0--py27_1	metaphlan2.py -v
+conda	carna	1.3.1--3	carna --help
+conda	infernal	1.1.1--0	cmsearch -h
+conda	intarna	1.2.5--1	IntaRNA -h
+conda	locarna	1.8.9--2	locarna --version
+conda	rnacode	0.3--0	RNAcode --help
+conda	rnashapes	2.1.6--0	RNAshapes  -h
+conda	rnastructure	5.7--1	refold -h
+conda	rnaz	2.1--1	RNAz -h
+conda	sortmerna	2.0--1	sortmerna --version
+conda	viennarna	2.2.5--2	RNAfold --version
+conda	mash	1.1--0	mash -h
+conda	autodock-vina	1.1.2--0	vina --help
+conda	bamhash	1.0--0	bamhash_checksum_bam --version
+conda	hicexplorer	0.1--py27_0	hicBuildMatrix --version
+conda	r-yaml	2.1.13--r3.2.2_0	Rscript -e 'library(''yaml'')'
+conda	bioconductor-gagedata	2.8.0--0	Rscript -e 'library(''gageData'')'
+conda	bioconductor-gage	2.21.1--0	Rscript -e 'library(''gage'')'
+conda	bioconductor-genefilter	1.52.1--r3.2.2_0	Rscript -e 'library(''genefilter'')'
+conda	bioconductor-affy	1.48.0--0	Rscript -e 'library(''affy'')'
+conda	bioconductor-deseq	1.22.1--r3.2.2_0	Rscript -e 'library(''DESeq'')'
+conda	bioconductor-limma	3.26.9--0	Rscript -e 'library(''limma'')'
+conda	age-metasv	2015.01.29.3--0	age_align
+conda	abyss	1.9.0--0	ABYSS --version
+conda	bioconductor-gosemsim	1.28.2--0	Rscript -e 'library(''GOSemSim'')'
+conda	last	719--py27_1	lastal -V &> /dev/null
+conda	biobambam	2.0.42--0	bamsormadup --help
+conda	khmer	2.0--py27_1	python -c 'import khmer'
+conda	kid	0.9.6--py27_1	python -c 'import kid'
+conda	kraken	0.10.6_eaf8fb68--2	kraken --version 2>&1 > /dev/null
+conda	bioblend	0.7.0--py27_0	python -c 'import bioblend'
+conda	impute2	2.3.2--0	impute2 2>&1 | grep IMPUTE
+conda	keepalive	0.5--py27_0	python -c 'import keepalive'
+conda	abricate	0.2--0	abricate --help 2>&1 | grep ResFinder > /dev/null
+conda	bioconductor-go.db	3.2.2--0	Rscript -e 'library(''GO.db'')'
+conda	art	3.19.15--1	art_illumina -sam -i test.fasta -l 150 -ss MS -f 10 -o illumina_test
+conda	lastz	1.0.2--0	lastz --version  2>&1 | grep 1.02.00 > /dev/null
+conda	kallisto	0.42.4--2	kallisto | grep Usage > /dev/null
+conda	cancerit-allelecount	2.1.2--1	alleleCounter -h
+conda	ccat	3.0--1	CCAT --help
+conda	cdbtools	0.99--1	cdbfasta -v
+conda	ceas	1.0.2--py27_0	ceas --version > /dev/null
+conda	chanjo	3.3.0--py27_0	chanjo --help
+conda	cnvkit	0.7.11--py27_0	cnvkit.py -h
+conda	cobra	0.4.0--py27_0	python -c 'import cobra'
+conda	crossmap	0.2.2--py27_2	CrossMap.py
+conda	cyvcf2	0.3.0--py27_0	python -c 'import cyvcf2'
