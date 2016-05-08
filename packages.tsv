@@ -11,6 +11,7 @@ alpine	postgresql	1	postgres -V
 alpine	mtr	1	/usr/sbin/mtr -v
 alpine	znc	1	/usr/bin/znc -v
 alpine	bc	1	test $(echo '2+3' | bc -q) = '5'
+conda	bowtie2	2.2.5--py35_2	bowtie2 --version
 conda	bowtie2	2.2.8--py35_2	bowtie2 --version
 conda	tmux	1.9a--1	tmux -V
 conda	tmux	2.1--1	tmux -V
@@ -71,5 +72,6 @@ conda	cdbtools	0.99--1	cdbfasta -v
 conda	ceas	1.0.2--py27_0	ceas --version > /dev/null
 conda	chanjo	3.3.0--py27_0	chanjo --help
 conda	cnvkit	0.7.11--py27_0	cnvkit.py -h
-conda	cutadapt	1.9.1--py27_0	python -c 'import cutadapt'
-conda	cyvcf2	0.2.8--py27_0	python -c 'import cyvcf2'
+conda	cobra	0.4.0--py27_0	python -c 'import cobra'
+conda	crossmap	0.2.2--py27_2	CrossMap.py
+conda	cyvcf2	0.3.0--py27_0	python -c 'import cyvcf2'
