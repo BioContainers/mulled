@@ -60,7 +60,6 @@ conda	kraken	0.10.6_eaf8fb68--2	kraken --version 2>&1 > /dev/null
 conda	bioblend	0.7.0--py27_0	python -c 'import bioblend'
 conda	impute2	2.3.2--0	impute2 2>&1 | grep IMPUTE
 conda	keepalive	0.5--py27_0	python -c 'import keepalive'
-conda	repeatmasker	4.0.6--4	RepeatMasker | grep 'RepeatMasker - Mask repetitive DNA' > /dev/null
 conda	abricate	0.2--0	abricate --help 2>&1 | grep ResFinder > /dev/null
 conda	bioconductor-go.db	3.2.2--0	Rscript -e 'library(''GO.db'')'
 conda	art	3.19.15--1	art_illumina -sam -i test.fasta -l 150 -ss MS -f 10 -o illumina_test
