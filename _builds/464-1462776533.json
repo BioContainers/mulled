@@ -1,0 +1,31 @@
+---
+{
+  "title": "464",
+  "packages": [
+    {
+      "image": "ddocent",
+      "packager": "conda",
+      "homepage": "http://ddocent.wordpress.com/",
+      "description": "dDocent is an interactive bash wrapper to QC, assemble, map, and call SNPs from double digest RAD data",
+      "travisid": 128776533,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-09T06:47:58+0000",
+      "version": "2.1--0",
+      "revision": "2.1--0",
+      "size": "548525946"
+    },
+    {
+      "image": "opsin",
+      "packager": "conda",
+      "homepage": "https://bitbucket.org/dan2097/opsin/",
+      "description": "OPSIN is a Java(1.6+) library for IUPAC name-to-structure conversion offering high recall and precision on organic chemical nomenclature.",
+      "travisid": 128776533,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-09T06:48:50+0000",
+      "version": "2.1.0--1",
+      "revision": "2.1.0--1",
+      "size": "160431106"
+    }
+  ]
+}
+---
