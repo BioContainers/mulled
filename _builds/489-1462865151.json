@@ -1,0 +1,55 @@
+---
+{
+  "title": "489",
+  "packages": [
+    {
+      "image": "macs2",
+      "packager": "conda",
+      "homepage": "https://github.com/taoliu/MACS/",
+      "description": "MACS -- Model-based Analysis of ChIP-Seq",
+      "travisid": 129058431,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T07:21:31+0000",
+      "version": "2.1.1--r3.2.2_0",
+      "revision": "2.1.1--r3.2.2_0",
+      "size": "733507628"
+    },
+    {
+      "image": "peptide-shaker",
+      "packager": "conda",
+      "homepage": "https://github.com/compomics/peptide-shaker",
+      "description": "PeptideShaker is a search engine independent platform for interpretation of proteomics identification results from multiple search engines,",
+      "travisid": 129058431,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T07:23:13+0000",
+      "version": "1.1.3--1",
+      "revision": "1.1.3--1",
+      "size": "390896155"
+    },
+    {
+      "image": "sam",
+      "packager": "conda",
+      "homepage": "https://compbio.soe.ucsc.edu/sam2src/",
+      "description": "SAM - Sequence Alignment and Modeling System",
+      "travisid": 129058431,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T07:23:38+0000",
+      "version": "3.5--0",
+      "revision": "3.5--0",
+      "size": "26886889"
+    },
+    {
+      "image": "searchgui",
+      "packager": "conda",
+      "homepage": "https://github.com/compomics/searchgui",
+      "description": "SearchGUI is a user-friendly open-source graphical user interface for configuring and running proteomics identification search engines, currently supporting X!Tandem, MS-GF+, MS Amanda, MyriMatch, Comet, Tide, Andromeda and OMSSA.",
+      "travisid": 129058431,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T07:25:49+0000",
+      "version": "2.1.4--1",
+      "revision": "2.1.4--1",
+      "size": "476187909"
+    }
+  ]
+}
+---
