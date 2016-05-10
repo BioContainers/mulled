@@ -1,0 +1,175 @@
+---
+{
+  "title": "536",
+  "packages": [
+    {
+      "image": "ucsc-splitfile",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Split up a file",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:52:42+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312048601"
+    },
+    {
+      "image": "ucsc-splitfilebycolumn",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Split text input into files named by column value",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:54:13+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312079517"
+    },
+    {
+      "image": "ucsc-sqltoxml",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "dump out all or part of a relational database to XML, guided",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:55:45+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312323400"
+    },
+    {
+      "image": "ucsc-stringify",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert file to C strings",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:57:08+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312069435"
+    },
+    {
+      "image": "ucsc-subchar",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Substitute one character for another throughout a file.",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:58:32+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312047546"
+    },
+    {
+      "image": "ucsc-subcolumn",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Substitute one column in a tab-separated file.",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:00:05+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312072873"
+    },
+    {
+      "image": "ucsc-taillines",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "add tail to each line of file",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:01:39+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312045918"
+    },
+    {
+      "image": "ucsc-tdbquery",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Query the trackDb system using SQL syntax.",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:03:04+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "316509072"
+    },
+    {
+      "image": "ucsc-texthistogram",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Make a histogram in ascii",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:04:32+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312088543"
+    },
+    {
+      "image": "ucsc-ticktodate",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert seconds since 1970 to time and date",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:06:04+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312068585"
+    },
+    {
+      "image": "ucsc-tolower",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert upper case to lower case in file. Leave other chars alone",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:07:44+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312046116"
+    },
+    {
+      "image": "ucsc-toupper",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert lower case to upper case in file. Leave other chars alone",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:09:12+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312046108"
+    },
+    {
+      "image": "ucsc-trfbig",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Mask tandem repeats on a big sequence file.",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:11:01+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312197644"
+    },
+    {
+      "image": "ucsc-twobitdup",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "check to see if a twobit file has any identical sequences in it",
+      "travisid": 129241984,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:12:36+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312211741"
+    }
+  ]
+}
+---
