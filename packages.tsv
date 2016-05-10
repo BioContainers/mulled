@@ -87,7 +87,7 @@ conda	macs2	2.1.1--r3.2.2_0	macs2 --version 2>&1 > /dev/null
 conda	sam	3.5--0	buildmodel -v
 conda	qiime	1.9.1--py27_0	python -c 'import qiime'
 conda	biom-format	2.1.5--py35_3	python -c 'import biom'
-conda	ucsc-mafsinregion	324--0	which mafSinRegion
+conda	ucsc-mafsinregion	324--0	which mafsInRegion
 conda	ucsc-mafspecieslist	324--0	which mafSpeciesList
 conda	ucsc-mafspeciessubset	324--0	which mafSpeciesSubset
 conda	ucsc-mafsplit	324--0	which mafSplit
