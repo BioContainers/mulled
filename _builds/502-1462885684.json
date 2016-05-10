@@ -1,0 +1,31 @@
+---
+{
+  "title": "502",
+  "packages": [
+    {
+      "image": "biom-format",
+      "packager": "conda",
+      "homepage": "http://www.biom-format.org",
+      "description": "Biological Observation Matrix (BIOM) format",
+      "travisid": 129127583,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T12:59:25+0000",
+      "version": "2.1.5--py35_3",
+      "revision": "2.1.5--py35_3",
+      "size": "710585291"
+    },
+    {
+      "image": "qiime",
+      "packager": "conda",
+      "homepage": "http://www.qiime.org",
+      "description": "Quantitative Insights Into Microbial Ecology",
+      "travisid": 129127583,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T13:08:01+0000",
+      "version": "1.9.1--py27_0",
+      "revision": "1.9.1--py27_0",
+      "size": "1335330195"
+    }
+  ]
+}
+---
