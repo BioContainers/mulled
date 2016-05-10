@@ -149,7 +149,7 @@ conda	ucsc-lavtopsl	324--0	which lavToPsl
 conda	ucsc-liftover	324--0	which liftOver
 conda	ucsc-liftup	324--0	which liftUp
 conda	ucsc-mafaddirows	324--0	which mafAddIRows
-conda	ucsc-mafaddqrows	324--0	which mafaddQRows
+conda	ucsc-mafaddqrows	324--0	which mafAddQRows
 conda	ucsc-mafcoverage	324--0	which mafCoverage
 conda	ucsc-maffetch	324--0	which mafFetch
 conda	ucsc-maffilter	324--0	which mafFilter
