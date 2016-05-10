@@ -87,3 +87,17 @@ conda	macs2	2.1.1--r3.2.2_0	macs2 --version 2>&1 > /dev/null
 conda	sam	3.5--0	buildmodel -v
 conda	qiime	1.9.1--py27_0	python -c 'import qiime'
 conda	biom-format	2.1.5--py35_3	python -c 'import biom'
+conda	ucsc-addcols	324--0	which addCols
+conda	ucsc-axttomaf	324--0	which axtToMaf
+conda	ucsc-axttopsl	324--0	which axtToPsl
+conda	ucsc-bedclip	324--0	which bedClip
+conda	ucsc-bedcommonregions	324--0	which bedCommonRegions
+conda	ucsc-bedcoverage	324--0	which bedCoverage
+conda	ucsc-bedextendranges	324--0	which bedExtendRanges
+conda	ucsc-bedgeneparts	324--0	which bedGeneParts
+conda	ucsc-bedgraphpack	324--0	which bedGraphPack
+conda	ucsc-bedgraphtobigwig	324--0	which bedGraphToBigWig
+conda	ucsc-bedintersect	324--0	which bedIntersect
+conda	ucsc-beditemoverlapcount	324--0	which bedItemOverlapCount
+conda	ucsc-bedpileups	324--0	which bedPileUps
+conda	ucsc-bedremoveoverlap	324--0	which bedRemoveOverlap
