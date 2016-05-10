@@ -101,6 +101,16 @@ conda	ucsc-bedintersect	324--0	which bedIntersect
 conda	ucsc-beditemoverlapcount	324--0	which bedItemOverlapCount
 conda	ucsc-bedpileups	324--0	which bedPileUps
 conda	ucsc-bedremoveoverlap	324--0	which bedRemoveOverlap
+conda	ucsc-twobitinfo	324--0	which twoBitInfo
+conda	ucsc-twobitmask	324--0	which twoBitMask
+conda	ucsc-twobittofa	324--0	which twoBitToFa
+conda	ucsc-validatefiles	324--0	which validateFiles
+conda	ucsc-validatemanifest	324--0	which validateManifest
+conda	ucsc-wigcorrelate	324--0	which wigCorrelate
+conda	ucsc-wigtobigwig	324--0	which wigToBigWig
+conda	ucsc-wordline	324--0	which wordLine
+conda	ucsc-xmlcat	324--0	which xmlCat
+conda	ucsc-xmltosql	324--0	which xmlToSql
 conda	ucsc-splitfile	324--0	which splitFile
 conda	ucsc-splitfilebycolumn	324--0	which splitFileByColumn
 conda	ucsc-sqltoxml	324--0	which sqlToXml
