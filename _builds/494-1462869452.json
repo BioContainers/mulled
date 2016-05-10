@@ -1,0 +1,19 @@
+---
+{
+  "title": "494",
+  "packages": [
+    {
+      "image": "mothur",
+      "packager": "conda",
+      "homepage": "http://www.mothur.org",
+      "description": "",
+      "travisid": 129072353,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T08:37:30+0000",
+      "version": "1.36.1--boost1.60_2",
+      "revision": "1.36.1--boost1.60_2",
+      "size": "382381446"
+    }
+  ]
+}
+---
