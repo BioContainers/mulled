@@ -82,5 +82,6 @@ conda	opsin	2.1.0--1	opsin --help
 conda	ddocent	2.1--0	dDocent --help
 conda	peptide-shaker	1.1.3--1	peptide-shaker eu.isas.peptideshaker.cmd.PeptideShakerCLI
 conda	searchgui	2.1.4--1	searchgui eu.isas.searchgui.cmd.FastaCLI
+conda	mothur	1.36.1--boost1.60_1	mothur '#help()'
 conda	macs2	2.1.1--r3.2.2_0	macs2 --version 2>&1 > /dev/null
 conda	sam	3.5--0	buildmodel -v
