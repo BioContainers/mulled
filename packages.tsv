@@ -101,13 +101,3 @@ conda	ucsc-tolower	324--0	which toLower
 conda	ucsc-toupper	324--0	which toUpper
 conda	ucsc-trfbig	324--0	which trfBig
 conda	ucsc-twobitdup	324--0	which twoBitDup
-conda	ucsc-twobitinfo	324--0	which twoBitInfo
-conda	ucsc-twobitmask	324--0	which twoBitMask
-conda	ucsc-twobittofa	324--0	which twoBitToFa
-conda	ucsc-validatefiles	324--0	which validateFiles
-conda	ucsc-validatemanifest	324--0	which validateManifest
-conda	ucsc-wigcorrelate	324--0	which wigCorrelate
-conda	ucsc-wigtobigwig	324--0	which wigToBigWig
-conda	ucsc-wordline	324--0	which wordLine
-conda	ucsc-xmlcat	324--0	which xmlCat
-conda	ucsc-xmltosql	324--0	which xmlToSql
