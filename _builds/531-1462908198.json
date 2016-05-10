@@ -1,0 +1,175 @@
+---
+{
+  "title": "531",
+  "packages": [
+    {
+      "image": "ucsc-addcols",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Sum columns in a text file.",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:02:23+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312047000"
+    },
+    {
+      "image": "ucsc-axttomaf",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert from axt to maf format",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:03:46+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308507003"
+    },
+    {
+      "image": "ucsc-axttopsl",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert axt to psl format",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:05:08+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308731636"
+    },
+    {
+      "image": "ucsc-bedclip",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Remove lines from bed file that refer to off-chromosome places.",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:06:40+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308489185"
+    },
+    {
+      "image": "ucsc-bedcommonregions",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Create a bed file (just bed3) that contains the regions common to all inputs.",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:08:51+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308351727"
+    },
+    {
+      "image": "ucsc-bedcoverage",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Analyse coverage by bed files - chromosome by",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:10:21+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312910211"
+    },
+    {
+      "image": "ucsc-bedextendranges",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "extend length of entries in bed 6+ data to be at least the given length,",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:11:52+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312889176"
+    },
+    {
+      "image": "ucsc-bedgeneparts",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Given a bed, spit out promoter, first exon, or all introns.",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:13:22+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308804696"
+    },
+    {
+      "image": "ucsc-bedgraphpack",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Pack together adjacent records representing same value.",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:15:14+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308351123"
+    },
+    {
+      "image": "ucsc-bedgraphtobigwig",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert a bedGraph file to bigWig format.",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:16:51+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308511768"
+    },
+    {
+      "image": "ucsc-bedintersect",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Intersect two bed files",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:18:32+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308377539"
+    },
+    {
+      "image": "ucsc-beditemoverlapcount",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "count number of times a base is overlapped by the",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:20:10+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312892457"
+    },
+    {
+      "image": "ucsc-bedpileups",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Find (exact) overlaps if any in bed input",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:21:38+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308353080"
+    },
+    {
+      "image": "ucsc-bedremoveoverlap",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Remove overlapping records from a (sorted) bed file. Gets rid of",
+      "travisid": 129225872,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T19:23:16+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308352685"
+    }
+  ]
+}
+---
