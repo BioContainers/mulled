@@ -99,7 +99,7 @@ conda	ucsc-bedgraphpack	324--0	which bedGraphPack
 conda	ucsc-bedgraphtobigwig	324--0	which bedGraphToBigWig
 conda	ucsc-bedintersect	324--0	which bedIntersect
 conda	ucsc-beditemoverlapcount	324--0	which bedItemOverlapCount
-conda	ucsc-bedpileups	324--0	which bedPileups
+conda	ucsc-bedpileups	324--0	which bedPileUps
 conda	ucsc-bedremoveoverlap	324--0	which bedRemoveOverlap
 conda	ucsc-bedrestricttopositions	324--0	which bedRestrictToPositions
 conda	ucsc-bedsort	324--0	which bedSort
