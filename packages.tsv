@@ -85,4 +85,4 @@ conda	searchgui	2.1.4--1	searchgui eu.isas.searchgui.cmd.FastaCLI
 conda	mothur	1.36.1--boost1.60_2	mothur '#help()'
 conda	macs2	2.1.1--r3.2.2_0	macs2 --version 2>&1 > /dev/null
 conda	sam	3.5--0	buildmodel -v
-conda	qiime	1.9.1--py27_0	python -c 'qiime'
+conda	qiime	1.9.1--py27_0	python -c 'import qiime'
