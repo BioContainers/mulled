@@ -89,7 +89,7 @@ conda	qiime	1.9.1--py27_0	python -c 'import qiime'
 conda	biom-format	2.1.5--py35_3	python -c 'import biom'
 conda	ucsc-pslfilter	324--0	which pslFilter
 conda	ucsc-pslhisto	324--0	which pslHisto
-conda	ucsc-pslliftsubrangeblat	324--0	which pslLiftSubRangeBlat
+conda	ucsc-pslliftsubrangeblat	324--0	which pslLiftSubrangeBlat
 conda	ucsc-pslmap	324--0	which pslMap
 conda	ucsc-pslmrnacover	324--0	which pslMrnaCover
 conda	ucsc-pslpairs	324--0	which pslPairs
