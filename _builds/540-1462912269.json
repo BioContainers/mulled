@@ -1,0 +1,127 @@
+---
+{
+  "title": "540",
+  "packages": [
+    {
+      "image": "ucsc-twobitinfo",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "get information about sequences in a .2bit file",
+      "travisid": 129245907,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:16:39+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312200706"
+    },
+    {
+      "image": "ucsc-twobitmask",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "apply masking to a .2bit file, creating a new .2bit file",
+      "travisid": 129245907,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:18:24+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312603934"
+    },
+    {
+      "image": "ucsc-twobittofa",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert all or part of .2bit file to fasta",
+      "travisid": 129245907,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:20:09+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312633816"
+    },
+    {
+      "image": "ucsc-validatefiles",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Validates the format of different genomic files.",
+      "travisid": 129245907,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:21:46+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "316474378"
+    },
+    {
+      "image": "ucsc-validatemanifest",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Validates the ENCODE3 manifest.txt file.",
+      "travisid": 129245907,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:23:12+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312177798"
+    },
+    {
+      "image": "ucsc-wigcorrelate",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Produce a table that correlates all pairs of wigs.",
+      "travisid": 129245907,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:24:47+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308642109"
+    },
+    {
+      "image": "ucsc-wigtobigwig",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert ascii format wig file (in fixedStep, variableStep",
+      "travisid": 129245907,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:26:25+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308547921"
+    },
+    {
+      "image": "ucsc-wordline",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "chop up words by white space and output them with one",
+      "travisid": 129245907,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:28:08+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312082023"
+    },
+    {
+      "image": "ucsc-xmlcat",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Concatenate xml files together, stuffing all records inside a single outer tag.",
+      "travisid": 129245907,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:29:33+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312098812"
+    },
+    {
+      "image": "ucsc-xmltosql",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert XML dump into a fairly normalized relational database",
+      "travisid": 129245907,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:31:06+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312181667"
+    }
+  ]
+}
+---
