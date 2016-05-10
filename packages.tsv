@@ -87,3 +87,13 @@ conda	macs2	2.1.1--r3.2.2_0	macs2 --version 2>&1 > /dev/null
 conda	sam	3.5--0	buildmodel -v
 conda	qiime	1.9.1--py27_0	python -c 'import qiime'
 conda	biom-format	2.1.5--py35_3	python -c 'import biom'
+conda	ucsc-twobitinfo	324--0	which twoBitInfo
+conda	ucsc-twobitmask	324--0	which twoBitMask
+conda	ucsc-twobittofa	324--0	which twoBitToFa
+conda	ucsc-validatefiles	324--0	which validateFiles
+conda	ucsc-validatemanifest	324--0	which validateManifest
+conda	ucsc-wigcorrelate	324--0	which wigCorrelate
+conda	ucsc-wigtobigwig	324--0	which wigToBigWig
+conda	ucsc-wordline	324--0	which wordLine
+conda	ucsc-xmlcat	324--0	which xmlCat
+conda	ucsc-xmltosql	324--0	which xmlToSql
