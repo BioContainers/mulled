@@ -125,3 +125,17 @@ conda	ucsc-tolower	324--0	which toLower
 conda	ucsc-toupper	324--0	which toUpper
 conda	ucsc-trfbig	324--0	which trfBig
 conda	ucsc-twobitdup	324--0	which twoBitDup
+conda	ucsc-mafsinregion	324--0	which mafsInRegion
+conda	ucsc-mafspecieslist	324--0	which mafSpeciesList
+conda	ucsc-mafspeciessubset	324--0	which mafSpeciesSubset
+conda	ucsc-mafsplit	324--0	which mafSplit
+conda	ucsc-mafsplitpos	324--0	which mafSplitPos
+conda	ucsc-maftoaxt	324--0	which mafToAxt
+conda	ucsc-maftopsl	324--0	which mafToPsl
+conda	ucsc-maftosnpbed	324--0	which mafToSnpBed
+conda	ucsc-netchainsubset	324--0	which netChainSubset
+conda	ucsc-nettobed	324--0	which netToBed
+conda	ucsc-pslcat	324--0	which pslCat
+conda	ucsc-pslcdnafilter	324--0	which pslCDnaFilter
+conda	ucsc-pslcheck	324--0	which pslCheck
+conda	ucsc-psldropoverlap	324--0	which pslDropOverlap
