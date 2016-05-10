@@ -111,17 +111,3 @@ conda	ucsc-chainantirepeat	324--0	which chainAntiRepeat
 conda	ucsc-chainfilter	324--0	which chainFilter
 conda	ucsc-chainmergesort	324--0	which chainMergeSort
 conda	ucsc-chainnet	324--0	which chainNet
-conda	ucsc-chainprenet	324--0	which chainPreNet
-conda	ucsc-chainsort	324--0	which chainSort
-conda	ucsc-chainsplit	324--0	which chainSplit
-conda	ucsc-chainstitchid	324--0	which chainStitchId
-conda	ucsc-chainswap	324--0	which chainSwap
-conda	ucsc-chaintoaxt	324--0	which chainToAxt
-conda	ucsc-chaintopsl	324--0	which chainToPsl
-conda	ucsc-chaintopslbasic	324--0	which chainToPslBasic
-conda	ucsc-crtreeindexbed	324--0	which crTreeIndexBed
-conda	ucsc-crtreesearchbed	324--0	which crTreeSearchBed
-conda	ucsc-fatotwobit	324--0	which faToTwoBit
-conda	ucsc-fetchchromsizes	324--0	which fetchChromSizes
-conda	ucsc-genepredtobed	324--0	which genePredToBed
-conda	ucsc-genepredtofakepsl	324--0	which genePredToFakePsl
