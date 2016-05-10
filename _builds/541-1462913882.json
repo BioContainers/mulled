@@ -1,0 +1,175 @@
+---
+{
+  "title": "541",
+  "packages": [
+    {
+      "image": "ucsc-mafsinregion",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Extract MAFS in a genomic region",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:39:20+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308854553"
+    },
+    {
+      "image": "ucsc-mafspecieslist",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Scan maf and output all species used in it.",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:40:43+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308438954"
+    },
+    {
+      "image": "ucsc-mafspeciessubset",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Extract a maf that just has a subset of species.",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:42:02+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308441239"
+    },
+    {
+      "image": "ucsc-mafsplit",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Split multiple alignment files",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:43:22+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308863501"
+    },
+    {
+      "image": "ucsc-mafsplitpos",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Pick positions to split multiple alignment input files",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:44:42+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312888938"
+    },
+    {
+      "image": "ucsc-maftoaxt",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert from maf to axt format",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:46:09+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308504989"
+    },
+    {
+      "image": "ucsc-maftopsl",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert maf to psl format",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:47:58+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308715994"
+    },
+    {
+      "image": "ucsc-maftosnpbed",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "finds SNPs in MAF and builds a bed with their functional consequence",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:49:22+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312886835"
+    },
+    {
+      "image": "ucsc-netchainsubset",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Create chain file with subset of chains that appear in the net",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:50:54+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308451254"
+    },
+    {
+      "image": "ucsc-nettobed",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert target coverage of net to a bed file.",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:52:16+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308370716"
+    },
+    {
+      "image": "ucsc-pslcat",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "concatenate psl files",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:53:48+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308643010"
+    },
+    {
+      "image": "ucsc-pslcdnafilter",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Filter cDNA alignments in psl format. Filtering criteria are comparative, selecting near best in genome alignments for each given cDNA and non-comparative, based only on the quality of an individual alignment.",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:55:11+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308837887"
+    },
+    {
+      "image": "ucsc-pslcheck",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "validate PSL files",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:56:31+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312895455"
+    },
+    {
+      "image": "ucsc-psldropoverlap",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "deletes all overlapping self alignments.",
+      "travisid": 129254326,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-10T20:58:00+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308648576"
+    }
+  ]
+}
+---
