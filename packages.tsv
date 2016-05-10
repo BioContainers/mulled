@@ -87,3 +87,17 @@ conda	macs2	2.1.1--r3.2.2_0	macs2 --version 2>&1 > /dev/null
 conda	sam	3.5--0	buildmodel -v
 conda	qiime	1.9.1--py27_0	python -c 'import qiime'
 conda	biom-format	2.1.5--py35_3	python -c 'import biom'
+conda	ucsc-splitfile	324--0	which splitFile
+conda	ucsc-splitfilebycolumn	324--0	which splitFileByColumn
+conda	ucsc-sqltoxml	324--0	which sqlToXml
+conda	ucsc-stringify	324--0	which stringify
+conda	ucsc-subchar	324--0	which subChar
+conda	ucsc-subcolumn	324--0	which subColumn
+conda	ucsc-taillines	324--0	which tailLines
+conda	ucsc-tdbquery	324--0	which tdbQuery
+conda	ucsc-texthistogram	324--0	which textHistogram
+conda	ucsc-ticktodate	324--0	which tickToDate
+conda	ucsc-tolower	324--0	which toLower
+conda	ucsc-toupper	324--0	which toUpper
+conda	ucsc-trfbig	324--0	which trfBig
+conda	ucsc-twobitdup	324--0	which twoBitDup
