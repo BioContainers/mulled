@@ -1,7 +1,14 @@
-# Mulled - Containerized Software Repository
-
 [![Gitter](https://badges.gitter.im/mulled/mulled.svg)](https://gitter.im/mulled/mulled?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/mulled/mulled.svg?branch=master)](https://travis-ci.org/mulled/mulled)
 
+# Mulled - Containerized Software Repository
+
+You need to have a very slim [Docker](https://www.docker.com/) or [rkt](https://coreos.com/rkt/) Container of your favorite tool?
+
+Your tool is already available in conda, alpine or linuxbrew?
+
+Fantastic! This project will generate a minimal Container either for [Docker](https://www.docker.com/) or [rkt](https://coreos.com/rkt/) and all what you need to do is to write one single line in [packages.tsv](https://github.com/mulled/mulled/blob/master/packages.tsv).
+
+Try it and build containers with us!
 
 # How to build your own container
 
