@@ -30,6 +30,7 @@ conda	deeptools	2.2.2--py27_0	bamCompare --version
 conda	deeptools	2.2.3--py27_0	bamCompare --version
 conda	bowtie	1.1.2--py35_1	(bowtie --version 2>&1) > /dev/null
 conda	metaphlan2	2.2.0--py27_1	metaphlan2.py -v
+conda	hifive	1.3.0--py27_0	python -c 'import hifive'
 conda	carna	1.3.1--3	carna --help
 conda	infernal	1.1.1--0	cmsearch -h
 conda	intarna	1.2.5--1	IntaRNA -h
