@@ -1,0 +1,91 @@
+---
+{
+  "title": "582",
+  "packages": [
+    {
+      "image": "ucsc-pslfilter",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "filter out psl file",
+      "travisid": 129418226,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T13:03:55+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308645929"
+    },
+    {
+      "image": "ucsc-pslhisto",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Collect counts on PSL alignments for making histograms. These then be analyzed with R, textHistogram, etc.",
+      "travisid": 129418226,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T13:05:07+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308678886"
+    },
+    {
+      "image": "ucsc-pslliftsubrangeblat",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "lift PSLs from blat subrange alignments",
+      "travisid": 129418226,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T13:06:23+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312908410"
+    },
+    {
+      "image": "ucsc-pslmap",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "map PSLs alignments to new targets using alignments of",
+      "travisid": 129418226,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T13:07:37+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308748285"
+    },
+    {
+      "image": "ucsc-pslmrnacover",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Make histogram of coverage percentage of mRNA in psl.",
+      "travisid": 129418226,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T13:08:54+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308716048"
+    },
+    {
+      "image": "ucsc-pslpairs",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "join paired ends in psl alignments",
+      "travisid": 129418226,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T13:10:17+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308688884"
+    },
+    {
+      "image": "ucsc-pslpartition",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "split PSL files into non-overlapping sets",
+      "travisid": 129418226,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T13:11:28+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308675845"
+    }
+  ]
+}
+---
