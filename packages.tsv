@@ -163,7 +163,7 @@ conda	ucsc-pslxtofa	324--0	which pslxToFa
 conda	ucsc-qactowig	324--0	which qacToWig
 conda	ucsc-qatoqac	324--0	which qaToQac
 conda	ucsc-randomlines	324--0	which randomLines
-conda	ucsc-rasqlquery	324--0	which rasqlQuery
+conda	ucsc-rasqlquery	324--0	which raSqlQuery
 conda	ucsc-ratolines	324--0	which raToLines
 conda	ucsc-ratotab	324--0	which raToTab
 conda	ucsc-rmfadups	324--0	which rmFaDups
