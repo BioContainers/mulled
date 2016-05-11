@@ -1,0 +1,103 @@
+---
+{
+  "title": "580",
+  "packages": [
+    {
+      "image": "ucsc-pslpostarget",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "flip psl strands so target is positive and implicit",
+      "travisid": 129413833,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:44:05+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308664141"
+    },
+    {
+      "image": "ucsc-pslpretty",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert PSL to human-readable output",
+      "travisid": 129413833,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:45:22+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308935631"
+    },
+    {
+      "image": "ucsc-pslrecalcmatch",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Recalculate match,mismatch,repMatch columns in psl file.",
+      "travisid": 129413833,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:46:41+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308864472"
+    },
+    {
+      "image": "ucsc-pslreps",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Analyze repeats and generate genome-wide best alignments from a",
+      "travisid": 129413833,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:47:59+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308683361"
+    },
+    {
+      "image": "ucsc-pslscore",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "calculate web blat score from psl files",
+      "travisid": 129413833,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:49:17+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308664312"
+    },
+    {
+      "image": "ucsc-pslselect",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "select records from a PSL file.",
+      "travisid": 129413833,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:50:43+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308670608"
+    },
+    {
+      "image": "ucsc-pslsort",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Merge and sort psCluster .psl output files",
+      "travisid": 129413833,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:52:17+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308680898"
+    },
+    {
+      "image": "ucsc-pslstats",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "collect statistics from a psl file.",
+      "travisid": 129413833,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:53:43+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308682098"
+    }
+  ]
+}
+---
