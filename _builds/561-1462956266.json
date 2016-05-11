@@ -1,0 +1,103 @@
+---
+{
+  "title": "561",
+  "packages": [
+    {
+      "image": "ucsc-maffetch",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "get overlapping records from an MAF using an index table",
+      "travisid": 129363764,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:34:47+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312885062"
+    },
+    {
+      "image": "ucsc-maffilter",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Filter out maf files. Output goes to standard out",
+      "travisid": 129363764,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:36:07+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308449439"
+    },
+    {
+      "image": "ucsc-maffrag",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Extract maf sequences for a region from database",
+      "travisid": 129363764,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:37:44+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312882476"
+    },
+    {
+      "image": "ucsc-maffrags",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Collect MAFs from regions specified in a 6 column bed file",
+      "travisid": 129363764,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:39:01+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312890898"
+    },
+    {
+      "image": "ucsc-mafgene",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "output protein alignments using maf and genePred",
+      "travisid": 129363764,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:40:21+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312949808"
+    },
+    {
+      "image": "ucsc-mafmefirst",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Move component to top if it is one of the named ones.",
+      "travisid": 129363764,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:41:44+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308439525"
+    },
+    {
+      "image": "ucsc-maforder",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "order components within a maf file",
+      "travisid": 129363764,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:43:08+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308439116"
+    },
+    {
+      "image": "ucsc-mafranges",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Extract ranges of target (or query) coverage from maf and",
+      "travisid": 129363764,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:44:23+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308446793"
+    }
+  ]
+}
+---
