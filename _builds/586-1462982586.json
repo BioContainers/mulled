@@ -1,0 +1,19 @@
+---
+{
+  "title": "586",
+  "packages": [
+    {
+      "image": "hifive",
+      "packager": "conda",
+      "homepage": "https://github.com/bxlab/hifive",
+      "description": "Python library for normalizing and analyzing HiC and 5C data",
+      "travisid": 129463312,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T16:03:04+0000",
+      "version": "1.3.0--py27_0",
+      "revision": "1.3.0--py27_0",
+      "size": "822884342"
+    }
+  ]
+}
+---
