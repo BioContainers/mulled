@@ -213,6 +213,4 @@ conda	ucsc-chainantirepeat	324--0	which chainAntiRepeat
 conda	ucsc-chainfilter	324--0	which chainFilter
 conda	ucsc-chainmergesort	324--0	which chainMergeSort
 conda	ucsc-chainnet	324--0	which chainNet
-conda	ucsc-pslpostarget	324--0	which pslPosTarget
-conda	ucsc-pslpretty	324--0	which pslPretty
-conda	ucsc-pslrecalcmatch	324--0	which pslRecalcMatch
+
