@@ -1,0 +1,19 @@
+---
+{
+  "title": "589",
+  "packages": [
+    {
+      "image": "fiji",
+      "packager": "conda",
+      "homepage": "http://fiji.sc/",
+      "description": "Fiji is an image processing package—a \"batteries-included\" distribution of ImageJ, bundling a lot of plugins which facilitate scientific image analysis.",
+      "travisid": 129467023,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T16:16:03+0000",
+      "version": "20141125--3",
+      "revision": "20141125--3",
+      "size": "393782575"
+    }
+  ]
+}
+---
