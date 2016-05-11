@@ -182,7 +182,7 @@ conda	ucsc-bigwigcorrelate	324--0	which bigWigCorrelate
 conda	ucsc-bigwiginfo	324--0	which bigWigInfo
 conda	ucsc-bigwigmerge	324--0	which bigWigMerge
 conda	ucsc-bigwigsummary	324--0	which bigWigSummary
-conda	ucsc-bigwigtobedgraph	324--0	which bigWigToBedgraph
+conda	ucsc-bigwigtobedgraph	324--0	which bigWigToBedGraph
 conda	ucsc-bigwigtowig	324--0	which bigWigToWig
 conda	ucsc-blasttopsl	324--0	which blastToPsl
 conda	ucsc-chainantirepeat	324--0	which chainAntiRepeat
