@@ -221,3 +221,10 @@ conda	ucsc-pslstats	324--0	which pslStats
 conda	ucsc-pslpostarget	324--0	which pslPosTarget
 conda	ucsc-pslpretty	324--0	which pslPretty
 conda	ucsc-pslrecalcmatch	324--0	which pslRecalcMatch
+conda	ucsc-pslfilter	324--0	which pslFilter
+conda	ucsc-pslhisto	324--0	which pslHisto
+conda	ucsc-pslliftsubrangeblat	324--0	which pslLiftSubrangeBlat
+conda	ucsc-pslmap	324--0	which pslMap
+conda	ucsc-pslmrnacover	324--0	which pslMrnaCover
+conda	ucsc-pslpairs	324--0	which pslPairs
+conda	ucsc-pslpartition	324--0	which pslPartition
