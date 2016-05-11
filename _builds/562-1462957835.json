@@ -1,0 +1,151 @@
+---
+{
+  "title": "562",
+  "packages": [
+    {
+      "image": "ucsc-genepredtomafframes",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "create mafFrames tables from a genePreds",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:54:54+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312988883"
+    },
+    {
+      "image": "ucsc-gtftogenepred",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "convert a GTF file to a genePred",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:56:13+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312889496"
+    },
+    {
+      "image": "ucsc-hgloadbed",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Load a generic bed file into database",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:57:39+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312936908"
+    },
+    {
+      "image": "ucsc-hgloadchain",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Load a generic Chain file into database",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:58:56+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312911022"
+    },
+    {
+      "image": "ucsc-hgloadmaf",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Load a maf file index into the database",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T09:00:14+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312922051"
+    },
+    {
+      "image": "ucsc-hgloadwiggle",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Load a wiggle track definition into database",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T09:01:44+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312919377"
+    },
+    {
+      "image": "ucsc-lavtopsl",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert blastz lav to psl format",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T09:03:45+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308878111"
+    },
+    {
+      "image": "ucsc-liftover",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Move annotations from one assembly to another",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T09:05:07+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312889557"
+    },
+    {
+      "image": "ucsc-liftup",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "change coordinates of .psl, .agp, .gap, .gl, .out, .align, .gff, .gtf",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T09:06:27+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "313041401"
+    },
+    {
+      "image": "ucsc-mafaddirows",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "add 'i' rows to a maf",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T09:07:52+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308552593"
+    },
+    {
+      "image": "ucsc-mafaddqrows",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Add quality data to a maf",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T09:09:08+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308531260"
+    },
+    {
+      "image": "ucsc-mafcoverage",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Analyse coverage by maf files - chromosome by",
+      "travisid": 129367296,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T09:10:33+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312918269"
+    }
+  ]
+}
+---
