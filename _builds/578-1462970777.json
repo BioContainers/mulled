@@ -1,0 +1,67 @@
+---
+{
+  "title": "578",
+  "packages": [
+    {
+      "image": "ucsc-pslreps",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Analyze repeats and generate genome-wide best alignments from a",
+      "travisid": 129413134,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:41:00+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308683361"
+    },
+    {
+      "image": "ucsc-pslscore",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "calculate web blat score from psl files",
+      "travisid": 129413134,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:42:22+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308664312"
+    },
+    {
+      "image": "ucsc-pslselect",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "select records from a PSL file.",
+      "travisid": 129413134,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:43:38+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308670608"
+    },
+    {
+      "image": "ucsc-pslsort",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Merge and sort psCluster .psl output files",
+      "travisid": 129413134,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:44:57+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308680898"
+    },
+    {
+      "image": "ucsc-pslstats",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "collect statistics from a psl file.",
+      "travisid": 129413134,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:46:15+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308682098"
+    }
+  ]
+}
+---
