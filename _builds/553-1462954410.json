@@ -1,0 +1,19 @@
+---
+{
+  "title": "553",
+  "packages": [
+    {
+      "image": "star",
+      "packager": "conda",
+      "homepage": "https://github.com/alexdobin/STAR",
+      "description": "An RNA-seq read aligner.",
+      "travisid": 129360842,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T08:13:28+0000",
+      "version": "2.5.1b--0",
+      "revision": "2.5.1b--0",
+      "size": "31358682"
+    }
+  ]
+}
+---
