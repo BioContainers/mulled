@@ -213,3 +213,8 @@ conda	ucsc-chainantirepeat	324--0	which chainAntiRepeat
 conda	ucsc-chainfilter	324--0	which chainFilter
 conda	ucsc-chainmergesort	324--0	which chainMergeSort
 conda	ucsc-chainnet	324--0	which chainNet
+conda	ucsc-pslreps	324--0	which pslReps
+conda	ucsc-pslscore	324--0	which pslScore
+conda	ucsc-pslselect	324--0	which pslSelect
+conda	ucsc-pslsort	324--0	which pslSort
+conda	ucsc-pslstats	324--0	which pslStats
