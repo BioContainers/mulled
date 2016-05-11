@@ -94,12 +94,4 @@ conda	ucsc-pslmap	324--0	which pslMap
 conda	ucsc-pslmrnacover	324--0	which pslMrnaCover
 conda	ucsc-pslpairs	324--0	which pslPairs
 conda	ucsc-pslpartition	324--0	which pslPartition
-conda	ucsc-pslpostarget	324--0	which pslPosTarget
-conda	ucsc-pslpretty	324--0	which pslPretty
-conda	ucsc-pslrecalcmatch	324--0	which pslRecalcMatch
-conda	ucsc-pslreps	324--0	which pslReps
-conda	ucsc-pslscore	324--0	which pslScore
-conda	ucsc-pslselect	324--0	which pslSelect
-conda	ucsc-pslsort	324--0	which pslSort
-conda	ucsc-pslstats	324--0	which pslStats
 
