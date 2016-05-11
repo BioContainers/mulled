@@ -102,18 +102,4 @@ conda	ucsc-pslscore	324--0	which pslScore
 conda	ucsc-pslselect	324--0	which pslSelect
 conda	ucsc-pslsort	324--0	which pslSort
 conda	ucsc-pslstats	324--0	which pslStats
-conda	ucsc-pslswap	324--0	which pslSwap
-conda	ucsc-psltobed	324--0	which pslToBed
-conda	ucsc-psltobigpsl	324--0	which pslToBigPsl
-conda	ucsc-psltochain	324--0	which pslToChain
-conda	ucsc-psltopslx	324--0	which pslToPslx
-conda	ucsc-pslxtofa	324--0	which pslxToFa
-conda	ucsc-qactowig	324--0	which qacToWig
-conda	ucsc-qatoqac	324--0	which qaToQac
-conda	ucsc-randomlines	324--0	which randomLines
-conda	ucsc-rasqlquery	324--0	which rasqlQuery
-conda	ucsc-ratolines	324--0	which raToLines
-conda	ucsc-ratotab	324--0	which raToTab
-conda	ucsc-rmfadups	324--0	which rmFaDups
-conda	ucsc-rowstocols	324--0	which rowsToCols
-conda	ucsc-spacedtotab	324--0	which spacedToTab
+
