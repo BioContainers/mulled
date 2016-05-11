@@ -174,3 +174,12 @@ conda	ucsc-liftup	324--0	which liftUp
 conda	ucsc-mafaddirows	324--0	which mafAddIRows
 conda	ucsc-mafaddqrows	324--0	which mafAddQRows
 conda	ucsc-mafcoverage	324--0	which mafCoverage
+conda	ucsc-bedrestricttopositions	324--0	which bedRestrictToPositions
+conda	ucsc-bedsort	324--0	which bedSort
+conda	ucsc-bedtobigbed	324--0	which bedToBigBed
+conda	ucsc-bedtogenepred	324--0	which bedToGenePred
+conda	ucsc-bedtopsl	324--0	which bedToPsl
+conda	ucsc-bedweedoverlapping	324--0	which bedWeedOverlapping
+conda	ucsc-bigbedinfo	324--0	which bigBedInfo
+conda	ucsc-bigbednameditems	324--0	which bigBedNamedItems
+conda	ucsc-bigbedsummary	324--0	which bigBedSummary
