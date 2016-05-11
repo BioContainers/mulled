@@ -151,11 +151,3 @@ conda	ucsc-liftup	324--0	which liftUp
 conda	ucsc-mafaddirows	324--0	which mafAddIRows
 conda	ucsc-mafaddqrows	324--0	which mafAddQRows
 conda	ucsc-mafcoverage	324--0	which mafCoverage
-conda	ucsc-maffetch	324--0	which mafFetch
-conda	ucsc-maffilter	324--0	which mafFilter
-conda	ucsc-maffrag	324--0	which mafFrag
-conda	ucsc-maffrags	324--0	which mafFrags
-conda	ucsc-mafgene	324--0	which mafGene
-conda	ucsc-mafmefirst	324--0	which mafMeFirst
-conda	ucsc-maforder	324--0	which mafOrder
-conda	ucsc-mafranges	324--0	which mafRanges
