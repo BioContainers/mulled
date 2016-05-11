@@ -1,0 +1,187 @@
+---
+{
+  "title": "569",
+  "packages": [
+    {
+      "image": "ucsc-pslswap",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Swap target and query in psls",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:14:05+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308664334"
+    },
+    {
+      "image": "ucsc-psltobed",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "transform a psl format file to a bed format file.",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:15:29+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308804746"
+    },
+    {
+      "image": "ucsc-psltobigpsl",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "converts psl to bigPsl input (bed format with extra fields)",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:16:48+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312455460"
+    },
+    {
+      "image": "ucsc-psltochain",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert psl records to chain records",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:18:11+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308699234"
+    },
+    {
+      "image": "ucsc-psltopslx",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert from psl to pslx format, which includes sequences",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:19:31+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308855104"
+    },
+    {
+      "image": "ucsc-pslxtofa",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "convert pslx (with sequence) to fasta file",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:20:52+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308666737"
+    },
+    {
+      "image": "ucsc-qactowig",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "convert from compressed quality score format to wiggle format.",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:22:23+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308474835"
+    },
+    {
+      "image": "ucsc-qatoqac",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "convert from uncompressed to compressed",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:23:43+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312165910"
+    },
+    {
+      "image": "ucsc-randomlines",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Pick out random lines from file",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:25:07+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312070289"
+    },
+    {
+      "image": "ucsc-rasqlquery",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Do a SQL-like query on a RA file.",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:26:33+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "316472743"
+    },
+    {
+      "image": "ucsc-ratolines",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Output .ra file stanzas as single lines, with pipe-separated fields.",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:27:50+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312069525"
+    },
+    {
+      "image": "ucsc-ratotab",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert ra file to table.",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:29:17+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312091838"
+    },
+    {
+      "image": "ucsc-rmfadups",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "remove duplicate records in FA file",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:30:36+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312133408"
+    },
+    {
+      "image": "ucsc-rowstocols",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert rows to columns and vice versa in a text file.",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:31:56+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312085730"
+    },
+    {
+      "image": "ucsc-spacedtotab",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert fixed width space separated fields to tab separated",
+      "travisid": 129394211,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:33:45+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312093212"
+    }
+  ]
+}
+---
