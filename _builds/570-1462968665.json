@@ -1,0 +1,187 @@
+---
+{
+  "title": "570",
+  "packages": [
+    {
+      "image": "ucsc-bigbedtobed",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert from bigBed to ascii bed format.",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:50:47+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308967233"
+    },
+    {
+      "image": "ucsc-bigwigaverageoverbed",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Compute average score of big wig over each bed, which may have introns.",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:52:05+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308979466"
+    },
+    {
+      "image": "ucsc-bigwigcat",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "merge non-overlapping bigWig files",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:53:29+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308590317"
+    },
+    {
+      "image": "ucsc-bigwigcluster",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Cluster bigWigs using a hacTree",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:54:45+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308510156"
+    },
+    {
+      "image": "ucsc-bigwigcorrelate",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Correlate bigWig files, optionally only on target regions.",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:56:04+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "309027675"
+    },
+    {
+      "image": "ucsc-bigwiginfo",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Print out information about bigWig file.",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:57:29+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308501252"
+    },
+    {
+      "image": "ucsc-bigwigmerge",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Merge together multiple bigWigs into a single output bedGraph.",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T11:58:46+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308506420"
+    },
+    {
+      "image": "ucsc-bigwigsummary",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Extract summary information from a bigWig file.",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:00:43+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308513738"
+    },
+    {
+      "image": "ucsc-bigwigtobedgraph",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert from bigWig to bedGraph format.",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:02:05+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308501616"
+    },
+    {
+      "image": "ucsc-bigwigtowig",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert bigWig to wig. This will keep more of the same structure of the",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:04:08+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308500451"
+    },
+    {
+      "image": "ucsc-blasttopsl",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert blast alignments to PSLs.",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:05:27+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308727974"
+    },
+    {
+      "image": "ucsc-chainantirepeat",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Get rid of chains that are primarily the results of repeats and degenerate DNA",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:06:59+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308577668"
+    },
+    {
+      "image": "ucsc-chainfilter",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Filter chain files. Output goes to standard out.",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:08:25+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308436855"
+    },
+    {
+      "image": "ucsc-chainmergesort",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Combine sorted files into larger sorted file",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:09:41+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308438862"
+    },
+    {
+      "image": "ucsc-chainnet",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Make alignment nets out of chains",
+      "travisid": 129401809,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T12:11:02+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308479918"
+    }
+  ]
+}
+---
