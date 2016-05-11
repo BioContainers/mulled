@@ -1,0 +1,115 @@
+---
+{
+  "title": "567",
+  "packages": [
+    {
+      "image": "ucsc-bedrestricttopositions",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Filter bed file, restricting to only ones that match chrom/start/ends specified in restrict.bed file.",
+      "travisid": 129381162,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T10:04:51+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308351355"
+    },
+    {
+      "image": "ucsc-bedsort",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Sort a .bed file by chrom,chromStart",
+      "travisid": 129381162,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T10:06:11+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308769252"
+    },
+    {
+      "image": "ucsc-bedtobigbed",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert bed file to bigBed. (BigBed version: 4)",
+      "travisid": 129381162,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T10:07:48+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308964619"
+    },
+    {
+      "image": "ucsc-bedtogenepred",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "convert bed format files to genePred format",
+      "travisid": 129381162,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T10:09:08+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312905772"
+    },
+    {
+      "image": "ucsc-bedtopsl",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "convert bed format files to psl format",
+      "travisid": 129381162,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T10:10:33+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308803495"
+    },
+    {
+      "image": "ucsc-bedweedoverlapping",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Filter out beds that overlap a 'weed.bed' file.",
+      "travisid": 129381162,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T10:11:56+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308804617"
+    },
+    {
+      "image": "ucsc-bigbedinfo",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Show information about a bigBed file.",
+      "travisid": 129381162,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T10:13:12+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308968937"
+    },
+    {
+      "image": "ucsc-bigbednameditems",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Extract item of given name from bigBed",
+      "travisid": 129381162,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T10:14:32+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308966349"
+    },
+    {
+      "image": "ucsc-bigbedsummary",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Extract summary information from a bigBed file.",
+      "travisid": 129381162,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T10:15:46+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308969098"
+    }
+  ]
+}
+---
