@@ -1,0 +1,175 @@
+---
+{
+  "title": "550",
+  "packages": [
+    {
+      "image": "ucsc-chainprenet",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Remove chains that don't have a chance of being netted",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:04:49+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308428402"
+    },
+    {
+      "image": "ucsc-chainsort",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Sort chains. By default sorts by score.",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:06:09+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308425786"
+    },
+    {
+      "image": "ucsc-chainsplit",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Split chains up by target or query sequence",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:08:01+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308426864"
+    },
+    {
+      "image": "ucsc-chainstitchid",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Join chain fragments with the same chain ID into a single",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:09:33+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308425390"
+    },
+    {
+      "image": "ucsc-chainswap",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Swap target and query in chain",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:10:50+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308421635"
+    },
+    {
+      "image": "ucsc-chaintoaxt",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert from chain to axt file",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:12:10+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308647653"
+    },
+    {
+      "image": "ucsc-chaintopsl",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert chain file to psl format",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:13:24+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308622434"
+    },
+    {
+      "image": "ucsc-chaintopslbasic",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Basic conversion chain file to psl format",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:14:48+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308700734"
+    },
+    {
+      "image": "ucsc-crtreeindexbed",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Create an index for a bed file.",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:16:08+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308456416"
+    },
+    {
+      "image": "ucsc-crtreesearchbed",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Search a crTree indexed bed file and print all items that overlap query.",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:17:32+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308456574"
+    },
+    {
+      "image": "ucsc-fatotwobit",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert DNA from fasta to 2bit format",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:18:47+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "308533831"
+    },
+    {
+      "image": "ucsc-fetchchromsizes",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "used to fetch chrom.sizes information from UCSC for the given <db>",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:20:09+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "307347875"
+    },
+    {
+      "image": "ucsc-genepredtobed",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Convert from genePred to bed format. Does not yet handle genePredExt",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:21:29+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312880916"
+    },
+    {
+      "image": "ucsc-genepredtofakepsl",
+      "packager": "conda",
+      "homepage": "http://hgdownload.cse.ucsc.edu/admin/exe/",
+      "description": "Create a psl of fake-mRNA aligned to gene-preds from a file or table.",
+      "travisid": 129344035,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-11T06:23:00+0000",
+      "version": "324--0",
+      "revision": "324--0",
+      "size": "312901591"
+    }
+  ]
+}
+---
