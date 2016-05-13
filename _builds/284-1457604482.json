@@ -123,18 +123,6 @@
       "size": "5280673"
     },
     {
-      "image": "pyrad",
-      "packager": "conda",
-      "homepage": "https://github.com/wichert/pyrad",
-      "description": "Assembly and analysis of RADseq data sets",
-      "travisid": 115008358,
-      "travisslug": "mulled/mulled",
-      "date": "2016-03-10T10:02:59+0000",
-      "version": "3.0.64--py27_0",
-      "revision": "3.0.64--py27_0",
-      "size": "677106214"
-    },
-    {
       "image": "r-vegan",
       "packager": "conda",
       "homepage": "http://cran.r-project.org, https://github.com/vegandevs/vegan",
