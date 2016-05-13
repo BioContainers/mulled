@@ -1,0 +1,19 @@
+---
+{
+  "title": "593",
+  "packages": [
+    {
+      "image": "amos",
+      "packager": "conda",
+      "homepage": "http://amos.sourceforge.net/wiki/index.php/AMOS",
+      "description": "A Modular, Open-Source whole genome assembler",
+      "travisid": 130004050,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-13T14:03:10+0000",
+      "version": "3.1.0--py35_3",
+      "revision": "3.1.0--py35_3",
+      "size": "693271531"
+    }
+  ]
+}
+---
