@@ -54,6 +54,7 @@ conda	bioconductor-deseq	1.22.1--r3.2.2_0	Rscript -e 'library(''DESeq'')'
 conda	bioconductor-limma	3.26.9--0	Rscript -e 'library(''limma'')'
 conda	age-metasv	2015.01.29.3--0	age_align
 conda	abyss	1.9.0--0	ABYSS --version
+conda	amos	3.1.0--py35_3	Minimo -h > /dev/null
 conda	bioconductor-gosemsim	1.28.2--0	Rscript -e 'library(''GOSemSim'')'
 conda	last	719--py27_1	lastal -V &> /dev/null
 conda	biobambam	2.0.42--0	bamsormadup --help
