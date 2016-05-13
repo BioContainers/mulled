@@ -1,3 +1,6 @@
+---
+---
+
 (function () {
   var xmlhttp = new XMLHttpRequest();
 
@@ -46,7 +49,7 @@
         c.querySelector(".card").appendChild(n);
       });
 
-			c.querySelector("a.report-bug").href = "https://github.com/thriqon/mulled/issues/new?labels=bug&title=[" + p.id + "] Bug:";
+			c.querySelector("a.report-bug").href = "{{site.github.issues_url}}/new?labels=bug&title=[" + p.id + "] Bug:";
 
       var n = document.importNode(c, true);
       par.appendChild(n);
