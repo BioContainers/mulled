@@ -1,0 +1,19 @@
+---
+{
+  "title": "590",
+  "packages": [
+    {
+      "image": "pyrad",
+      "packager": "conda",
+      "homepage": "https://github.com/wichert/pyrad",
+      "description": "Assembly and analysis of RADseq data sets",
+      "travisid": 129479481,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-13T12:45:56+0000",
+      "version": "3.0.64--py27_0",
+      "revision": "3.0.64--py27_0",
+      "size": "677959979"
+    }
+  ]
+}
+---
