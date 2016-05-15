@@ -42,6 +42,7 @@ conda	rnaz	2.1--1	RNAz -h
 conda	sortmerna	2.0--1	sortmerna --version
 conda	viennarna	2.2.5--2	RNAfold --version
 conda	mash	1.1--0	mash -h
+conda	rdkit	2015.09.2--py27_boost1.57_0	python -c 'import rdkit'
 conda	autodock-vina	1.1.2--0	vina --help
 conda	bamhash	1.0--0	bamhash_checksum_bam --version
 conda	hicexplorer	0.1--py27_0	hicBuildMatrix --version
