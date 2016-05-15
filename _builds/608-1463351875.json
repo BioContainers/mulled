@@ -1,0 +1,19 @@
+---
+{
+  "title": "608",
+  "packages": [
+    {
+      "image": "bamtools",
+      "packager": "conda",
+      "homepage": "https://github.com/pezmaster31/bamtools",
+      "description": "C++ API & command-line toolkit for working with BAM data",
+      "travisid": 130454003,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-15T22:37:52+0000",
+      "version": "2.4.0--3",
+      "revision": "2.4.0--3",
+      "size": "13784487"
+    }
+  ]
+}
+---
