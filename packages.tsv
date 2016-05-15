@@ -20,7 +20,8 @@ conda	m4	1.4.17--0	test $(echo 'define(a, bbb)a' | m4) = 'bbb'
 conda	samtools	1.3--1	samtools --version
 conda	samtools	1.0--0	samtools --version
 conda	pyrad	3.0.64--py27_0	pyrad -h
-conda	bwa	0.7.13--1	bwa 2>&1 | grep "alignment via Burrows-Wheeler" > /dev/null
+conda	bwa	0.7.13--1	bwa 2>&1 | grep 'alignment via Burrows-Wheeler' > /dev/null
+conda	bamtools	2.4.0--2	bamtools --help
 conda	stacks	1.37--0	cstacks  2>&1 | grep cstacks
 conda	r-vegan	2.3_4--r3.2.2_1	R -e 'library(''vegan'')'
 conda	cufflinks	2.2.1--py27_1	(cuffmerge --help 2>&1) | grep Options > /dev/null
