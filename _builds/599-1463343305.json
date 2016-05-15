@@ -1,0 +1,19 @@
+---
+{
+  "title": "599",
+  "packages": [
+    {
+      "image": "bwa",
+      "packager": "conda",
+      "homepage": "http://bio-bwa.sourceforge.net",
+      "description": "The BWA read mapper.",
+      "travisid": 130431839,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-15T20:15:02+0000",
+      "version": "0.7.13--1",
+      "revision": "0.7.13--1",
+      "size": "8491325"
+    }
+  ]
+}
+---
