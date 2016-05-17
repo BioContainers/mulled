@@ -1,0 +1,19 @@
+---
+{
+  "title": "614",
+  "packages": [
+    {
+      "image": "metilene",
+      "packager": "conda",
+      "homepage": "http://www.bioinf.uni-leipzig.de/Software/metilene/",
+      "description": "Fast and sensitive detection of differential DNA methylation",
+      "travisid": 130908405,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-17T18:22:22+0000",
+      "version": "0.2.6--r3.2.2_0",
+      "revision": "0.2.6--r3.2.2_0",
+      "size": "302024286"
+    }
+  ]
+}
+---
