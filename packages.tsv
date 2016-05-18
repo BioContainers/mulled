@@ -2,6 +2,7 @@
 linuxbrew	hello	1	test $(/brew/bin/hello -g 'Hello_World') = 'Hello_World'
 linuxbrew	base64	1	echo -n mulled | /brew/bin/base64 | grep 'bXVsbGVk'
 linuxbrew	coreutils	1	test $(/brew/bin/factor 15 | tr ' ' '_') = '15:_3_5'
+linuxbrew	sha2	1	test $(echo -n mulled | /brew/bin/sha2 -256 -q) = '950af197b83c2b315d43232ffb1e11118874fd02e4a4d1d2baf93cea419feb5d'
 alpine	go	1	go version | grep 'go version'
 alpine	irssi	1	irssi -v
 alpine	mksh	1	mksh -v
@@ -15,10 +16,13 @@ conda	bowtie2	2.2.5--py35_2	bowtie2 --version
 conda	bowtie2	2.2.8--py35_2	bowtie2 --version
 conda	tmux	1.9a--1	tmux -V
 conda	tmux	2.1--1	tmux -V
+conda	metilene	0.2.6--r3.2.2_0	metilene --help 2>&1 | grep VERSION
 conda	m4	1.4.17--0	test $(echo 'define(a, bbb)a' | m4) = 'bbb'
 conda	samtools	1.3--1	samtools --version
 conda	samtools	1.0--0	samtools --version
 conda	pyrad	3.0.64--py27_0	pyrad -h
+conda	bwa	0.7.13--1	bwa 2>&1 | grep 'alignment via Burrows-Wheeler' > /dev/null
+conda	bamtools	2.4.0--3	bamtools --help
 conda	stacks	1.37--0	cstacks  2>&1 | grep cstacks
 conda	r-vegan	2.3_4--r3.2.2_1	R -e 'library(''vegan'')'
 conda	cufflinks	2.2.1--py27_1	(cuffmerge --help 2>&1) | grep Options > /dev/null
@@ -29,7 +33,9 @@ conda	deeptools	2.2.2--py27_0	bamCompare --version
 conda	deeptools	2.2.3--py27_0	bamCompare --version
 conda	bowtie	1.1.2--py35_1	(bowtie --version 2>&1) > /dev/null
 conda	metaphlan2	2.2.0--py27_1	metaphlan2.py -v
+conda	hifive	1.3.0--py27_0	python -c 'import hifive'
 conda	carna	1.3.1--3	carna --help
+conda	chemfp	1.1p1--py27_0	python -c 'import chemfp'
 conda	infernal	1.1.1--0	cmsearch -h
 conda	intarna	1.2.5--1	IntaRNA -h
 conda	locarna	1.8.9--2	locarna --version
@@ -40,6 +46,7 @@ conda	rnaz	2.1--1	RNAz -h
 conda	sortmerna	2.0--1	sortmerna --version
 conda	viennarna	2.2.5--2	RNAfold --version
 conda	mash	1.1--0	mash -h
+conda	rdkit	2015.09.2--py27_boost1.57_0	python -c 'import rdkit'
 conda	autodock-vina	1.1.2--0	vina --help
 conda	align_it	1.0.3--1	align-it --help
 conda	bamhash	1.0--0	bamhash_checksum_bam --version
@@ -53,6 +60,7 @@ conda	bioconductor-deseq	1.22.1--r3.2.2_0	Rscript -e 'library(''DESeq'')'
 conda	bioconductor-limma	3.26.9--0	Rscript -e 'library(''limma'')'
 conda	age-metasv	2015.01.29.3--0	age_align
 conda	abyss	1.9.0--0	ABYSS --version
+conda	amos	3.1.0--py35_3	Minimo -h > /dev/null
 conda	bioconductor-gosemsim	1.28.2--0	Rscript -e 'library(''GOSemSim'')'
 conda	last	719--py27_1	lastal -V &> /dev/null
 conda	biobambam	2.0.42--0	bamsormadup --help
@@ -64,6 +72,7 @@ conda	impute2	2.3.2--0	impute2 2>&1 | grep IMPUTE
 conda	keepalive	0.5--py27_0	python -c 'import keepalive'
 conda	abricate	0.2--0	abricate --help 2>&1 | grep ResFinder > /dev/null
 conda	bioconductor-go.db	3.2.2--0	Rscript -e 'library(''GO.db'')'
+conda	fiji	20141125--3	fiji --help
 conda	art	3.19.15--1	art_illumina -sam -i test.fasta -l 150 -ss MS -f 10 -o illumina_test
 conda	lastz	1.0.2--0	lastz --version  2>&1 | grep 1.02.00 > /dev/null
 conda	kallisto	0.42.4--2	kallisto | grep Usage > /dev/null
@@ -76,3 +85,155 @@ conda	cnvkit	0.7.11--py27_0	cnvkit.py -h
 conda	cobra	0.4.0--py27_0	python -c 'import cobra'
 conda	crossmap	0.2.2--py27_2	CrossMap.py
 conda	cyvcf2	0.3.0--py27_0	python -c 'import cyvcf2'
+conda	sambamba	0.6.1--0	sambamba view
+conda	star	2.5.1b--0	STAR --version
+conda	theta2	0.7--py27_0	RunTHetA.py -h
+conda	opsin	2.1.0--1	opsin --help
+conda	ddocent	2.1--0	dDocent --help
+conda	peptide-shaker	1.1.3--1	peptide-shaker eu.isas.peptideshaker.cmd.PeptideShakerCLI
+conda	searchgui	2.1.4--1	searchgui eu.isas.searchgui.cmd.FastaCLI
+conda	mothur	1.36.1--boost1.60_2	mothur '#help()'
+conda	macs2	2.1.1--r3.2.2_0	macs2 --version 2>&1 > /dev/null
+conda	sam	3.5--0	buildmodel -v
+conda	qiime	1.9.1--py27_0	python -c 'import qiime'
+conda	biom-format	2.1.5--py35_3	python -c 'import biom'
+conda	ucsc-addcols	324--0	which addCols
+conda	ucsc-axttomaf	324--0	which axtToMaf
+conda	ucsc-axttopsl	324--0	which axtToPsl
+conda	ucsc-bedclip	324--0	which bedClip
+conda	ucsc-bedcommonregions	324--0	which bedCommonRegions
+conda	ucsc-bedcoverage	324--0	which bedCoverage
+conda	ucsc-bedextendranges	324--0	which bedExtendRanges
+conda	ucsc-bedgeneparts	324--0	which bedGeneParts
+conda	ucsc-bedgraphpack	324--0	which bedGraphPack
+conda	ucsc-bedgraphtobigwig	324--0	which bedGraphToBigWig
+conda	ucsc-bedintersect	324--0	which bedIntersect
+conda	ucsc-beditemoverlapcount	324--0	which bedItemOverlapCount
+conda	ucsc-bedpileups	324--0	which bedPileUps
+conda	ucsc-bedremoveoverlap	324--0	which bedRemoveOverlap
+conda	ucsc-chainprenet	324--0	which chainPreNet
+conda	ucsc-chainsort	324--0	which chainSort
+conda	ucsc-chainsplit	324--0	which chainSplit
+conda	ucsc-chainstitchid	324--0	which chainStitchId
+conda	ucsc-chainswap	324--0	which chainSwap
+conda	ucsc-chaintoaxt	324--0	which chainToAxt
+conda	ucsc-chaintopsl	324--0	which chainToPsl
+conda	ucsc-chaintopslbasic	324--0	which chainToPslBasic
+conda	ucsc-crtreeindexbed	324--0	which crTreeIndexBed
+conda	ucsc-crtreesearchbed	324--0	which crTreeSearchBed
+conda	ucsc-fatotwobit	324--0	which faToTwoBit
+conda	ucsc-fetchchromsizes	324--0	which fetchChromSizes
+conda	ucsc-genepredtobed	324--0	which genePredToBed
+conda	ucsc-genepredtofakepsl	324--0	which genePredToFakePsl
+conda	ucsc-twobitinfo	324--0	which twoBitInfo
+conda	ucsc-twobitmask	324--0	which twoBitMask
+conda	ucsc-twobittofa	324--0	which twoBitToFa
+conda	ucsc-validatefiles	324--0	which validateFiles
+conda	ucsc-validatemanifest	324--0	which validateManifest
+conda	ucsc-wigcorrelate	324--0	which wigCorrelate
+conda	ucsc-wigtobigwig	324--0	which wigToBigWig
+conda	ucsc-wordline	324--0	which wordLine
+conda	ucsc-xmlcat	324--0	which xmlCat
+conda	ucsc-xmltosql	324--0	which xmlToSql
+conda	ucsc-splitfile	324--0	which splitFile
+conda	ucsc-splitfilebycolumn	324--0	which splitFileByColumn
+conda	ucsc-sqltoxml	324--0	which sqlToXml
+conda	ucsc-stringify	324--0	which stringify
+conda	ucsc-subchar	324--0	which subChar
+conda	ucsc-subcolumn	324--0	which subColumn
+conda	ucsc-taillines	324--0	which tailLines
+conda	ucsc-tdbquery	324--0	which tdbQuery
+conda	ucsc-texthistogram	324--0	which textHistogram
+conda	ucsc-ticktodate	324--0	which tickToDate
+conda	ucsc-tolower	324--0	which toLower
+conda	ucsc-toupper	324--0	which toUpper
+conda	ucsc-trfbig	324--0	which trfBig
+conda	ucsc-twobitdup	324--0	which twoBitDup
+conda	ucsc-mafsinregion	324--0	which mafsInRegion
+conda	ucsc-mafspecieslist	324--0	which mafSpeciesList
+conda	ucsc-mafspeciessubset	324--0	which mafSpeciesSubset
+conda	ucsc-mafsplit	324--0	which mafSplit
+conda	ucsc-mafsplitpos	324--0	which mafSplitPos
+conda	ucsc-maftoaxt	324--0	which mafToAxt
+conda	ucsc-maftopsl	324--0	which mafToPsl
+conda	ucsc-maftosnpbed	324--0	which mafToSnpBed
+conda	ucsc-netchainsubset	324--0	which netChainSubset
+conda	ucsc-nettobed	324--0	which netToBed
+conda	ucsc-pslcat	324--0	which pslCat
+conda	ucsc-pslcdnafilter	324--0	which pslCDnaFilter
+conda	ucsc-pslcheck	324--0	which pslCheck
+conda	ucsc-psldropoverlap	324--0	which pslDropOverlap
+conda	ucsc-maffetch	324--0	which mafFetch
+conda	ucsc-maffilter	324--0	which mafFilter
+conda	ucsc-maffrag	324--0	which mafFrag
+conda	ucsc-maffrags	324--0	which mafFrags
+conda	ucsc-mafgene	324--0	which mafGene
+conda	ucsc-mafmefirst	324--0	which mafMeFirst
+conda	ucsc-maforder	324--0	which mafOrder
+conda	ucsc-mafranges	324--0	which mafRanges
+conda	ucsc-genepredtomafframes	324--0	which genePredToMafFrames
+conda	ucsc-gtftogenepred	324--0	which gtfToGenePred
+conda	ucsc-hgloadbed	324--0	which hgLoadBed
+conda	ucsc-hgloadchain	324--0	which hgLoadChain
+conda	ucsc-hgloadmaf	324--0	which hgLoadMaf
+conda	ucsc-hgloadwiggle	324--0	which hgLoadWiggle
+conda	ucsc-lavtopsl	324--0	which lavToPsl
+conda	ucsc-liftover	324--0	which liftOver
+conda	ucsc-liftup	324--0	which liftUp
+conda	ucsc-mafaddirows	324--0	which mafAddIRows
+conda	ucsc-mafaddqrows	324--0	which mafAddQRows
+conda	ucsc-mafcoverage	324--0	which mafCoverage
+conda	ucsc-bedrestricttopositions	324--0	which bedRestrictToPositions
+conda	ucsc-bedsort	324--0	which bedSort
+conda	ucsc-bedtobigbed	324--0	which bedToBigBed
+conda	ucsc-bedtogenepred	324--0	which bedToGenePred
+conda	ucsc-bedtopsl	324--0	which bedToPsl
+conda	ucsc-bedweedoverlapping	324--0	which bedWeedOverlapping
+conda	ucsc-bigbedinfo	324--0	which bigBedInfo
+conda	ucsc-bigbednameditems	324--0	which bigBedNamedItems
+conda	ucsc-bigbedsummary	324--0	which bigBedSummary
+conda	ucsc-pslswap	324--0	which pslSwap
+conda	ucsc-psltobed	324--0	which pslToBed
+conda	ucsc-psltobigpsl	324--0	which pslToBigPsl
+conda	ucsc-psltochain	324--0	which pslToChain
+conda	ucsc-psltopslx	324--0	which pslToPslx
+conda	ucsc-pslxtofa	324--0	which pslxToFa
+conda	ucsc-qactowig	324--0	which qacToWig
+conda	ucsc-qatoqac	324--0	which qaToQac
+conda	ucsc-randomlines	324--0	which randomLines
+conda	ucsc-rasqlquery	324--0	which raSqlQuery
+conda	ucsc-ratolines	324--0	which raToLines
+conda	ucsc-ratotab	324--0	which raToTab
+conda	ucsc-rmfadups	324--0	which rmFaDups
+conda	ucsc-rowstocols	324--0	which rowsToCols
+conda	ucsc-spacedtotab	324--0	which spacedToTab
+conda	ucsc-bigbedtobed	324--0	which bigBedToBed
+conda	ucsc-bigwigaverageoverbed	324--0	which bigWigAverageOverBed
+conda	ucsc-bigwigcat	324--0	which bigWigCat
+conda	ucsc-bigwigcluster	324--0	which bigWigCluster
+conda	ucsc-bigwigcorrelate	324--0	which bigWigCorrelate
+conda	ucsc-bigwiginfo	324--0	which bigWigInfo
+conda	ucsc-bigwigmerge	324--0	which bigWigMerge
+conda	ucsc-bigwigsummary	324--0	which bigWigSummary
+conda	ucsc-bigwigtobedgraph	324--0	which bigWigToBedGraph
+conda	ucsc-bigwigtowig	324--0	which bigWigToWig
+conda	ucsc-blasttopsl	324--0	which blastToPsl
+conda	ucsc-chainantirepeat	324--0	which chainAntiRepeat
+conda	ucsc-chainfilter	324--0	which chainFilter
+conda	ucsc-chainmergesort	324--0	which chainMergeSort
+conda	ucsc-chainnet	324--0	which chainNet
+conda	ucsc-pslreps	324--0	which pslReps
+conda	ucsc-pslscore	324--0	which pslScore
+conda	ucsc-pslselect	324--0	which pslSelect
+conda	ucsc-pslsort	324--0	which pslSort
+conda	ucsc-pslstats	324--0	which pslStats
+conda	ucsc-pslpostarget	324--0	which pslPosTarget
+conda	ucsc-pslpretty	324--0	which pslPretty
+conda	ucsc-pslrecalcmatch	324--0	which pslRecalcMatch
+conda	ucsc-pslfilter	324--0	which pslFilter
+conda	ucsc-pslhisto	324--0	which pslHisto
+conda	ucsc-pslliftsubrangeblat	324--0	which pslLiftSubrangeBlat
+conda	ucsc-pslmap	324--0	which pslMap
+conda	ucsc-pslmrnacover	324--0	which pslMrnaCover
+conda	ucsc-pslpairs	324--0	which pslPairs
+conda	ucsc-pslpartition	324--0	which pslPartition
