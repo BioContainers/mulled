@@ -1,0 +1,19 @@
+---
+{
+  "title": "621",
+  "packages": [
+    {
+      "image": "openmg",
+      "packager": "conda",
+      "homepage": "https://sourceforge.net/projects/openmg",
+      "description": "Exhaustive generation of chemical structures",
+      "travisid": 131360382,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-19T09:15:57+0000",
+      "version": "0.1--0",
+      "revision": "0.1--0",
+      "size": "177837922"
+    }
+  ]
+}
+---
