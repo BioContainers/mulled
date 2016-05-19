@@ -1,0 +1,19 @@
+---
+{
+  "title": "626",
+  "packages": [
+    {
+      "image": "align_it",
+      "packager": "conda",
+      "homepage": "http://silicos-it.be.s3-website-eu-west-1.amazonaws.com/software/align-it/1.0.4/align-it.html",
+      "description": "Align-it is a tool to align molecules according to their pharmacophores. A pharmacophore is an abstract concept based on the specific interactions observed in drug-receptor interactions: hydrogen bonding, charge transfer, electrostatic and hydrophobic interactions.",
+      "travisid": 131512801,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-19T19:51:31+0000",
+      "version": "1.0.3--2",
+      "revision": "1.0.3--2",
+      "size": "136752842"
+    }
+  ]
+}
+---
