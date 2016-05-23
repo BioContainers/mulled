@@ -1,0 +1,19 @@
+---
+{
+  "title": "630",
+  "packages": [
+    {
+      "image": "eoulsan",
+      "packager": "conda",
+      "homepage": "http://www.tools.genomique.biologie.ens.fr/eoulsan/",
+      "description": "A pipeline and a framework for NGS analysis (RNA-Seq and Chip-Seq)",
+      "travisid": 132268537,
+      "travisslug": "mulled/mulled",
+      "date": "2016-05-23T13:17:30+0000",
+      "version": "2.0_beta4--1",
+      "revision": "2.0_beta4--1",
+      "size": "287714431"
+    }
+  ]
+}
+---
