@@ -1,0 +1,19 @@
+---
+{
+  "title": "635",
+  "packages": [
+    {
+      "image": "variant-effect-predictor",
+      "packager": "conda",
+      "homepage": "http://www.ensembl.org/info/docs/tools/vep/index.html",
+      "description": "The VEP determines the effect of your variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence, as well as regulatory regions.",
+      "travisid": 134434237,
+      "travisslug": "mulled/mulled",
+      "date": "2016-06-01T12:44:35+0000",
+      "version": "83--4",
+      "revision": "83--4",
+      "size": "293230698"
+    }
+  ]
+}
+---
