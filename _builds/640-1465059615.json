@@ -1,0 +1,19 @@
+---
+{
+  "title": "640",
+  "packages": [
+    {
+      "image": "lighter",
+      "packager": "conda",
+      "homepage": "https://github.com/mourisl/Lighter",
+      "description": "ighter is a kmer-based error correction method for whole genome sequencing data",
+      "travisid": 135274717,
+      "travisslug": "mulled/mulled",
+      "date": "2016-06-04T17:00:12+0000",
+      "version": "1.1.1--1",
+      "revision": "1.1.1--1",
+      "size": "10913350"
+    }
+  ]
+}
+---
