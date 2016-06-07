@@ -15,6 +15,7 @@ alpine	bc	1	test $(echo '2+3' | bc -q) = '5'
 conda	bowtie2	2.2.5--py35_2	bowtie2 --version
 conda	bowtie2	2.2.8--py35_2	bowtie2 --version
 conda	circexplorer	0.1--py35_1	CIRCexplorer.py --help
+conda	circexplorer	1.1.9--py35_0	CIRCexplorer.py --help
 conda	lighter	1.1.1--1	lighter -h
 conda	tmux	1.9a--1	tmux -V
 conda	tmux	2.1--1	tmux -V
