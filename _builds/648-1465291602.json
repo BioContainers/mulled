@@ -1,0 +1,19 @@
+---
+{
+  "title": "648",
+  "packages": [
+    {
+      "image": "circexplorer",
+      "packager": "conda",
+      "homepage": "https://github.com/YangLab/CIRCexplorer",
+      "description": "A combined strategy to identify circular RNAs (circRNAs and ciRNAs)",
+      "travisid": 135818233,
+      "travisslug": "mulled/mulled",
+      "date": "2016-06-07T09:26:40+0000",
+      "version": "1.1.9--py35_0",
+      "revision": "1.1.9--py35_0",
+      "size": "233289401"
+    }
+  ]
+}
+---
