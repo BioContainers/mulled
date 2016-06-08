@@ -1,0 +1,19 @@
+---
+{
+  "title": "650",
+  "packages": [
+    {
+      "image": "piranha",
+      "packager": "conda",
+      "homepage": "http://smithlabresearch.org/software/piranha/",
+      "description": "Piranha is a peak-caller for CLIP- and RIP-Seq data.",
+      "travisid": 136125093,
+      "travisslug": "mulled/mulled",
+      "date": "2016-06-08T11:55:19+0000",
+      "version": "1.2.1--gsl1.16_0",
+      "revision": "1.2.1--gsl1.16_0",
+      "size": "44963895"
+    }
+  ]
+}
+---
