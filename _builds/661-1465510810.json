@@ -1,0 +1,31 @@
+---
+{
+  "title": "661",
+  "packages": [
+    {
+      "image": "piranha",
+      "packager": "conda",
+      "homepage": "http://smithlabresearch.org/software/piranha/",
+      "description": "Piranha is a peak-caller for CLIP- and RIP-Seq data.",
+      "travisid": 136559405,
+      "travisslug": "mulled/mulled",
+      "date": "2016-06-09T22:18:35+0000",
+      "version": "1.2.1--gsl1.16_2",
+      "revision": "1.2.1--gsl1.16_2",
+      "size": "48272529"
+    },
+    {
+      "image": "t_coffee",
+      "packager": "conda",
+      "homepage": "http://www.tcoffee.org/Projects/tcoffee/",
+      "description": "A collection of tools for Computing, Evaluating and Manipulating Multiple Alignments of DNA, RNA, Protein Sequences and Structures.",
+      "travisid": 136559405,
+      "travisslug": "mulled/mulled",
+      "date": "2016-06-09T22:20:07+0000",
+      "version": "11.0.8--py35_1",
+      "revision": "11.0.8--py35_1",
+      "size": "248094164"
+    }
+  ]
+}
+---
