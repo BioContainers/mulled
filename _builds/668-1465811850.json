@@ -1,0 +1,19 @@
+---
+{
+  "title": "668",
+  "packages": [
+    {
+      "image": "stacks",
+      "packager": "conda",
+      "homepage": "http://catchenlab.life.illinois.edu/stacks/",
+      "description": "Stacks is a software pipeline for building loci from RAD-seq",
+      "travisid": 137199053,
+      "travisslug": "mulled/mulled",
+      "date": "2016-06-13T09:57:28+0000",
+      "version": "1.40--1",
+      "revision": "1.40--1",
+      "size": "136859048"
+    }
+  ]
+}
+---
