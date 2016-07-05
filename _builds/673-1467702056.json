@@ -1,0 +1,19 @@
+---
+{
+  "title": "673",
+  "packages": [
+    {
+      "image": "trimmomatic",
+      "packager": "conda",
+      "homepage": "http://www.usadellab.org/cms/?page=trimmomatic",
+      "description": "A flexible read trimming tool for Illumina NGS data",
+      "travisid": 142373845,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-05T07:00:53+0000",
+      "version": "0.36--3",
+      "revision": "0.36--3",
+      "size": "153570752"
+    }
+  ]
+}
+---
