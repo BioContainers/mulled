@@ -1,0 +1,31 @@
+---
+{
+  "title": "678",
+  "packages": [
+    {
+      "image": "circos",
+      "packager": "conda",
+      "homepage": "http://circos.ca",
+      "description": "Circos is a software package for visualizing data and information. It visualizes data in a circular layout",
+      "travisid": 142671199,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-06T06:22:16+0000",
+      "version": "0.69.2--0",
+      "revision": "0.69.2--0",
+      "size": "211818918"
+    },
+    {
+      "image": "perl-bioperl",
+      "packager": "conda",
+      "homepage": "http://metacpan.org/pod/BioPerl",
+      "description": "Bioinformatics Toolkit",
+      "travisid": 142671199,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-06T06:25:24+0000",
+      "version": "1.6.924--6",
+      "revision": "1.6.924--6",
+      "size": "279103326"
+    }
+  ]
+}
+---
