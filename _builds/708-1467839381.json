@@ -1,0 +1,31 @@
+---
+{
+  "title": "708",
+  "packages": [
+    {
+      "image": "gemini",
+      "packager": "conda",
+      "homepage": "https://github.com/arq5x/gemini",
+      "description": "a lightweight db framework for disease and population genetics.",
+      "travisid": 142875791,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-06T21:08:05+0000",
+      "version": "0.19.0--py27_0",
+      "revision": "0.19.0--py27_0",
+      "size": "1192176015"
+    },
+    {
+      "image": "tophat",
+      "packager": "conda",
+      "homepage": "http://ccb.jhu.edu/software/tophat/index.shtml",
+      "description": "A spliced read mapper for RNA-Seq",
+      "travisid": 142875791,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-06T21:09:38+0000",
+      "version": "2.1.1--py27_0",
+      "revision": "2.1.1--py27_0",
+      "size": "146461982"
+    }
+  ]
+}
+---
