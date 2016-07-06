@@ -21,6 +21,7 @@ conda	perl-bioperl	1.6.924--6	perl -e 'use Bio::Seq;'
 conda	lighter	1.1.1--1	lighter -h
 conda	tmux	1.9a--1	tmux -V
 conda	tmux	2.1--1	tmux -V
+conda	barrnap	0.7--1	barrnap --help 2>&1 | grep Options > /dev/null
 conda	eoulsan	2.0_beta4--1	eoulsan.sh --version
 conda	metilene	0.2.6--r3.2.2_0	metilene --help 2>&1 | grep VERSION
 conda	m4	1.4.17--0	test $(echo 'define(a, bbb)a' | m4) = 'bbb'
