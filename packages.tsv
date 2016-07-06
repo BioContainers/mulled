@@ -29,7 +29,7 @@ conda	m4	1.4.17--0	test $(echo 'define(a, bbb)a' | m4) = 'bbb'
 conda	openmg	0.1--0	openmg -h 2>&1 | grep 'Optional Parameters'
 conda	samtools	1.3--1	samtools --version
 conda	samtools	1.0--0	samtools --version
-conda	rgi	3.1.0--1	rgi -h
+conda	rgi	3.1.0--py27_1	rgi -h
 conda	pyrad	3.0.64--py27_0	pyrad -h
 conda	bwa	0.7.13--1	bwa 2>&1 | grep 'alignment via Burrows-Wheeler' > /dev/null
 conda	bamtools	2.4.0--3	bamtools --help
