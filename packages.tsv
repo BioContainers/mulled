@@ -12,6 +12,7 @@ alpine	postgresql	1	postgres -V
 alpine	mtr	1	/usr/sbin/mtr -v
 alpine	znc	1	/usr/bin/znc -v
 alpine	bc	1	test $(echo '2+3' | bc -q) = '5'
+conda	bedtools	2.25.0--2	bedtools
 conda	bowtie2	2.2.5--py35_2	bowtie2 --version
 conda	bowtie2	2.2.8--py35_2	bowtie2 --version
 conda	circos	0.69.2--0	circos -v
@@ -21,6 +22,7 @@ conda	perl-bioperl	1.6.924--6	perl -e 'use Bio::Seq;'
 conda	lighter	1.1.1--1	lighter -h
 conda	tmux	1.9a--1	tmux -V
 conda	tmux	2.1--1	tmux -V
+conda	barrnap	0.7--1	barrnap --help 2>&1 | grep Options > /dev/null
 conda	eoulsan	2.0_beta4--1	eoulsan.sh --version
 conda	metilene	0.2.6--r3.2.2_0	metilene --help 2>&1 | grep VERSION
 conda	m4	1.4.17--0	test $(echo 'define(a, bbb)a' | m4) = 'bbb'
@@ -251,4 +253,4 @@ conda	variant-effect-predictor	83--4	variant_effect_predictor.pl --help
 conda	t_coffee	11.0.8--py35_1	t_coffee --help
 conda	piranha	1.2.1--gsl1.16_0	Piranha
 conda	piranha	1.2.1--gsl1.16_2	Piranha
-conda	trimmomatic	0.36--3		trimmomatic --help
+conda	trimmomatic	0.36--3	trimmomatic --help
