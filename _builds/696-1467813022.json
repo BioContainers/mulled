@@ -1,0 +1,19 @@
+---
+{
+  "title": "696",
+  "packages": [
+    {
+      "image": "bedtools",
+      "packager": "conda",
+      "homepage": "http://bedtools.readthedocs.org/",
+      "description": "A powerful toolset for genome arithmetic",
+      "travisid": 142765642,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-06T13:50:20+0000",
+      "version": "2.25.0--2",
+      "revision": "2.25.0--2",
+      "size": "13069597"
+    }
+  ]
+}
+---
