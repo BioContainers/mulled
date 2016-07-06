@@ -1,0 +1,19 @@
+---
+{
+  "title": "702",
+  "packages": [
+    {
+      "image": "rgi",
+      "packager": "conda",
+      "homepage": "https://card.mcmaster.ca",
+      "description": "This tool provides a preliminary annotation of your DNA sequence(s) based upon the data available in CARD. Hits to genes tagged with Antibiotic Resistance ontology terms will be highlighted. As CARD expands to include more pathogens, genomes, plasmids, and ontology terms this tool will grow increasingly powerful in providing first-pass detection of antibiotic resistance associated genes.",
+      "travisid": 142829556,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-06T18:01:50+0000",
+      "version": "3.1.0--py27_1",
+      "revision": "3.1.0--py27_1",
+      "size": "1183991015"
+    }
+  ]
+}
+---
