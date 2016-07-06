@@ -1,0 +1,19 @@
+---
+{
+  "title": "685",
+  "packages": [
+    {
+      "image": "barrnap",
+      "packager": "conda",
+      "homepage": "https://github.com/tseemann/barrnap",
+      "description": "Find 5S, 16S and 23S ribosomal RNA genes in bacterial contigs",
+      "travisid": 142726908,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-06T11:19:09+0000",
+      "version": "0.7--1",
+      "revision": "0.7--1",
+      "size": "124253356"
+    }
+  ]
+}
+---
