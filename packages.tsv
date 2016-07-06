@@ -12,6 +12,7 @@ alpine	postgresql	1	postgres -V
 alpine	mtr	1	/usr/sbin/mtr -v
 alpine	znc	1	/usr/bin/znc -v
 alpine	bc	1	test $(echo '2+3' | bc -q) = '5'
+conda	bedtools	2.25.0--2	bedtools
 conda	bowtie2	2.2.5--py35_2	bowtie2 --version
 conda	bowtie2	2.2.8--py35_2	bowtie2 --version
 conda	circos	0.69.2--0	circos -v
