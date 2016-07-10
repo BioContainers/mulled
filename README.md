@@ -21,8 +21,12 @@ Try it and build containers with us!
   4. You are done. We will merge your PR as early as possible or you can apply to get commit access by asking on [gitter](https://gitter.im/mulled/mulled?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
+## Underlying technology
+
+The layer donning technology underlying the mulled project is developed in the [involucro](https://github.com/involucro/involucro) project. If you want to contribute, for example to add an `dpkg` or `yum` backend please contact us and check out the [involucro](https://github.com/involucro/involucro) project.
 
 
 ## Conceptual Overview
 
 ![Flowchar](pictures/mulledflow.png)
+
