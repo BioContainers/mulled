@@ -1,0 +1,19 @@
+---
+{
+  "title": "718",
+  "packages": [
+    {
+      "image": "segway",
+      "packager": "conda",
+      "homepage": "http://segway.hoffmanlab.org/",
+      "description": "a tool for easy pattern discovery and identification in functional genomics data.",
+      "travisid": 144123259,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-12T10:37:15+0000",
+      "version": "1.4--py27_0",
+      "revision": "1.4--py27_0",
+      "size": "625872751"
+    }
+  ]
+}
+---
