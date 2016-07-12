@@ -17,6 +17,7 @@ Try it and build containers with us!
     * First column is the name of your package manager [conda, linuxbrew, alpine]
     * Second column is the package name (e.g. samtools)
     * Third column is the package version (e.g. 1.3--1). The version format depends on your package manager please have a look at other examples to get it right.
+    * Please ensure you are using TABS not spaces to separate columns
   3. Create a Pull Request and wait until our testing passes
   4. You are done. We will merge your PR as early as possible or you can apply to get commit access by asking on [gitter](https://gitter.im/mulled/mulled?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
