@@ -258,3 +258,4 @@ conda	t_coffee	11.0.8--py35_1	t_coffee --help
 conda	piranha	1.2.1--gsl1.16_0	Piranha
 conda	piranha	1.2.1--gsl1.16_2	Piranha
 conda	trimmomatic	0.36--3	trimmomatic --help
+conda	bwa	0.7.15--0	which bwa
