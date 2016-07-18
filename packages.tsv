@@ -13,6 +13,8 @@ alpine	mtr	1	/usr/sbin/mtr -v
 alpine	znc	1	/usr/bin/znc -v
 alpine	bc	1	test $(echo '2+3' | bc -q) = '5'
 alpine	git	1	git --version
+alpine	mc	1	mc --version
+alpine	lftp	1	lftp --version
 conda	segway	1.4--py27_0	segway --help
 conda	bedtools	2.25.0--2	bedtools
 conda	bowtie2	2.2.5--py35_2	bowtie2 --version
