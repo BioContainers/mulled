@@ -16,7 +16,7 @@ alpine	git	1	git --version
 alpine	mc	1	mc --version
 alpine	lftp	1	lftp --version
 conda	segway	1.4--py27_0	segway --help
-conda	emboss	6.5.7--0	needle --help
+conda	emboss	6.5.7--1	needle --help
 conda	bedtools	2.25.0--2	bedtools
 conda	bowtie2	2.2.5--py35_2	bowtie2 --version
 conda	bowtie2	2.2.8--py35_2	bowtie2 --version
