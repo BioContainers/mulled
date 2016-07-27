@@ -1,0 +1,19 @@
+---
+{
+  "title": "742",
+  "packages": [
+    {
+      "image": "repeatmasker",
+      "packager": "conda",
+      "homepage": "http://www.repeatmasker.org",
+      "description": "RepeatMasker is a program that screens DNA sequences for interspersed repeats and low complexity DNA sequences.",
+      "travisid": 147867014,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-27T21:01:03+0000",
+      "version": "4.0.6--4",
+      "revision": "4.0.6--4",
+      "size": "2419320977"
+    }
+  ]
+}
+---
