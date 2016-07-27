@@ -262,3 +262,4 @@ conda	piranha	1.2.1--gsl1.16_0	Piranha
 conda	piranha	1.2.1--gsl1.16_2	Piranha
 conda	trimmomatic	0.36--3	trimmomatic --help
 conda	bwa	0.7.15--0	which bwa
+conda	cofold	2.0.4	CoFold --help
