@@ -1,0 +1,19 @@
+---
+{
+  "title": "745",
+  "packages": [
+    {
+      "image": "cofold",
+      "packager": "conda",
+      "homepage": "http://www.e-rna.org/cofold/",
+      "description": "An RNA secondary structure prediction method that takes co-transcriptional folding into account.",
+      "travisid": 148124970,
+      "travisslug": "mulled/mulled",
+      "date": "2016-07-28T19:23:47+0000",
+      "version": "2.0.4--1",
+      "revision": "2.0.4--1",
+      "size": "63298682"
+    }
+  ]
+}
+---
