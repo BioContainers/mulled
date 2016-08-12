@@ -17,6 +17,8 @@ alpine	mc	1	mc --version
 alpine	lftp	1	lftp --version
 conda	segway	1.4--py27_0	segway --help
 conda	emboss	6.5.7--2	needle --help
+conda	cofold	2.0.4--1	CoFold --help
+conda	repeatmasker	4.0.6--4	RepeatMasker | grep 'RepeatMasker - Mask repetitive DNA'
 conda	bedtools	2.25.0--2	bedtools
 conda	bowtie2	2.2.5--py35_2	bowtie2 --version
 conda	bowtie2	2.2.8--py35_2	bowtie2 --version
@@ -263,3 +265,4 @@ conda	piranha	1.2.1--gsl1.16_0	Piranha
 conda	piranha	1.2.1--gsl1.16_2	Piranha
 conda	trimmomatic	0.36--3	trimmomatic --help
 conda	bwa	0.7.15--0	which bwa
+conda	ribotaper	1.3.1--0	Ribotaper.sh 2>&1  | grep Usage > /dev/null
