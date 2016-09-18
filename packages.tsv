@@ -99,6 +99,7 @@ conda	art	3.19.15--1	art_illumina -sam -i test.fasta -l 150 -ss MS -f 10 -o illu
 conda	lastz	1.0.2--0	lastz --version  2>&1 | grep 1.02.00 > /dev/null
 conda	kallisto	0.42.4--2	kallisto | grep Usage > /dev/null
 conda	cancerit-allelecount	2.1.2--1	alleleCounter -h
+conda	julia	0.4.5--1	test $(julia -e "print(2+3)") = "5"
 conda	ccat	3.0--1	CCAT --help
 conda	cdbtools	0.99--1	cdbfasta -v
 conda	ceas	1.0.2--py27_0	ceas --version > /dev/null
