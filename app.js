@@ -38,7 +38,7 @@
 
       p.versions.forEach(function (ver) {
         vt.querySelector("h4").textContent = ver.version;
-        vt.querySelector("button.copy-btn").setAttribute("data-clipboard-text", "docker run -it --rm quay.io/mulled/" + p.id + ":" + ver.revision);
+        vt.querySelector("button.copy-btn").setAttribute("data-clipboard-text", "docker run -it --rm quay.io/biocontainers/" + p.id + ":" + ver.revision);
         vt.querySelector("span.package-size").textContent = numeral(ver.size).format('0b');
         vt.querySelector("span.package-date").textContent = new Date(ver.date).toLocaleString();
 
